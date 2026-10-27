@@ -1,3 +1,4 @@
+// Modified for the Revelation Ray Tracing fork, 2026-10-27. See MODIFICATIONS.md; original license notices retained.
 /*
 --------------------------------------------------------------------------------
 
@@ -12,14 +13,13 @@
 //======// Utility //=============================================================================//
 
 #include "/lib/Utility.glsl"
+#include "/lib/surface/Selection.glsl"
 
-#define SELECTION_BOX_COLOR_R 0.1 // [0.0 0.05 0.1 0.15 0.2 0.25 0.3 0.35 0.4 0.45 0.5 0.55 0.6 0.65 0.7 0.75 0.8 0.85 0.9 0.95 1.0]
-#define SELECTION_BOX_COLOR_G 0.1 // [0.0 0.05 0.1 0.15 0.2 0.25 0.3 0.35 0.4 0.45 0.5 0.55 0.6 0.65 0.7 0.75 0.8 0.85 0.9 0.95 1.0]
-#define SELECTION_BOX_COLOR_B 0.1 // [0.0 0.05 0.1 0.15 0.2 0.25 0.3 0.35 0.4 0.45 0.5 0.55 0.6 0.65 0.7 0.75 0.8 0.85 0.9 0.95 1.0]
 
 //======// Output //==============================================================================//
 
 flat out vec4 vertColor;
+flat out uint selectionOverlay;
 out vec2 lightmap;
 
 //======// Uniform //=============================================================================//
@@ -31,6 +31,7 @@ uniform vec2 renderScale;
 //======// Main //================================================================================//
 void main() {
 	vertColor = gl_Color;
+	selectionOverlay = uint(renderStage == MC_RENDER_STAGE_OUTLINE);
 	lightmap = saturate((gl_MultiTexCoord1.xy - 8.0) * rcp(232.0));
 
 	if (renderStage == MC_RENDER_STAGE_OUTLINE) {
@@ -41,7 +42,7 @@ void main() {
 	vec3 viewPos = transMAD(gl_ModelViewMatrix, gl_Vertex.xyz);
     gl_Position = project(gl_ProjectionMatrix, viewPos);
     #ifdef SHOULD_APPLY_JITTER
-        gl_Position.xy += taaJitter * gl_Position.w;
+        if (selectionOverlay == 0u) gl_Position.xy += taaJitter * gl_Position.w;
     #endif
     #if (RENDER_SCALE_1000X != 1000) || SR_ENABLE
         gl_Position.xy = gl_Position.xy * renderScale + (renderScale - 1.0) * gl_Position.w;

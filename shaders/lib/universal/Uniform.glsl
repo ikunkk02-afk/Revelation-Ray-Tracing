@@ -1,3 +1,4 @@
+// Revelation RT modifications, 2026-10-26. Apache-2.0.
 #if !defined INCLUDE_LIB_UNIVERSAL_UNIFORM
 #define INCLUDE_LIB_UNIVERSAL_UNIFORM
 
@@ -13,6 +14,7 @@ uniform sampler2D colortex6;
 uniform usampler2D colortex7;
 uniform sampler2D colortex8;
 uniform sampler2D colortex9;
+uniform sampler2D colortex10;
 uniform usampler2D colortex11;
 uniform sampler2D colortex12;
 uniform usampler2D colortex13;

@@ -1,0 +1,60 @@
+{
+  "source_digest": "d34a83f9aa4bfad4480c0b38bfb629c89ff387ccf95871443a402f7fae7e58e6",
+  "passed": true,
+  "renderer": "NVIDIA GeForce RTX 5060 Laptop GPU/PCIe/SSE2",
+  "scope": "Single-lamp production direct lighting; v9.1 failing control; independent CPU projection; actual shadow-ray counters; 32-frame stability",
+  "runtime_game_validation": false,
+  "tests": [
+    {
+      "name": "Ultra and RT presets use a single placed and handheld projection",
+      "passed": true
+    },
+    {
+      "name": "Single-source shadow agrees with independent CPU segment-box projection",
+      "passed": true,
+      "max_absolute_error": 5.960464477539063e-08
+    },
+    {
+      "name": "Shipped v9.1 reproduces several offset partial projections",
+      "passed": true,
+      "partial_pixels": 3371
+    },
+    {
+      "name": "Default has no displaced quarter-strength shadow copies",
+      "passed": true,
+      "partial_pixels": 0
+    },
+    {
+      "name": "Single projection remains stable over 32 frames",
+      "passed": true,
+      "max_frame_difference": 0.0
+    },
+    {
+      "name": "Handheld uses one stable projection with nonzero illumination",
+      "passed": true,
+      "max_frame_difference": 0.0
+    },
+    {
+      "name": "One lamp traces one shadow ray instead of four",
+      "passed": true,
+      "v91_shadow_rays": 16384,
+      "v92_shadow_rays": 4096,
+      "whole_game_fps_measured": false
+    },
+    {
+      "name": "Fully occluded and illuminated regions are both retained",
+      "passed": true
+    },
+    {
+      "name": "Oak-trapdoor projection matches independent vanilla-alpha CPU rays",
+      "passed": true,
+      "max_absolute_error": 9.685754776000977e-08,
+      "receiver_rays": 4096,
+      "opaque_model_voxels": 660
+    },
+    {
+      "name": "Oak-trapdoor apertures retain one full-strength projection per lamp",
+      "passed": true
+    }
+  ]
+}

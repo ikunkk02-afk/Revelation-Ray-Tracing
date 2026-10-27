@@ -1,3 +1,4 @@
+// Modified for the Revelation Ray Tracing fork, 2026-10-27. See MODIFICATIONS.md; original license notices retained.
 #if !defined INCLUDE_LIB_SURFACE_MATERIAL
 #define INCLUDE_LIB_SURFACE_MATERIAL
 
@@ -55,11 +56,13 @@ const vec3 HardcodedMetalF0[8] = vec3[8](
 vec3 GetMaterialF0(float metallic, vec3 albedo) {
 	#if TEXTURE_FORMAT == 0
 		vec3 f0;
-		uint metalIndex = uint(metallic * 255.0);
+		uint metalIndex = uint(round(metallic * 255.0));
 
 		if (metalIndex < 230u) {
 			// Dielectrics
-			f0 = vec3(mix(DEFAULT_DIELECTRIC_F0, 1.0, metallic));
+			// LabPBR stores linear F0 directly, not a metalness blend.
+			// Zero is also the pack's sentinel for a missing specular map.
+			f0 = vec3(metalIndex == 0u ? DEFAULT_DIELECTRIC_F0 : metallic);
 	#ifdef LABPBR_HARDCODED_METAL
 		} else if (metalIndex < 238u) {
 			// Hardcoded metals
@@ -90,6 +93,9 @@ Material GetMaterialData(vec4 specTex, vec3 albedo) {
     material.emissive *= luminance(albedo) * 4.0;
 
     material.reflectance = GetMaterialF0(material.metallic, albedo);
+	#if TEXTURE_FORMAT == 0
+		material.metallic = step(229.5 / 255.0, specTex.g);
+	#endif
 
 	material.specularMask = material.roughness < 0.4 || material.metallic > EPS;
 	material.mirrorMask = material.roughness < ROUGH_REFLECTIONS_THRESHOLD;
@@ -104,6 +110,9 @@ Material GetMaterialData(vec2 specTex, vec3 albedo) {
 	material.metallic = specTex.g;
 
     material.reflectance = GetMaterialF0(material.metallic, albedo);
+	#if TEXTURE_FORMAT == 0
+		material.metallic = step(229.5 / 255.0, specTex.g);
+	#endif
 
 	material.specularMask = material.roughness < 0.4 || material.metallic > EPS;
 	material.mirrorMask = material.roughness < ROUGH_REFLECTIONS_THRESHOLD;
@@ -116,6 +125,9 @@ Material GetMaterialData(vec2 specTex) {
 
 	material.roughness = sqr(1.0 - specTex.r);
 	material.metallic = specTex.g;
+	#if TEXTURE_FORMAT == 0
+		material.metallic = step(229.5 / 255.0, specTex.g);
+	#endif
 
 	material.specularMask = material.roughness < 0.4 || material.metallic > EPS;
 	material.mirrorMask = material.roughness < ROUGH_REFLECTIONS_THRESHOLD;

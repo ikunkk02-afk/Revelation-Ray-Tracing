@@ -1,3 +1,5 @@
+# Fork release: stable source bytes on Linux and Windows checkouts.
+* text=auto eol=lf
 *.glsl text linguist-language=glsl
 *.vsh text linguist-language=glsl
 *.fsh text linguist-language=glsl
@@ -7,3 +9,6 @@
 *.frag text linguist-language=glsl
 *.geom text linguist-language=glsl
 *.comp text linguist-language=glsl
+
+# Fork release: retain language files byte-for-byte for source/report digests.
+*.lang -text whitespace=cr-at-eol

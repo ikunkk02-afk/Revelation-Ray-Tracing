@@ -1,3 +1,4 @@
+// Revelation RT v3 modifications, 2026-10-26. Apache-2.0.
 /*
 --------------------------------------------------------------------------------
 
@@ -33,6 +34,10 @@ writeonly restrict uniform image2D colorimg3;
 #include "/lib/universal/SSBO.glsl"
 
 //======// Function //============================================================================//
+
+#ifdef RT_LOCAL_LIGHTS
+#include "/lib/lighting/LightTiles.glsl"
+#endif
 
 const uint padRadius = 1;
 const uvec2 sharedSize = gl_WorkGroupSize.xy + (padRadius << 1);

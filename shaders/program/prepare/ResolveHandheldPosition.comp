@@ -1,0 +1,12 @@
+// Revelation RT v7.1, Apache-2.0. Runs before local diffuse and reflections.
+#include "/lib/Utility.glsl"
+#include "/lib/universal/Uniform.glsl"
+#define RT_HANDHELD_POSITION_WRITE
+#include "/lib/lighting/HandheldPosition.glsl"
+layout(local_size_x=2) in;
+const ivec3 workGroups=ivec3(1,1,1);
+void main() {
+    int hand = int(gl_LocalInvocationID.x);
+    int level = hand == 0 ? heldBlockLightValue : heldBlockLightValue2;
+    rtHandheld.source[hand] = level > 0 ? RTResolveHandheldPosition(hand) : vec4(0.0);
+}

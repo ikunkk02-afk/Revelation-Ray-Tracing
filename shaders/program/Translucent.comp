@@ -1,3 +1,4 @@
+// Modified for the Revelation Ray Tracing fork, 2026-10-27. See MODIFICATIONS.md; original license notices retained.
 /*
 --------------------------------------------------------------------------------
 
@@ -56,10 +57,28 @@ writeonly uniform image2D colorimg3; // Lighting output
 #include "/lib/lighting/shadow/Render.glsl"
 
 #include "/lib/lighting/SSRT.glsl"
+#include "/lib/universal/MonteCarlo.glsl"
+#include "/lib/lighting/GlassMaterial.glsl"
+#ifdef RT_LOCAL_LIGHTS
+#include "/lib/lighting/LocalLights.glsl"
+#endif
+#ifdef HANDHELD_LIGHTING
+#include "/lib/lighting/HandheldTracing.glsl"
+#endif
 
-vec4 CalculateSpecularReflections(vec3 viewPos, vec3 worldNormal, vec3 worldDir, float dither, float skylight, bool waterMask) {
+vec4 CalculateSpecularReflectionSample(vec3 viewPos, vec3 worldNormal, vec3 worldDir, float dither, float skylight, bool waterMask, int sampleIndex) {
+    worldNormal = faceforward(worldNormal, worldDir, worldNormal);
 	float NdotV = abs(dot(worldNormal, worldDir));
-	vec3 rayDir = worldDir + worldNormal * NdotV * 2.0;
+    vec3 halfway = worldNormal;
+#ifdef RT_PHYSICAL_GLASS
+    float roughness = waterMask ? TRANSLUCENT_ROUGHNESS : RT_GLASS_ROUGHNESS;
+    if (roughness > 0.0001) {
+        mat3 basis = BuildOrthonormalBasis(worldNormal);
+        vec2 noise = SampleStbnVec2(ivec2(gl_GlobalInvocationID.xy), frameCounter + sampleIndex * 19);
+        halfway = basis * SampleVisibleGGX(-worldDir * basis, roughness, noise);
+    }
+#endif
+	vec3 rayDir = reflect(worldDir, halfway);
 
 	if (dot(worldNormal, rayDir) < EPS) return vec4(0.0, 0.0, 0.0, 1.0);
 
@@ -79,14 +98,25 @@ vec4 CalculateSpecularReflections(vec3 viewPos, vec3 worldNormal, vec3 worldDir,
 	}
 
 	float ior = waterMask ? isEyeInWater == 1 ? 1.0 / WATER_IOR : WATER_IOR : GLASS_IOR;
-	float fresnel = FresnelDielectricN(NdotV, ior);
+	float fresnel = RTDielectricFresnel(abs(dot(halfway, worldDir)), ior);
 
 	return vec4(reflection * fresnel, 1.0 - fresnel);
+}
+
+vec4 CalculateSpecularReflections(vec3 viewPos, vec3 worldNormal, vec3 worldDir, float dither, float skylight, bool waterMask) {
+    int count = 1;
+#ifdef RT_PHYSICAL_GLASS
+    if (!waterMask && RT_GLASS_ROUGHNESS > 0.0001) count = RT_SPECULAR_SAMPLES;
+#endif
+    vec4 result = vec4(0.0);
+    for (int i = 0; i < count; ++i) result += CalculateSpecularReflectionSample(viewPos, worldNormal, worldDir, fract(dither + float(i) * 0.61803399), skylight, waterMask, i) / float(count);
+    return result;
 }
 
 //======// Main //================================================================================//
 void main() {
 	ivec2 texelPos = ivec2(gl_GlobalInvocationID.xy);
+    if (any(greaterThanEqual(texelPos, ivec2(scaledViewSize)))) return;
 
 	uvec2 materialPack = loadMaterialPack(texelPos).xy;
 
@@ -224,5 +254,20 @@ void main() {
 		}
 	}
 
+    // Placed and handheld emitters also reflect on water and glass surfaces.
+    if (notParticle) {
+        Material material;
+        material.roughness = max(waterMask ? TRANSLUCENT_ROUGHNESS : RT_GLASS_ROUGHNESS, 0.02);
+        material.metallic = 0.0; material.emissive = 0.0;
+        material.reflectance = vec3(F0FromIOR(waterMask ? WATER_IOR : GLASS_IOR));
+        material.specularMask = true; material.mirrorMask = false;
+        vec3 unusedDiffuse = vec3(0.0);
+#ifdef RT_LOCAL_LIGHTS
+        AddTracedLocalLighting(viewPos, worldNormal, geoNormal, material, screenPos.z < 0.56, dither, texelPos, unusedDiffuse, lightingOut.rgb);
+#endif
+#ifdef HANDHELD_LIGHTING
+        AddTracedHandheldLighting(viewPos, worldNormal, geoNormal, material, screenPos.z < 0.56, dither, texelPos, unusedDiffuse, lightingOut.rgb);
+#endif
+    }
 	imageStore(colorimg3, texelPos, lightingOut);
 }

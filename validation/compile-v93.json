@@ -1,0 +1,4603 @@
+{
+  "source_digest": "d34a83f9aa4bfad4480c0b38bfb629c89ff387ccf95871443a402f7fae7e58e6",
+  "renderer": "NVIDIA GeForce RTX 5060 Laptop GPU/PCIe/SSE2",
+  "coverage": "RT v8: six quality presets, all-light masks/direct/volume, original lighting branches, handheld/glass/cache regression",
+  "excluded_integrations": [
+    "Distant Horizons",
+    "Voxy"
+  ],
+  "checks": [
+    {
+      "variant": "Default",
+      "file": "world0\\begin.csh",
+      "passed": true,
+      "source_hash": "0006a052e0a8ed2f33114c95d96cca8e6a126f779d0e60fac30165185c969b52",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "Default",
+      "file": "world0\\begin_a.csh",
+      "passed": true,
+      "source_hash": "a083e699b9a20d7ba66983158364522d9d7de602d9637f1e33417f139469fb0e",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "Default",
+      "file": "world0\\begin1.csh",
+      "passed": true,
+      "source_hash": "a26c7f78f9c3c9eb38c8291130e00e64d74d147f67bdffd1513eec8ef1db14a5",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "Default",
+      "file": "world0\\begin2.csh",
+      "passed": true,
+      "source_hash": "c68f50b79a5e1b1f1af58dfda2fa087fdafd2da943d429adaefdcc5c67992597",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "Default",
+      "file": "world0\\deferred.csh",
+      "passed": true,
+      "source_hash": "283dbec95c3b9c5218c9b06714572416b24e9093a76870864b0e16d53a05c1d4",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "Default",
+      "file": "world0\\deferred1.csh",
+      "passed": true,
+      "source_hash": "79a7ca4ee7c82711090c69b2dad9a88fa204b85e7377387e265b42085874ba74",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "Default",
+      "file": "world0\\deferred1_a.csh",
+      "passed": true,
+      "source_hash": "87f75e8b265432f83b2d9f38bf42d1330b2bd2f4a30a13fdb83220b859c185c6",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "Default",
+      "file": "world0\\deferred4.fsh",
+      "passed": true,
+      "source_hash": "86078f194049d47d889653cc193a5cf1ab34f12e9ed8bf52c41fb483dc2105a5",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "Default",
+      "file": "world0\\deferred21.fsh",
+      "passed": true,
+      "source_hash": "8e0873ae33974b9cc101ee93fee3b8d40e65b5379817f0a5ef53ebe4e585a33a",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "Default",
+      "file": "world0\\deferred50.fsh",
+      "passed": true,
+      "source_hash": "3d4b4510c84115eaa146edf174b74ee823a848c7a7c706cbb44f6a60cdaef94d",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "Default",
+      "file": "world0\\composite2.fsh",
+      "passed": true,
+      "source_hash": "e2c6dc585125c4d816b0359bbbe0943e339748981c7b32d5d33e8c4259d8d1d0",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "Default",
+      "file": "world0\\composite2.csh",
+      "passed": true,
+      "source_hash": "c761697b88a2c35863fe1875c7a7a41b84e78954827a8153f68ed51115e4b21a",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "Default",
+      "file": "world0\\composite.fsh",
+      "passed": true,
+      "source_hash": "6ccdc15d06fb1d2f0c9a1c84bfff3410bc2cc3917c6ca7f2b2915b5463eb222a",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "Default",
+      "file": "world0\\final.fsh",
+      "passed": true,
+      "source_hash": "5279390006ddcb352e754a1a77061eae9ddbccc4e11abeeeeb86dac276fffa56",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "Default",
+      "file": "world0\\shadow.vsh",
+      "passed": true,
+      "source_hash": "96220692deadcc8c923f0981bd919d50d54a14f5063df2ab0926a83cee42fd2a",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "Default",
+      "file": "world0\\shadow.fsh",
+      "passed": true,
+      "source_hash": "df2af8dc101d526a0e9461cb998dbe18600f43a7ef9ab55b6afb0acc30a3a0b0",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "Default",
+      "file": "world0\\gbuffers_terrain.vsh",
+      "passed": true,
+      "source_hash": "5a0a26f3c403af3c1434d44edfd6cbf3c4e36692ee2899fd3e626f871a28f5f2",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "Default",
+      "file": "world0\\gbuffers_block.vsh",
+      "passed": true,
+      "source_hash": "097fe7aaa3f024d75a2585cdacd60f7263e58b874dd70e5a71b92ee2a101d8c0",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "Default",
+      "file": "world0\\gbuffers_water.vsh",
+      "passed": true,
+      "source_hash": "b2258b70a5221536d6eef422ee81d3696a9a5736da704199051799a610e4e53c",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "Default",
+      "file": "world0\\gbuffers_hand.vsh",
+      "passed": true,
+      "source_hash": "68364978239ac4ed2f18575dea0ac0a2307f6005c574f4cfb5702ccae4c65d8b",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "Default",
+      "file": "world0\\gbuffers_hand.fsh",
+      "passed": true,
+      "source_hash": "58fde2383ce1e1928b315187f1c865d2ee521b43b0dd27cf4754c23667aaab39",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "Default",
+      "file": "world0\\deferred2.csh",
+      "passed": true,
+      "source_hash": "c51f40e86bf7222af18983a9004195cbc46634f5712ad9f63b9740a91e9c929e",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "Default",
+      "file": "world0\\deferred3.fsh",
+      "passed": true,
+      "source_hash": "1eb551b32f49bd7b3471ed4934425b8b7b0df2dc7650e44ddb2dd9647357f616",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "Default",
+      "file": "world0\\deferred5.csh",
+      "passed": true,
+      "source_hash": "7d4312c7b2f86d9d0e3bea499e1a75d54c758aac8094b9c92d26f19d7995f57f",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "Default",
+      "file": "world0\\deferred6.csh",
+      "passed": true,
+      "source_hash": "0591b7a7e7336bb9fab3aac8bba629dead3c1277fb3e32565f5f1b0b215b2cbd",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "Default",
+      "file": "world0\\deferred7.csh",
+      "passed": true,
+      "source_hash": "16e264055227e005767a01b0845721042aff558a4fd87f7786e33622d251255a",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "Default",
+      "file": "world0\\deferred8.csh",
+      "passed": true,
+      "source_hash": "cc940e1dcfebdfb3f5732d943840a88253a57217ea6f2c7b42cd112621473609",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "Default",
+      "file": "world0\\deferred9.csh",
+      "passed": true,
+      "source_hash": "1616fd25cbc9c0f75ae3053c93ac2571d77e6d53fd6ebf0b272bf62d41dc6244",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "Default",
+      "file": "world0\\deferred10.csh",
+      "passed": true,
+      "source_hash": "f59e44dd04d9c7126021bc890dbaa1e460ac87204c500c867ac7f3a1deef416a",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "Default",
+      "file": "world-1\\begin.csh",
+      "passed": true,
+      "source_hash": "c68f50b79a5e1b1f1af58dfda2fa087fdafd2da943d429adaefdcc5c67992597",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "Default",
+      "file": "world-1\\begin_a.csh",
+      "passed": true,
+      "source_hash": "a083e699b9a20d7ba66983158364522d9d7de602d9637f1e33417f139469fb0e",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "Default",
+      "file": "world-1\\begin1.csh",
+      "passed": true,
+      "source_hash": "a26c7f78f9c3c9eb38c8291130e00e64d74d147f67bdffd1513eec8ef1db14a5",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "Default",
+      "file": "world-1\\begin2.csh",
+      "passed": true,
+      "source_hash": "c68f50b79a5e1b1f1af58dfda2fa087fdafd2da943d429adaefdcc5c67992597",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "Default",
+      "file": "world-1\\deferred.csh",
+      "passed": true,
+      "source_hash": "283dbec95c3b9c5218c9b06714572416b24e9093a76870864b0e16d53a05c1d4",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "Default",
+      "file": "world-1\\deferred1.csh",
+      "passed": true,
+      "source_hash": "79a7ca4ee7c82711090c69b2dad9a88fa204b85e7377387e265b42085874ba74",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "Default",
+      "file": "world-1\\deferred4.fsh",
+      "passed": true,
+      "source_hash": "86078f194049d47d889653cc193a5cf1ab34f12e9ed8bf52c41fb483dc2105a5",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "Default",
+      "file": "world-1\\deferred21.fsh",
+      "passed": true,
+      "source_hash": "eda49b38d552928e62cf48101fea80e1f8875f50ade7d0b7b5bdfac145f9df82",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "Default",
+      "file": "world-1\\deferred50.fsh",
+      "passed": true,
+      "source_hash": "98aff8b14d4963d922d0e559744e8596da7ec905c9c266223a1c1d0963da26ad",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "Default",
+      "file": "world-1\\composite2.fsh",
+      "passed": true,
+      "source_hash": "1276149df8dc0e7ca890d1ffd81830bf19e6606631a7bd91c069649a092eb382",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "Default",
+      "file": "world-1\\composite2.csh",
+      "passed": true,
+      "source_hash": "6f1d165bf568e80e602e05757f0719e1c3d5bb22dcf7dfd3d3bf707b51b2d1ad",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "Default",
+      "file": "world-1\\final.fsh",
+      "passed": true,
+      "source_hash": "5279390006ddcb352e754a1a77061eae9ddbccc4e11abeeeeb86dac276fffa56",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "Default",
+      "file": "world-1\\shadow.vsh",
+      "passed": true,
+      "source_hash": "1e3b808739a950e32892ca72c55dd85ee06900f86de5c5a6e0bd12e2d797a4a3",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "Default",
+      "file": "world-1\\gbuffers_terrain.vsh",
+      "passed": true,
+      "source_hash": "69f7764d74dcb511dd74734121558ea154aa97a4f65cc00c34cdaedc305ce26f",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "Default",
+      "file": "world-1\\gbuffers_block.vsh",
+      "passed": true,
+      "source_hash": "25220d0b0534a6ce3cd5e446b8662eb468f500074e24fb06a59fee3398fbc04b",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "Default",
+      "file": "world0\\gbuffers_hand_water.vsh",
+      "passed": true,
+      "source_hash": "6c9f91c75ab852f4106796ec11e48c169048d7a11284db86dae9aeef41dd0e2c",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "Default",
+      "file": "world0\\shadowcomp.csh",
+      "passed": true,
+      "source_hash": "c8d31b37dc1271cda28884954ccd711f96f238c2e58fb7ca510bb92cfaa4cd9a",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "Default",
+      "file": "world-1\\gbuffers_water.vsh",
+      "passed": true,
+      "source_hash": "e00116a87484433d77245e38bee8c2e09a1be70c27a3f6f050e755be44cbbfeb",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "Default",
+      "file": "world-1\\gbuffers_hand_water.vsh",
+      "passed": true,
+      "source_hash": "efb8ef9fe20a88b6aa01a21f291302f9f6f6b643b97d6821962870039da83252",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "Default",
+      "file": "world-1\\shadowcomp.csh",
+      "passed": true,
+      "source_hash": "643135cdc4c24efb3f4523a76d21a815ff830480aae8768d6cc3c49be53f3266",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "Default",
+      "file": "world-1\\composite.fsh",
+      "passed": true,
+      "source_hash": "a161f3550ff70dd8024cdf005e8e9fb1ed5bb1d4daff229018e67090751008be",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "Default",
+      "file": "world0\\deferred18.csh",
+      "passed": true,
+      "source_hash": "21ba92de8c1412e24fadc29af5a9cc8b203e3bfedb44f0001aa8b8d727617e94",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "Default",
+      "file": "world0\\deferred20.csh",
+      "passed": true,
+      "source_hash": "283cf606d49f24035cc7d33d5b8f9dd4e13b90fe1e8e9b046993226a0d1e9433",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "Default",
+      "file": "world0\\gbuffers_basic.vsh",
+      "passed": true,
+      "source_hash": "31ceebc03a6407dad98400782003b770053d978f1a1b7f55555ca7249cd6efea",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "Default",
+      "file": "world0\\composite31.fsh",
+      "passed": true,
+      "source_hash": "334febcccb0a65854366748ff421028a2429302623c20bb22043e46c6dc368c7",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "Default",
+      "file": "world-1\\deferred18.csh",
+      "passed": true,
+      "source_hash": "4f61e64d7badf5a43880152cf7e92d9ec6e1c9618ccbd3dcb53e2057fdff5784",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "Default",
+      "file": "world-1\\deferred20.csh",
+      "passed": true,
+      "source_hash": "54f6cc65e1ada0f2c25212ab4a5f569f6c83bbdc9bd93a9679a99043da8969fb",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "Default",
+      "file": "world-1\\gbuffers_basic.vsh",
+      "passed": true,
+      "source_hash": "f28f0a9b8ef876f263a166762d205774bfb93e96bb04c830efc1822b4b947270",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "Default",
+      "file": "world-1\\composite31.fsh",
+      "passed": true,
+      "source_hash": "334febcccb0a65854366748ff421028a2429302623c20bb22043e46c6dc368c7",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "Low",
+      "file": "world0\\begin.csh",
+      "passed": true,
+      "source_hash": "8cf48b8ccde55d111acac64655a246c7f57633e9ee0c8d80f72ce0d582b3983a",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "Low",
+      "file": "world0\\begin_a.csh",
+      "passed": true,
+      "source_hash": "ebec94da4725c5d7d4ef6c2512f5476ca8384ca0617be4cad7003563a762e2ec",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "Low",
+      "file": "world0\\begin1.csh",
+      "passed": true,
+      "source_hash": "f7750ca97e9a3a9f7d9da9eac05930836dc0e4f40d76fcaa4ffc94fbd9527239",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "Low",
+      "file": "world0\\begin2.csh",
+      "passed": true,
+      "source_hash": "5c71d17f784fbc79908d29e81392c1e048f6d451caa8aaf434e518149f65bfbd",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "Low",
+      "file": "world0\\deferred.csh",
+      "passed": true,
+      "source_hash": "da3da0b0ecb01c923fc494f665f93ec1a588ae17cc05cb218a7295aea42a7385",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "Low",
+      "file": "world0\\deferred1.csh",
+      "passed": true,
+      "source_hash": "e64409135e5df1b65f226d5bd7a70f04cdaff3e2732a54c2ca818b85d4c211f6",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "Low",
+      "file": "world0\\deferred1_a.csh",
+      "passed": true,
+      "source_hash": "350902793482acc611a41533208766e435325fdc170cbbbeac99883837bc17d7",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "Low",
+      "file": "world0\\deferred4.fsh",
+      "passed": true,
+      "source_hash": "e2f6802770fd064b3d4d44b298cff76905c88453353e78f1912a8c034834dab0",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "Low",
+      "file": "world0\\deferred21.fsh",
+      "passed": true,
+      "source_hash": "7b4095fba57b16804e195541a14b46aa9a9cfcb5bbe02602af4a356ac2e8ba59",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "Low",
+      "file": "world0\\deferred50.fsh",
+      "passed": true,
+      "source_hash": "320e1464a418cc07e40ebe3bec4624886c7a72f618fc4378aa24e208dc6ae180",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "Low",
+      "file": "world0\\composite2.fsh",
+      "passed": true,
+      "source_hash": "2c5c1cd1ae711360b38494324bbe25c1d0d44e31de03c74e50822476b612769c",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "Low",
+      "file": "world0\\composite2.csh",
+      "passed": true,
+      "source_hash": "fdc6cd8a4adefe4ea823d4d62bc25cbb544807c87b8cdfbbca9c31c556330a02",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "Low",
+      "file": "world0\\composite.fsh",
+      "passed": true,
+      "source_hash": "e5151aeed2b6a672343c2d8eefe02a65b5c20f6279e8341009cea431a9915b36",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "Low",
+      "file": "world0\\final.fsh",
+      "passed": true,
+      "source_hash": "2476537d6fad830e32c4afa3b4f4a9a667408d685596ffe7f0788719492e0ca6",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "Low",
+      "file": "world0\\shadow.vsh",
+      "passed": true,
+      "source_hash": "0f5bc2c7ab31f0127dc9b561ad26e69d160903042ea4d6aeb25b150574df8b1f",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "Low",
+      "file": "world0\\shadow.fsh",
+      "passed": true,
+      "source_hash": "d4739733f2c98498f6c836966a2411119e9dfc7a8d17bc0bff0a470f62dccb3a",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "Low",
+      "file": "world0\\gbuffers_terrain.vsh",
+      "passed": true,
+      "source_hash": "01711cf0024f535f924b11c812501df7a623969662416beca58dc2994b89e9fd",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "Low",
+      "file": "world0\\gbuffers_block.vsh",
+      "passed": true,
+      "source_hash": "134b61e1af032479f801f4dda65ecfcb6dcd967a6a97ccdcfd80d7034f0604c7",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "Low",
+      "file": "world0\\gbuffers_water.vsh",
+      "passed": true,
+      "source_hash": "81cd9dcd0c73699ccae617764c682e8ad6d98851c9e9b99131e71f6fecf2c1d4",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "Low",
+      "file": "world0\\gbuffers_hand.vsh",
+      "passed": true,
+      "source_hash": "fa676841dc7a391cd52272de3fbf3db3d1e433440669a7a450aebdf4c6b67659",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "Low",
+      "file": "world0\\gbuffers_hand.fsh",
+      "passed": true,
+      "source_hash": "9731bd454521635273a6600b098d2b7e5f14a613a73c3ec66e2c0e22eeb889cf",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "Low",
+      "file": "world0\\deferred2.csh",
+      "passed": true,
+      "source_hash": "90eb67ef5ae07e25ffef4a7e69645835a0d2d60122a32925761cda0291f6b376",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "Low",
+      "file": "world0\\deferred3.fsh",
+      "passed": true,
+      "source_hash": "aa78a467471355db6b200033e1088945b11533d9a7c0ff1b5b4035fc8a5c3a04",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "Low",
+      "file": "world0\\deferred5.csh",
+      "passed": true,
+      "source_hash": "bcfde236f859807576d2f9a664d6cf3733a7531d4ef8b6edb575995bd94dfa1e",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "Low",
+      "file": "world0\\deferred6.csh",
+      "passed": true,
+      "source_hash": "e840b679829f448113dcca822cd304bdcebd00b9e4055eaa976de0f661de3e63",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "Low",
+      "file": "world0\\deferred7.csh",
+      "passed": true,
+      "source_hash": "01c0f0537f5b73361d9c08bbea9db16bbf4be837dfbea03f28de53e96a6361f9",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "Low",
+      "file": "world0\\deferred8.csh",
+      "passed": true,
+      "source_hash": "330e33c6d31f950a2b9e19833589ece9d64a495e736be5a1e76f95c2b4d5a3f1",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "Low",
+      "file": "world0\\deferred9.csh",
+      "passed": true,
+      "source_hash": "cf2ef23960eaf4bbe9d242a3a48513484a216bb93961e9074dade7b346ebf089",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "Low",
+      "file": "world0\\deferred10.csh",
+      "passed": true,
+      "source_hash": "42ed135815eab7fb41a16fcf444a9a6f632117cc17ed448bbc40ca1a57513f20",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "Low",
+      "file": "world-1\\begin.csh",
+      "passed": true,
+      "source_hash": "5c71d17f784fbc79908d29e81392c1e048f6d451caa8aaf434e518149f65bfbd",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "Low",
+      "file": "world-1\\begin_a.csh",
+      "passed": true,
+      "source_hash": "ebec94da4725c5d7d4ef6c2512f5476ca8384ca0617be4cad7003563a762e2ec",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "Low",
+      "file": "world-1\\begin1.csh",
+      "passed": true,
+      "source_hash": "f7750ca97e9a3a9f7d9da9eac05930836dc0e4f40d76fcaa4ffc94fbd9527239",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "Low",
+      "file": "world-1\\begin2.csh",
+      "passed": true,
+      "source_hash": "5c71d17f784fbc79908d29e81392c1e048f6d451caa8aaf434e518149f65bfbd",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "Low",
+      "file": "world-1\\deferred.csh",
+      "passed": true,
+      "source_hash": "da3da0b0ecb01c923fc494f665f93ec1a588ae17cc05cb218a7295aea42a7385",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "Low",
+      "file": "world-1\\deferred1.csh",
+      "passed": true,
+      "source_hash": "e64409135e5df1b65f226d5bd7a70f04cdaff3e2732a54c2ca818b85d4c211f6",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "Low",
+      "file": "world-1\\deferred4.fsh",
+      "passed": true,
+      "source_hash": "e2f6802770fd064b3d4d44b298cff76905c88453353e78f1912a8c034834dab0",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "Low",
+      "file": "world-1\\deferred21.fsh",
+      "passed": true,
+      "source_hash": "22be57b6cb821e00d36b49c8c26b1346094902d44e083a2b7c78070374bb43da",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "Low",
+      "file": "world-1\\deferred50.fsh",
+      "passed": true,
+      "source_hash": "89817366a9f164899b2a8cc7f1f21676cdd4736b6f99d7254e8aca56d89db874",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "Low",
+      "file": "world-1\\composite2.fsh",
+      "passed": true,
+      "source_hash": "a01ad99341bb91bf4e2f4dc3af8846b45f9bffb03481e7781f315e56806e3e5f",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "Low",
+      "file": "world-1\\composite2.csh",
+      "passed": true,
+      "source_hash": "d82376a82c86f5cf1f769d2ae8445bac4cf3d34686d8e8d776095dbf1f1fb19e",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "Low",
+      "file": "world-1\\final.fsh",
+      "passed": true,
+      "source_hash": "2476537d6fad830e32c4afa3b4f4a9a667408d685596ffe7f0788719492e0ca6",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "Low",
+      "file": "world-1\\shadow.vsh",
+      "passed": true,
+      "source_hash": "1e3b808739a950e32892ca72c55dd85ee06900f86de5c5a6e0bd12e2d797a4a3",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "Low",
+      "file": "world-1\\gbuffers_terrain.vsh",
+      "passed": true,
+      "source_hash": "073eb2b7892041815ea98e3c149565ff22a62c08141079651555bf61b213b808",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "Low",
+      "file": "world-1\\gbuffers_block.vsh",
+      "passed": true,
+      "source_hash": "1a9f1ba0e6d64aa8a3c55d0201b2ad4352beb50598c83b81f1e972a5180cc0d0",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "Low",
+      "file": "world0\\gbuffers_hand_water.vsh",
+      "passed": true,
+      "source_hash": "84a2aa4b22685aa698a57fa7600f94354eef44fd05c4b4eb7f446ca5d43088af",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "Low",
+      "file": "world0\\shadowcomp.csh",
+      "passed": true,
+      "source_hash": "399c5f81f1bd47f5a41137aa6d4b879286865e4b1dcab5e44ba5386f1a896237",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "Low",
+      "file": "world-1\\gbuffers_water.vsh",
+      "passed": true,
+      "source_hash": "20c478b6fed4708cb800e4dd64cdd23d501901faa47e7bdab96e7b5ff9f36cce",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "Low",
+      "file": "world-1\\gbuffers_hand_water.vsh",
+      "passed": true,
+      "source_hash": "2e110d6a93167f1c983ef7470792eca103ae39e18639cd1bf2393ece90b7a5bf",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "Low",
+      "file": "world-1\\shadowcomp.csh",
+      "passed": true,
+      "source_hash": "f061708eb74d1bdb0eb94aebb61d4f59d63e75c77fa2a62c40bfa583578e4c1b",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "Low",
+      "file": "world-1\\composite.fsh",
+      "passed": true,
+      "source_hash": "ae4c2037eb56e8354ce77ac6de2e26e360f43f88592ec8d4ef6d2ac60c350182",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "Low",
+      "file": "world0\\deferred18.csh",
+      "passed": true,
+      "source_hash": "f946dd2962f8066b1e282ee05e9889df6d0aca236d2fe9ceccb225fb7370b0ef",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "Low",
+      "file": "world0\\deferred20.csh",
+      "passed": true,
+      "source_hash": "eff1f9be645855ebd662e979c9ec325a6e1420176358759d6ac4cb75173090d8",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "Low",
+      "file": "world0\\gbuffers_basic.vsh",
+      "passed": true,
+      "source_hash": "32b0abdc43f6a8abbc4bffe906a2b7ece3b84b7f756fb2249f7c4b58ad657ab3",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "Low",
+      "file": "world0\\composite31.fsh",
+      "passed": true,
+      "source_hash": "66d75a1a61be815088e741ba432d1de5351293ec6e450513f70bb2c3348f9817",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "Low",
+      "file": "world-1\\deferred18.csh",
+      "passed": true,
+      "source_hash": "6e6fa85611d560437d5ca47be59a0251727785fac8ab651cc2ed15eda7b2a195",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "Low",
+      "file": "world-1\\deferred20.csh",
+      "passed": true,
+      "source_hash": "5fd2a621234706fc27f699ba157fe17c2be6590d050413cc03b5bf041fcb7b2c",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "Low",
+      "file": "world-1\\gbuffers_basic.vsh",
+      "passed": true,
+      "source_hash": "ad5a85b03950f3d82d678acdefc8b21ea22f5a73bfbafa0df39815ba144ac2de",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "Low",
+      "file": "world-1\\composite31.fsh",
+      "passed": true,
+      "source_hash": "66d75a1a61be815088e741ba432d1de5351293ec6e450513f70bb2c3348f9817",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "Medium",
+      "file": "world0\\begin.csh",
+      "passed": true,
+      "source_hash": "344a55c3458c193833a76545babd2a145956d8336dded91f095e9d408cac5161",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "Medium",
+      "file": "world0\\begin_a.csh",
+      "passed": true,
+      "source_hash": "dafd4a228f690c3e809ee3c0da27bbfcb5a390d768948afc8a03bf35147c2f27",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "Medium",
+      "file": "world0\\begin1.csh",
+      "passed": true,
+      "source_hash": "41bf0144c0aca9cb5686077b2c417bbc6f29747d14a19a288bdd0ceb0e391b2b",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "Medium",
+      "file": "world0\\begin2.csh",
+      "passed": true,
+      "source_hash": "7af202d482f1a3d17bc64941c02071c14e3f26888bf0b89db6e20f61638177cd",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "Medium",
+      "file": "world0\\deferred.csh",
+      "passed": true,
+      "source_hash": "89ba80fb1028b0ae2f860ce38d3d6b9741f6f27f3e2d8a03641d5c3e2adbcf27",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "Medium",
+      "file": "world0\\deferred1.csh",
+      "passed": true,
+      "source_hash": "fc241b18af78b7311f03f1db07c82e0ab30ecca27f2958da85196018d4973886",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "Medium",
+      "file": "world0\\deferred1_a.csh",
+      "passed": true,
+      "source_hash": "f953bb9a622e2585d6b965348963a7db73f977771021951c229fa7c57b2edbbe",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "Medium",
+      "file": "world0\\deferred4.fsh",
+      "passed": true,
+      "source_hash": "08af72a3e777cf69d4ec100ba061fa771f9d31d222c141898bdda87d429aac47",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "Medium",
+      "file": "world0\\deferred21.fsh",
+      "passed": true,
+      "source_hash": "8473853e4dccbf6d61ad83d956c3762a8705304ac90421de03ba1fd05a31769f",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "Medium",
+      "file": "world0\\deferred50.fsh",
+      "passed": true,
+      "source_hash": "3bc718f3cf5a1d5b6eebfbf017c384b6393b004707cc3bb2b9b24d6ddb8b108f",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "Medium",
+      "file": "world0\\composite2.fsh",
+      "passed": true,
+      "source_hash": "013424f63adc86b100e8841ba41d7203afc2a9e1a2bc02b85e66dabe228f4c3b",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "Medium",
+      "file": "world0\\composite2.csh",
+      "passed": true,
+      "source_hash": "74bb50f1248b0bacb27a1d666a5b10798b1cacb6701534083dd56ff0d176affe",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "Medium",
+      "file": "world0\\composite.fsh",
+      "passed": true,
+      "source_hash": "493c9866cbc9702007d69ed6a58216ac52a118ffeb7528c8f8c073d2c7290511",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "Medium",
+      "file": "world0\\final.fsh",
+      "passed": true,
+      "source_hash": "6d7269cf8fb83a443c329ea73670e075aae4be7af7efb999467f4e55ce2f2973",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "Medium",
+      "file": "world0\\shadow.vsh",
+      "passed": true,
+      "source_hash": "780a490dd17ca1c12a6052f9fd8019df7057fd76d59432bbcc10de3564edfd7c",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "Medium",
+      "file": "world0\\shadow.fsh",
+      "passed": true,
+      "source_hash": "de76551461f4f05466a308a62a35ae68398c2f3119824aba2c24d73680f1cc21",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "Medium",
+      "file": "world0\\gbuffers_terrain.vsh",
+      "passed": true,
+      "source_hash": "1dc1ee7bf7dd537bc899d022d7969fff8c7e387823455bf51d18cd0fe0bff159",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "Medium",
+      "file": "world0\\gbuffers_block.vsh",
+      "passed": true,
+      "source_hash": "ee947a14400ba80abc11da576082838d1c181cf82c8439a03acb954ebcc11d0c",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "Medium",
+      "file": "world0\\gbuffers_water.vsh",
+      "passed": true,
+      "source_hash": "fecb742a645dd259aa4d46220d66aaac2af729ef1dfffdf0bdf4686cbf2653d1",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "Medium",
+      "file": "world0\\gbuffers_hand.vsh",
+      "passed": true,
+      "source_hash": "db48faffe206b1721b90d24277a17862253e7b947fca83c204f420557cfbcae4",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "Medium",
+      "file": "world0\\gbuffers_hand.fsh",
+      "passed": true,
+      "source_hash": "02d772c064fcbc41f627413c59fdbc450a18ab0273f4413f58858c265d38f26f",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "Medium",
+      "file": "world0\\deferred2.csh",
+      "passed": true,
+      "source_hash": "90c7d908664d4fdc9475201f606fb3d41fd78a26d1f7db1a2aa7566085a61b19",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "Medium",
+      "file": "world0\\deferred3.fsh",
+      "passed": true,
+      "source_hash": "ca3ea8605b3cf962c08a20258ce906c2179e464997f0b076e73b99d85bfde38e",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "Medium",
+      "file": "world0\\deferred5.csh",
+      "passed": true,
+      "source_hash": "e682a0346d495b68f2aac47323e67bc78a647499d02f03645099e2ef9ab760d4",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "Medium",
+      "file": "world0\\deferred6.csh",
+      "passed": true,
+      "source_hash": "a51292fa70d0d67f752e22feffaf11e5ac40f880abc3c3e58f0950754ffb7dfd",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "Medium",
+      "file": "world0\\deferred7.csh",
+      "passed": true,
+      "source_hash": "995ee732917209ec74f37d6c0eea898574c44804c4e0a5a384802debb91ecc37",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "Medium",
+      "file": "world0\\deferred8.csh",
+      "passed": true,
+      "source_hash": "2df5960cca86f7f3cc6e8b2e8ca5d7181467eedf6ea8fef0ace5b723ccb4fbeb",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "Medium",
+      "file": "world0\\deferred9.csh",
+      "passed": true,
+      "source_hash": "e4fea1af1ee1b95b216fcd2cbf4542b270d36df4f5f2166b3f28a52cfbc4f901",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "Medium",
+      "file": "world0\\deferred10.csh",
+      "passed": true,
+      "source_hash": "3a53252f8b3cce6e5e2710e8c6b46d98aee0ac746b58e656be6cbecd48237a5b",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "Medium",
+      "file": "world-1\\begin.csh",
+      "passed": true,
+      "source_hash": "7af202d482f1a3d17bc64941c02071c14e3f26888bf0b89db6e20f61638177cd",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "Medium",
+      "file": "world-1\\begin_a.csh",
+      "passed": true,
+      "source_hash": "dafd4a228f690c3e809ee3c0da27bbfcb5a390d768948afc8a03bf35147c2f27",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "Medium",
+      "file": "world-1\\begin1.csh",
+      "passed": true,
+      "source_hash": "41bf0144c0aca9cb5686077b2c417bbc6f29747d14a19a288bdd0ceb0e391b2b",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "Medium",
+      "file": "world-1\\begin2.csh",
+      "passed": true,
+      "source_hash": "7af202d482f1a3d17bc64941c02071c14e3f26888bf0b89db6e20f61638177cd",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "Medium",
+      "file": "world-1\\deferred.csh",
+      "passed": true,
+      "source_hash": "89ba80fb1028b0ae2f860ce38d3d6b9741f6f27f3e2d8a03641d5c3e2adbcf27",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "Medium",
+      "file": "world-1\\deferred1.csh",
+      "passed": true,
+      "source_hash": "fc241b18af78b7311f03f1db07c82e0ab30ecca27f2958da85196018d4973886",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "Medium",
+      "file": "world-1\\deferred4.fsh",
+      "passed": true,
+      "source_hash": "08af72a3e777cf69d4ec100ba061fa771f9d31d222c141898bdda87d429aac47",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "Medium",
+      "file": "world-1\\deferred21.fsh",
+      "passed": true,
+      "source_hash": "688c1f4fa74ff939227badba81ee6559491f9b24fa2cb81c1ed73381098688f9",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "Medium",
+      "file": "world-1\\deferred50.fsh",
+      "passed": true,
+      "source_hash": "0e42737f321d5d986a52ec087cfab33495d2becba7609323ed891c167a32d98b",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "Medium",
+      "file": "world-1\\composite2.fsh",
+      "passed": true,
+      "source_hash": "8a70559866db01989c6bfe3e6851d775c5cee69a1b9dae45be8aff55298f751f",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "Medium",
+      "file": "world-1\\composite2.csh",
+      "passed": true,
+      "source_hash": "1f0ee4160e1384dcf3dc16ec1b0554a2683ad79c5b3a71ae5e89eb410ba282ee",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "Medium",
+      "file": "world-1\\final.fsh",
+      "passed": true,
+      "source_hash": "6d7269cf8fb83a443c329ea73670e075aae4be7af7efb999467f4e55ce2f2973",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "Medium",
+      "file": "world-1\\shadow.vsh",
+      "passed": true,
+      "source_hash": "1e3b808739a950e32892ca72c55dd85ee06900f86de5c5a6e0bd12e2d797a4a3",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "Medium",
+      "file": "world-1\\gbuffers_terrain.vsh",
+      "passed": true,
+      "source_hash": "6f87786c573eb09d82b740510d00d2dbf408711b4b11b3819678bce28f3ab94b",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "Medium",
+      "file": "world-1\\gbuffers_block.vsh",
+      "passed": true,
+      "source_hash": "2cb42c0f142f6416a6549583e4e4ef0ca8746ab1e7105f705446975c1d0f6881",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "Medium",
+      "file": "world0\\gbuffers_hand_water.vsh",
+      "passed": true,
+      "source_hash": "9bf602b4cae6196e6c596765f6b60388609e87df6ae7bb29a67ce5b2a5fb2f13",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "Medium",
+      "file": "world0\\shadowcomp.csh",
+      "passed": true,
+      "source_hash": "0d4e61a7fbc73994cf6a4ebb1c4397a0d9e42c194763fe307d82e1210903864c",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "Medium",
+      "file": "world-1\\gbuffers_water.vsh",
+      "passed": true,
+      "source_hash": "fdd44d9f59f6dfe501e7ec46e79a77437263864efb1029f89f54aa6b3b5a37d5",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "Medium",
+      "file": "world-1\\gbuffers_hand_water.vsh",
+      "passed": true,
+      "source_hash": "1475b16222ae8fa99eda6378f9054e9ffda9cc9c2a004b54c25160fbb1221b1c",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "Medium",
+      "file": "world-1\\shadowcomp.csh",
+      "passed": true,
+      "source_hash": "a49e2863380b23c5d05c1a4ff24e4fcaaf04840fec0bbc1a1686b73a207bd30f",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "Medium",
+      "file": "world-1\\composite.fsh",
+      "passed": true,
+      "source_hash": "2638e9848357c5ce4ff5a001c1fa4ff00c6d341d74357974ee342138dbdd39ee",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "Medium",
+      "file": "world0\\deferred18.csh",
+      "passed": true,
+      "source_hash": "2d91b7eb5684a395f5e81b21d6c0e5f3817cd1c6856a374c5c93c6d7ff2a1981",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "Medium",
+      "file": "world0\\deferred20.csh",
+      "passed": true,
+      "source_hash": "2db2f99f6dfd57909c15308c0cd1ce68261cb7517538e942de1cec90dfef3118",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "Medium",
+      "file": "world0\\gbuffers_basic.vsh",
+      "passed": true,
+      "source_hash": "0a454265a5e29160ae019ab9812330d9ca8ab2a37bb851e9323de6e1d1f68f52",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "Medium",
+      "file": "world0\\composite31.fsh",
+      "passed": true,
+      "source_hash": "9b6a96d5770193b66a99670b1bc391eb52d5052bde18a25aef2010b5aebaa91c",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "Medium",
+      "file": "world-1\\deferred18.csh",
+      "passed": true,
+      "source_hash": "d20d42e61d361c18e229427a560d08073d53222ed87c8bddac93f9da67710205",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "Medium",
+      "file": "world-1\\deferred20.csh",
+      "passed": true,
+      "source_hash": "ffe1b6b5008f3e32965b21c06e67ea29a98d40709d60275cd352340ac3f5f20a",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "Medium",
+      "file": "world-1\\gbuffers_basic.vsh",
+      "passed": true,
+      "source_hash": "cdd831f646d913a7fb5a6cb4cf2b093e5eb172385eb99128c8267d81837a93d7",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "Medium",
+      "file": "world-1\\composite31.fsh",
+      "passed": true,
+      "source_hash": "9b6a96d5770193b66a99670b1bc391eb52d5052bde18a25aef2010b5aebaa91c",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "High",
+      "file": "world0\\begin.csh",
+      "passed": true,
+      "source_hash": "0003a3c7a5693f3b90eecb94d663d5aac8f2304293ebb63e062341514badcb95",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "High",
+      "file": "world0\\begin_a.csh",
+      "passed": true,
+      "source_hash": "0287d818b22a91f0e9995f7ebd8fea0b594f43c15a10a74627a2f493f3954232",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "High",
+      "file": "world0\\begin1.csh",
+      "passed": true,
+      "source_hash": "392c51d30820b2442458e0dd05d035d82094228812b6c414668674b7ca1d0763",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "High",
+      "file": "world0\\begin2.csh",
+      "passed": true,
+      "source_hash": "2ab85781780fe7df6f9cc55512631c3bba3c25b6a0eaceeaff44fadad3d0e496",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "High",
+      "file": "world0\\deferred.csh",
+      "passed": true,
+      "source_hash": "4b18627d7c321945c68628a73b457d69451f53d8261dce2796646ee42027d8e5",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "High",
+      "file": "world0\\deferred1.csh",
+      "passed": true,
+      "source_hash": "8465e236479623bbafb231b8e8db377a704f64ef797dd87196ef7e47e5f0899c",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "High",
+      "file": "world0\\deferred1_a.csh",
+      "passed": true,
+      "source_hash": "7b1ebcdf16a368d318690c10f923f558fb28b19e9178baf23212ac74b6aaf915",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "High",
+      "file": "world0\\deferred4.fsh",
+      "passed": true,
+      "source_hash": "7df5248bdd1d8d3a094f54b5dd4aba6b617b04d13cf98264807d65520cb0e13b",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "High",
+      "file": "world0\\deferred21.fsh",
+      "passed": true,
+      "source_hash": "f9dafbf2979a4e11143b36193fdeaa54c7bbf74a6676ee1c6d734f56117e3fd6",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "High",
+      "file": "world0\\deferred50.fsh",
+      "passed": true,
+      "source_hash": "f73d85ed2b7dae793733d12cde6745c97979f157ef24ee068649834215d19630",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "High",
+      "file": "world0\\composite2.fsh",
+      "passed": true,
+      "source_hash": "3a27eea91d639553c8d34cae932454615d8b5f20e1acb9e6451af3e728a7e8a5",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "High",
+      "file": "world0\\composite2.csh",
+      "passed": true,
+      "source_hash": "f3c26471cee2a9606c0c0e99535a2032e0981860598f122b6ab8bce65a055863",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "High",
+      "file": "world0\\composite.fsh",
+      "passed": true,
+      "source_hash": "b5292f3c0b6c639dffc896a24e159c9fe4b9e998b1d1aa4a58beb6ca6032da12",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "High",
+      "file": "world0\\final.fsh",
+      "passed": true,
+      "source_hash": "58e56f4df790f064a25058025bafb62ffbd37d9a185828985b006ed022c4e434",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "High",
+      "file": "world0\\shadow.vsh",
+      "passed": true,
+      "source_hash": "0c296de4008c8b37edc24c4931ed6b5bbeade604d8af6e572ca93f9efbacc948",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "High",
+      "file": "world0\\shadow.fsh",
+      "passed": true,
+      "source_hash": "cbb6addf6c0b93eaa5336675d7d5ac125895df7b156e0c67293577f347347fad",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "High",
+      "file": "world0\\gbuffers_terrain.vsh",
+      "passed": true,
+      "source_hash": "effa2baeceafce45c5b86d2e3d4a76b599c95b21a8e14cc3a98c77f39474ef36",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "High",
+      "file": "world0\\gbuffers_block.vsh",
+      "passed": true,
+      "source_hash": "98835c7601abc306f83fe0764aa25382c7c48867d8443a561b9b6c5a11d694e3",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "High",
+      "file": "world0\\gbuffers_water.vsh",
+      "passed": true,
+      "source_hash": "8f3b18c614d53f432e4194101d7407dde9f5adf60299c48bc5ec5c37df3bf63a",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "High",
+      "file": "world0\\gbuffers_hand.vsh",
+      "passed": true,
+      "source_hash": "c8357af1d819e5f327ca88f6e464ef2b0070f6cf692bb45f83dbb0ac12f561e6",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "High",
+      "file": "world0\\gbuffers_hand.fsh",
+      "passed": true,
+      "source_hash": "f0e23913faffe91d8eba53817de0e72434824960ca96fb039ffe3109b001c7da",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "High",
+      "file": "world0\\deferred2.csh",
+      "passed": true,
+      "source_hash": "1e7fd6399227b9ff38345dfe214ae3cc15868e8e47607f54197c396166a0b3cb",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "High",
+      "file": "world0\\deferred3.fsh",
+      "passed": true,
+      "source_hash": "7cc3bd48cdc3b60776642fca65cb5dd90c6c921a8737235943e1ff00a377f183",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "High",
+      "file": "world0\\deferred5.csh",
+      "passed": true,
+      "source_hash": "e89f7f06ec7f073a5524ea07d855d2a2349af86f16bb7799c683abb56c0b34fd",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "High",
+      "file": "world0\\deferred6.csh",
+      "passed": true,
+      "source_hash": "1ad837bbe203864bea18591646e9586410fe8ba55a52185db550ef311fc81720",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "High",
+      "file": "world0\\deferred7.csh",
+      "passed": true,
+      "source_hash": "4c373617ad7263aa2ec5d63729157955097c2c484566b0d357db1ba98937e235",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "High",
+      "file": "world0\\deferred8.csh",
+      "passed": true,
+      "source_hash": "1ab07801c96eea8a6f53f9c2ab4816fc8b6cd2afc171a2040c1da775813fa020",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "High",
+      "file": "world0\\deferred9.csh",
+      "passed": true,
+      "source_hash": "149c255d8ac1c76744bb5666921f0651f6a45b33a52328688a643d8815436ca2",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "High",
+      "file": "world0\\deferred10.csh",
+      "passed": true,
+      "source_hash": "f1361bc265e20671031e2657d1221431ee104fed0141ed358a22fe94c6fdc6a0",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "High",
+      "file": "world-1\\begin.csh",
+      "passed": true,
+      "source_hash": "2ab85781780fe7df6f9cc55512631c3bba3c25b6a0eaceeaff44fadad3d0e496",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "High",
+      "file": "world-1\\begin_a.csh",
+      "passed": true,
+      "source_hash": "0287d818b22a91f0e9995f7ebd8fea0b594f43c15a10a74627a2f493f3954232",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "High",
+      "file": "world-1\\begin1.csh",
+      "passed": true,
+      "source_hash": "392c51d30820b2442458e0dd05d035d82094228812b6c414668674b7ca1d0763",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "High",
+      "file": "world-1\\begin2.csh",
+      "passed": true,
+      "source_hash": "2ab85781780fe7df6f9cc55512631c3bba3c25b6a0eaceeaff44fadad3d0e496",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "High",
+      "file": "world-1\\deferred.csh",
+      "passed": true,
+      "source_hash": "4b18627d7c321945c68628a73b457d69451f53d8261dce2796646ee42027d8e5",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "High",
+      "file": "world-1\\deferred1.csh",
+      "passed": true,
+      "source_hash": "8465e236479623bbafb231b8e8db377a704f64ef797dd87196ef7e47e5f0899c",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "High",
+      "file": "world-1\\deferred4.fsh",
+      "passed": true,
+      "source_hash": "7df5248bdd1d8d3a094f54b5dd4aba6b617b04d13cf98264807d65520cb0e13b",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "High",
+      "file": "world-1\\deferred21.fsh",
+      "passed": true,
+      "source_hash": "bd7ac4fd0d3e8723d83c021c96aa951984c7157b54ba5ad774093c4257baa06b",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "High",
+      "file": "world-1\\deferred50.fsh",
+      "passed": true,
+      "source_hash": "b54e01812a2eddf01ddbe30d9acd07b6de9df4ad80d7981b4cbd9d95ae6b6057",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "High",
+      "file": "world-1\\composite2.fsh",
+      "passed": true,
+      "source_hash": "fc8b0ead249f069e903709d7786654f4ab469e8fa103cfe2760aa9d9f449ddc9",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "High",
+      "file": "world-1\\composite2.csh",
+      "passed": true,
+      "source_hash": "9186b6bb609b3a7ee4a4fb5c45918489baccbe693d94bded8840e0b372dcd94a",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "High",
+      "file": "world-1\\final.fsh",
+      "passed": true,
+      "source_hash": "58e56f4df790f064a25058025bafb62ffbd37d9a185828985b006ed022c4e434",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "High",
+      "file": "world-1\\shadow.vsh",
+      "passed": true,
+      "source_hash": "1e3b808739a950e32892ca72c55dd85ee06900f86de5c5a6e0bd12e2d797a4a3",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "High",
+      "file": "world-1\\gbuffers_terrain.vsh",
+      "passed": true,
+      "source_hash": "1b0cb8341ccbf0e8d57fece8cf0de8de99967c6ff9222cbab0e04a26a7a61c11",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "High",
+      "file": "world-1\\gbuffers_block.vsh",
+      "passed": true,
+      "source_hash": "2099ca1b79dd6034f527711867a522fec0b01fde670236c15eb4d8f6205f7ac2",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "High",
+      "file": "world0\\gbuffers_hand_water.vsh",
+      "passed": true,
+      "source_hash": "262f6b240e399b5d3a92c544cb5bdf506fbe6b1559a960e743b3852a5803ce0e",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "High",
+      "file": "world0\\shadowcomp.csh",
+      "passed": true,
+      "source_hash": "76737cde641a5ead9991fe043d5871999ac5da6fb7dd642f0d24b84cac4fcf51",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "High",
+      "file": "world-1\\gbuffers_water.vsh",
+      "passed": true,
+      "source_hash": "2ef617b3bc13df616cf3c162fad61df50b23bf5b94f46ca8f0f9b6d872b62259",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "High",
+      "file": "world-1\\gbuffers_hand_water.vsh",
+      "passed": true,
+      "source_hash": "477e305e386d834fabecbcda29924cc4336b31174fb6edf429303c0c8d5c2018",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "High",
+      "file": "world-1\\shadowcomp.csh",
+      "passed": true,
+      "source_hash": "1ec8e6a19e38a4f37cf950ce596ea1787afa26de1e7d77c9ac314438b40dbd2a",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "High",
+      "file": "world-1\\composite.fsh",
+      "passed": true,
+      "source_hash": "be76301a39d9e29f44689b1e2d7b0c4876d05bc991c963e09c2f9c2c3e3d79f0",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "High",
+      "file": "world0\\deferred18.csh",
+      "passed": true,
+      "source_hash": "335641a73770543021fac0168cfbd49095a43f17877b48e7e409dd727dfa664f",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "High",
+      "file": "world0\\deferred20.csh",
+      "passed": true,
+      "source_hash": "7cf060adf673b858c245e3edc5d97559d763a2d6e113335cd0cb9f5a9c16ac97",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "High",
+      "file": "world0\\gbuffers_basic.vsh",
+      "passed": true,
+      "source_hash": "46cfce3fc78c76bf703e720ff12681a15bd915d5f54171907a78c01465069913",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "High",
+      "file": "world0\\composite31.fsh",
+      "passed": true,
+      "source_hash": "1d5bdfb98ee84d0be5bda6b69402fefe60db94cf1a46940e4ef2bb9f6e521893",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "High",
+      "file": "world-1\\deferred18.csh",
+      "passed": true,
+      "source_hash": "4a11fbfd46643192da07da307cabde7466acff06056202e23f7ff454a611fa44",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "High",
+      "file": "world-1\\deferred20.csh",
+      "passed": true,
+      "source_hash": "3c3d56d7e9f6c23ec6f46b699a77be6b2291229ec403cd833c2de19b64abf1d3",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "High",
+      "file": "world-1\\gbuffers_basic.vsh",
+      "passed": true,
+      "source_hash": "b14aa2bdd7a85c8b2e6a27deaa68efcc9fde7e31c54a7cde2446168059132754",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "High",
+      "file": "world-1\\composite31.fsh",
+      "passed": true,
+      "source_hash": "1d5bdfb98ee84d0be5bda6b69402fefe60db94cf1a46940e4ef2bb9f6e521893",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "Ultra",
+      "file": "world0\\begin.csh",
+      "passed": true,
+      "source_hash": "132d19d6c09f1ff0a6dfbbb522c630654188dbccd593d1ad34b4a30cc1886fd3",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "Ultra",
+      "file": "world0\\begin_a.csh",
+      "passed": true,
+      "source_hash": "e18aac89581644f74bb2c50bc9fcc6c7384e94bffdb6f65424722a5128c04311",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "Ultra",
+      "file": "world0\\begin1.csh",
+      "passed": true,
+      "source_hash": "35c018ba89fbc72a3334ea9f7e73305f769dc63e56ef414070929797d8c66e88",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "Ultra",
+      "file": "world0\\begin2.csh",
+      "passed": true,
+      "source_hash": "d2cfa22f889110f811ab4942387c7de7c79d4ab5b4be2a0d975f4d7267c4a80e",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "Ultra",
+      "file": "world0\\deferred.csh",
+      "passed": true,
+      "source_hash": "8dca1e1e76662c681383d6feba6a300ddc3299a80ba3cf08888527afd183098b",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "Ultra",
+      "file": "world0\\deferred1.csh",
+      "passed": true,
+      "source_hash": "d5b6d1e05eeaab46096a277f92f5bc96c6e4924f3339343e62ed5e0b67805dd8",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "Ultra",
+      "file": "world0\\deferred1_a.csh",
+      "passed": true,
+      "source_hash": "8f0cb5700fadaa2f227d9ccd846cf72756f3577d16cd0b64f8232bbf0595ec52",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "Ultra",
+      "file": "world0\\deferred4.fsh",
+      "passed": true,
+      "source_hash": "1e02f8b660b3446117f86eef0e4b43a2010f991495ad5c41b2764752df0082dc",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "Ultra",
+      "file": "world0\\deferred21.fsh",
+      "passed": true,
+      "source_hash": "93d1aa9a583284e95205b5fabdaf8065d1093b80e4dfda6cd8f9a86a938c4db4",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "Ultra",
+      "file": "world0\\deferred50.fsh",
+      "passed": true,
+      "source_hash": "1c00a176894788224e121e0a2d0ed47d1c0a21d37baf6b285dc7fb6c13a90712",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "Ultra",
+      "file": "world0\\composite2.fsh",
+      "passed": true,
+      "source_hash": "409cf61141539f88ab83e5964e6588de50dafbabcfe7943ba3e96d18ac4c96b2",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "Ultra",
+      "file": "world0\\composite2.csh",
+      "passed": true,
+      "source_hash": "ad4cec61e7ed24bb60c639a47ca6929a71bdae640021f0300ad5842958078e0f",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "Ultra",
+      "file": "world0\\composite.fsh",
+      "passed": true,
+      "source_hash": "44f6d64aa299a42619434a11f77a423180646ad06dc9579ad4470874777eaab3",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "Ultra",
+      "file": "world0\\final.fsh",
+      "passed": true,
+      "source_hash": "57c5ab91f4f5597db0a9ed54ecfae836316c38986971eaffa13b58ce80a43ec5",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "Ultra",
+      "file": "world0\\shadow.vsh",
+      "passed": true,
+      "source_hash": "cad3aa5deb243cafd72e76a8143252c0bd2f35297011e2c64b0f22f36dd29b1b",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "Ultra",
+      "file": "world0\\shadow.fsh",
+      "passed": true,
+      "source_hash": "e509579599ea347a53ea22e8117c915bdea57c96cdbc56d948f3c4ff58afc6d9",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "Ultra",
+      "file": "world0\\gbuffers_terrain.vsh",
+      "passed": true,
+      "source_hash": "9c006bcf1a0b7f3f8ee9a05a3791eb8cb120a2038df3144e8dda2441bab6dd70",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "Ultra",
+      "file": "world0\\gbuffers_block.vsh",
+      "passed": true,
+      "source_hash": "8ac281d2a09af9a546a2d233038a0fc21abbd937fa2eb63e206705cc0e34624f",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "Ultra",
+      "file": "world0\\gbuffers_water.vsh",
+      "passed": true,
+      "source_hash": "313b5dcd2fbb0d5ecb6505c68347863242eed4485ffadaa62996d3a45deeffd7",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "Ultra",
+      "file": "world0\\gbuffers_hand.vsh",
+      "passed": true,
+      "source_hash": "461dcffd0e6d1ba4c07bfa871354138a5eb4e662e9a3fa5e59cc591cbd74e5dc",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "Ultra",
+      "file": "world0\\gbuffers_hand.fsh",
+      "passed": true,
+      "source_hash": "3b77e69501ad2b9376ffd3cbb8ac00593356631dd3d6c179532c31f8c42f2183",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "Ultra",
+      "file": "world0\\deferred2.csh",
+      "passed": true,
+      "source_hash": "95f3356b5fa221b4b30a98f97de6b69fd996459e2e8a80f9670b8c004a64886c",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "Ultra",
+      "file": "world0\\deferred3.fsh",
+      "passed": true,
+      "source_hash": "c705fb6e0828941f77efb91f75fe4dad2e2bb2fe1e1b9d43e7a36f3e6e8b4c68",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "Ultra",
+      "file": "world0\\deferred5.csh",
+      "passed": true,
+      "source_hash": "1312778ebd1668a9b4c1f4db36df5deaecc5338ac6bebf5d5ca733fea29c9b3c",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "Ultra",
+      "file": "world0\\deferred6.csh",
+      "passed": true,
+      "source_hash": "eeb76ae17a568e6b2bd02b281f3ac1a8f1974481ea045911715192d61d95e9f8",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "Ultra",
+      "file": "world0\\deferred7.csh",
+      "passed": true,
+      "source_hash": "1955beeb285a2f66560c734c759bd1060e66c30d6acd2ea2c9f2fe984325c91b",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "Ultra",
+      "file": "world0\\deferred8.csh",
+      "passed": true,
+      "source_hash": "198b601e115c029295ed7439543282a0fcd4d70d67a6ba1aae56c5ec2c660fe5",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "Ultra",
+      "file": "world0\\deferred9.csh",
+      "passed": true,
+      "source_hash": "6cea6699e9aa580771b4e9dd6c8c92663c753222fa4d07da77f98df94bb55557",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "Ultra",
+      "file": "world0\\deferred10.csh",
+      "passed": true,
+      "source_hash": "473975ad7398396d5680feb1b5544c6f6a0f46c2565f982ca764fb6ab8fa633b",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "Ultra",
+      "file": "world-1\\begin.csh",
+      "passed": true,
+      "source_hash": "d2cfa22f889110f811ab4942387c7de7c79d4ab5b4be2a0d975f4d7267c4a80e",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "Ultra",
+      "file": "world-1\\begin_a.csh",
+      "passed": true,
+      "source_hash": "e18aac89581644f74bb2c50bc9fcc6c7384e94bffdb6f65424722a5128c04311",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "Ultra",
+      "file": "world-1\\begin1.csh",
+      "passed": true,
+      "source_hash": "35c018ba89fbc72a3334ea9f7e73305f769dc63e56ef414070929797d8c66e88",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "Ultra",
+      "file": "world-1\\begin2.csh",
+      "passed": true,
+      "source_hash": "d2cfa22f889110f811ab4942387c7de7c79d4ab5b4be2a0d975f4d7267c4a80e",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "Ultra",
+      "file": "world-1\\deferred.csh",
+      "passed": true,
+      "source_hash": "8dca1e1e76662c681383d6feba6a300ddc3299a80ba3cf08888527afd183098b",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "Ultra",
+      "file": "world-1\\deferred1.csh",
+      "passed": true,
+      "source_hash": "d5b6d1e05eeaab46096a277f92f5bc96c6e4924f3339343e62ed5e0b67805dd8",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "Ultra",
+      "file": "world-1\\deferred4.fsh",
+      "passed": true,
+      "source_hash": "1e02f8b660b3446117f86eef0e4b43a2010f991495ad5c41b2764752df0082dc",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "Ultra",
+      "file": "world-1\\deferred21.fsh",
+      "passed": true,
+      "source_hash": "f948eebdbbce0616aa21b4f71f133ceca3bdb27aefae6b96c6324e54bf3b739e",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "Ultra",
+      "file": "world-1\\deferred50.fsh",
+      "passed": true,
+      "source_hash": "7034a9e1361dfd082ed764e51a53b3e629577090a7a7bdc526a9e41488755fa5",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "Ultra",
+      "file": "world-1\\composite2.fsh",
+      "passed": true,
+      "source_hash": "2be8a5789ff5be3e486b5eb7e54435b0f4d56e0faa56f701d5367395209ab664",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "Ultra",
+      "file": "world-1\\composite2.csh",
+      "passed": true,
+      "source_hash": "6792756a46eb2806fca822d997f6cc36d2dc4294b7953d4b209b784d9c4307d0",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "Ultra",
+      "file": "world-1\\final.fsh",
+      "passed": true,
+      "source_hash": "57c5ab91f4f5597db0a9ed54ecfae836316c38986971eaffa13b58ce80a43ec5",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "Ultra",
+      "file": "world-1\\shadow.vsh",
+      "passed": true,
+      "source_hash": "1e3b808739a950e32892ca72c55dd85ee06900f86de5c5a6e0bd12e2d797a4a3",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "Ultra",
+      "file": "world-1\\gbuffers_terrain.vsh",
+      "passed": true,
+      "source_hash": "474a6cb9e92296080e10aeebc72fb11d42444c20e76885a14fb8267e87bb7bf7",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "Ultra",
+      "file": "world-1\\gbuffers_block.vsh",
+      "passed": true,
+      "source_hash": "74d0ff4b22eb9c351e9db6cfa77b51ea02ba745a228685a70410bf5b7c28e896",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "Ultra",
+      "file": "world0\\gbuffers_hand_water.vsh",
+      "passed": true,
+      "source_hash": "8eb0a7456aace9e4b625ba1eb924c15693ba62e0a09606951f4e154547a7f5b0",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "Ultra",
+      "file": "world0\\shadowcomp.csh",
+      "passed": true,
+      "source_hash": "0e77f0c74b5d77444fb324a744b9aa55daa67f046824cef388e039c2a6e08f59",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "Ultra",
+      "file": "world-1\\gbuffers_water.vsh",
+      "passed": true,
+      "source_hash": "8f52d8c9f07fdb8e349e7c93df441f0ab56a300ee8eb30868ad270d02f4b912a",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "Ultra",
+      "file": "world-1\\gbuffers_hand_water.vsh",
+      "passed": true,
+      "source_hash": "2d5fb8c64c5399f62fd63499618780d568f17e33a93b229f44dd48b44e07bb22",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "Ultra",
+      "file": "world-1\\shadowcomp.csh",
+      "passed": true,
+      "source_hash": "23b310cb2886476cfc2f57a4cab74c84acf8c8ee3f728a34b51416c6638b123c",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "Ultra",
+      "file": "world-1\\composite.fsh",
+      "passed": true,
+      "source_hash": "969639aa286a40e32192f3d7d67ef1ef3c04627d55f94737e4029f5c04edc178",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "Ultra",
+      "file": "world0\\deferred18.csh",
+      "passed": true,
+      "source_hash": "e60346fee6f369085d533d52134a0d2ee4905bf39e52cf1599c09de0c3b35582",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "Ultra",
+      "file": "world0\\deferred20.csh",
+      "passed": true,
+      "source_hash": "65cc9848b491dcad4314d41a1d17280b1857d8b248e859f9eb922c6e0e77345c",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "Ultra",
+      "file": "world0\\gbuffers_basic.vsh",
+      "passed": true,
+      "source_hash": "f0ea7d4a15b1ccf87dbe360f182c552475505288ed174e70190cd9cdb7f3dd1f",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "Ultra",
+      "file": "world0\\composite31.fsh",
+      "passed": true,
+      "source_hash": "e27254193221706f43d28b62d1937621f0bce888b215f2f746e07cbdc16e6b1e",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "Ultra",
+      "file": "world-1\\deferred18.csh",
+      "passed": true,
+      "source_hash": "a6d6a0e1b053aa10eb683143523c5a6f6e7307b7af6762ce8cd435374e2f2fcc",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "Ultra",
+      "file": "world-1\\deferred20.csh",
+      "passed": true,
+      "source_hash": "95471f653e3f215b0422fadfa02b31cc2af609cbfaefd369dc55310a48741f7a",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "Ultra",
+      "file": "world-1\\gbuffers_basic.vsh",
+      "passed": true,
+      "source_hash": "d84225d8b6f7e9beb3e388f6235eca082258a7606c6d8da11a12ea3341f92288",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "Ultra",
+      "file": "world-1\\composite31.fsh",
+      "passed": true,
+      "source_hash": "e27254193221706f43d28b62d1937621f0bce888b215f2f746e07cbdc16e6b1e",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "RayTracing",
+      "file": "world0\\begin.csh",
+      "passed": true,
+      "source_hash": "0e14331d2b10c3cd086fb48edf5bd6829dd8d73568279e643c27a071560e7f84",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "RayTracing",
+      "file": "world0\\begin_a.csh",
+      "passed": true,
+      "source_hash": "f4bff7db87436edeb025a054f7d1c1a04e0b468f315671ea6f36ccb94fb73493",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "RayTracing",
+      "file": "world0\\begin1.csh",
+      "passed": true,
+      "source_hash": "a2b31c83e3076af888fbe8ab436be512fb9c7156809775dbf637d1070df4cfcd",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "RayTracing",
+      "file": "world0\\begin2.csh",
+      "passed": true,
+      "source_hash": "7cba28e2ddd96c80ffeda21f34961d9373762412669674ab7ff96181fabb4310",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "RayTracing",
+      "file": "world0\\deferred.csh",
+      "passed": true,
+      "source_hash": "dfe3832125be4348d3ce181fc29b2f8995b691bf722b64b287298ba18f03b274",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "RayTracing",
+      "file": "world0\\deferred1.csh",
+      "passed": true,
+      "source_hash": "c01f7a9d697b06563ad687dd67f11dfa18a9a04ba00bc855cb84bd26bb272fb3",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "RayTracing",
+      "file": "world0\\deferred1_a.csh",
+      "passed": true,
+      "source_hash": "19cdebd8b5ce2c2a969f3c68bd46fdca312aac2f607f896dfcb3f902858be61e",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "RayTracing",
+      "file": "world0\\deferred4.fsh",
+      "passed": true,
+      "source_hash": "561037967b93150850d8ee01580534721cce80cb150a6921edbc4a50e6cb458c",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "RayTracing",
+      "file": "world0\\deferred21.fsh",
+      "passed": true,
+      "source_hash": "3e1cc7ac85aac0b64d998110ebdcea328d86e7623e8b0c27d8b36ed02b492c67",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "RayTracing",
+      "file": "world0\\deferred50.fsh",
+      "passed": true,
+      "source_hash": "1a1c06c63833e2e48b19da74662b2fd78495480163fdeecb62472a0f5cc06009",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "RayTracing",
+      "file": "world0\\composite2.fsh",
+      "passed": true,
+      "source_hash": "6211fb725100dfd91f134a2b830c2c8b00e83a191d868d385b4267d4848fd395",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "RayTracing",
+      "file": "world0\\composite2.csh",
+      "passed": true,
+      "source_hash": "4c44de38750ba71dfc70cb5a1c041865ea3e9e211f3db60ea634f4762f5a384b",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "RayTracing",
+      "file": "world0\\composite.fsh",
+      "passed": true,
+      "source_hash": "ce396ec24321b923f85c753d282471706713a2671ea129865ae21e7396e001f9",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "RayTracing",
+      "file": "world0\\final.fsh",
+      "passed": true,
+      "source_hash": "117ae6ace88ef1c716caaa7c1908b9668fb76050853db9f4e7405aaa3ca4d9f2",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "RayTracing",
+      "file": "world0\\shadow.vsh",
+      "passed": true,
+      "source_hash": "f4b80cfb385b832371e884631d9489bab44e578b1368c538fa5c051289442a9e",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "RayTracing",
+      "file": "world0\\shadow.fsh",
+      "passed": true,
+      "source_hash": "589cdd4da171431d55cd93b5167af4d5a7a403856a5ab67472863a466e4fc892",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "RayTracing",
+      "file": "world0\\gbuffers_terrain.vsh",
+      "passed": true,
+      "source_hash": "578b61c2849b645aac458503aca75725076943ced6126c67366d208f8cddbf73",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "RayTracing",
+      "file": "world0\\gbuffers_block.vsh",
+      "passed": true,
+      "source_hash": "51482e8c9f289d82c9514b7c70ccd3940e6719cbafaeb659dc3ed389333861b4",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "RayTracing",
+      "file": "world0\\gbuffers_water.vsh",
+      "passed": true,
+      "source_hash": "54260690da563501aa255d01064ed6a09a80a8f431407ac17a4f78fb87bd4a8a",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "RayTracing",
+      "file": "world0\\gbuffers_hand.vsh",
+      "passed": true,
+      "source_hash": "a8eb1b10dff414841db65260b2100ed1f92b9b001c69ccbd08732e769b08b1c5",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "RayTracing",
+      "file": "world0\\gbuffers_hand.fsh",
+      "passed": true,
+      "source_hash": "d9931f828ffab3d6ecaac6b3f1966400f1583b27d766aa6e8c11adabd04d926f",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "RayTracing",
+      "file": "world0\\deferred2.csh",
+      "passed": true,
+      "source_hash": "50d3ca5ed28739965953bd19f899ea0fa70942a41a97b9e4d60b901dba526b0f",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "RayTracing",
+      "file": "world0\\deferred3.fsh",
+      "passed": true,
+      "source_hash": "e6da155cf500b9b2c68bba1f9f816163aba22be907f751b674a0eff1ced563ce",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "RayTracing",
+      "file": "world0\\deferred5.csh",
+      "passed": true,
+      "source_hash": "637f3e158557ccf8e87ce0f0623e451c88a25215563ecfecb6572a6b88ea5cac",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "RayTracing",
+      "file": "world0\\deferred6.csh",
+      "passed": true,
+      "source_hash": "d5b49a51b23b6c65add5b063a87413af47b273a890539241c9041b057bd29a50",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "RayTracing",
+      "file": "world0\\deferred7.csh",
+      "passed": true,
+      "source_hash": "b51e2c3d0efee70b8c1f5809029b1f3533d2b45c55060edde4aafdfa41325c43",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "RayTracing",
+      "file": "world0\\deferred8.csh",
+      "passed": true,
+      "source_hash": "ca2a72d1dab5696ab4bf9050955713eefe6e44afb5f5626e8af1a7379d362672",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "RayTracing",
+      "file": "world0\\deferred9.csh",
+      "passed": true,
+      "source_hash": "4b44c652dcf6ef20dc3c9a23b15c988149f61ea394e971e54547d137263c5e7f",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "RayTracing",
+      "file": "world0\\deferred10.csh",
+      "passed": true,
+      "source_hash": "1c9046f188c441bb0a6cfd7abdc780086ab36a154225b361a9a44ad72853d279",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "RayTracing",
+      "file": "world-1\\begin.csh",
+      "passed": true,
+      "source_hash": "7cba28e2ddd96c80ffeda21f34961d9373762412669674ab7ff96181fabb4310",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "RayTracing",
+      "file": "world-1\\begin_a.csh",
+      "passed": true,
+      "source_hash": "f4bff7db87436edeb025a054f7d1c1a04e0b468f315671ea6f36ccb94fb73493",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "RayTracing",
+      "file": "world-1\\begin1.csh",
+      "passed": true,
+      "source_hash": "a2b31c83e3076af888fbe8ab436be512fb9c7156809775dbf637d1070df4cfcd",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "RayTracing",
+      "file": "world-1\\begin2.csh",
+      "passed": true,
+      "source_hash": "7cba28e2ddd96c80ffeda21f34961d9373762412669674ab7ff96181fabb4310",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "RayTracing",
+      "file": "world-1\\deferred.csh",
+      "passed": true,
+      "source_hash": "dfe3832125be4348d3ce181fc29b2f8995b691bf722b64b287298ba18f03b274",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "RayTracing",
+      "file": "world-1\\deferred1.csh",
+      "passed": true,
+      "source_hash": "c01f7a9d697b06563ad687dd67f11dfa18a9a04ba00bc855cb84bd26bb272fb3",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "RayTracing",
+      "file": "world-1\\deferred4.fsh",
+      "passed": true,
+      "source_hash": "561037967b93150850d8ee01580534721cce80cb150a6921edbc4a50e6cb458c",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "RayTracing",
+      "file": "world-1\\deferred21.fsh",
+      "passed": true,
+      "source_hash": "fec4838208e569c205490fb7ac311ab8e19500033146dd434506a77ab2086de9",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "RayTracing",
+      "file": "world-1\\deferred50.fsh",
+      "passed": true,
+      "source_hash": "20ce96c4939a529718bb66f31d230cc7bf394e1387192af8560273d5fbb0fab7",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "RayTracing",
+      "file": "world-1\\composite2.fsh",
+      "passed": true,
+      "source_hash": "090558751bda42e0b70a6c95ea808d1e148c1fcaec36ed12a368361a48f65327",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "RayTracing",
+      "file": "world-1\\composite2.csh",
+      "passed": true,
+      "source_hash": "df972828094d63ffe6933e5b412787b371bc242b2caa6e68154fc9475e3413d6",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "RayTracing",
+      "file": "world-1\\final.fsh",
+      "passed": true,
+      "source_hash": "117ae6ace88ef1c716caaa7c1908b9668fb76050853db9f4e7405aaa3ca4d9f2",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "RayTracing",
+      "file": "world-1\\shadow.vsh",
+      "passed": true,
+      "source_hash": "1e3b808739a950e32892ca72c55dd85ee06900f86de5c5a6e0bd12e2d797a4a3",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "RayTracing",
+      "file": "world-1\\gbuffers_terrain.vsh",
+      "passed": true,
+      "source_hash": "c5b50256539dd943a0ce64676814c8b129c46bcd1bc08a0af08f9140a2bb0ae0",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "RayTracing",
+      "file": "world-1\\gbuffers_block.vsh",
+      "passed": true,
+      "source_hash": "54548d4a99d537e19cb4fa0be0b1e9a493183ce640e0e8390b7649133207ba83",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "RayTracing",
+      "file": "world0\\gbuffers_hand_water.vsh",
+      "passed": true,
+      "source_hash": "d644f56c3bf521095797ef3868b75079584dc3813b29b5c03b3f33f79f3a9447",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "RayTracing",
+      "file": "world0\\shadowcomp.csh",
+      "passed": true,
+      "source_hash": "44c9bb634da9d7b7ce2189160232bdd70d3bac7138e11b0b0a3a9dc7b2ce489b",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "RayTracing",
+      "file": "world-1\\gbuffers_water.vsh",
+      "passed": true,
+      "source_hash": "62f9a0eb76bb144114b3384968594e20e4aedd2400a824baf73c6ab533aab636",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "RayTracing",
+      "file": "world-1\\gbuffers_hand_water.vsh",
+      "passed": true,
+      "source_hash": "d73da3a48c692613ec7425a32adc58f3cc4242d14b548c5c38620f0b7755854a",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "RayTracing",
+      "file": "world-1\\shadowcomp.csh",
+      "passed": true,
+      "source_hash": "c4cb3eb8a5592668c7cda2fc4cc3b67415b8c741058277280d5e1c27f3dae443",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "RayTracing",
+      "file": "world-1\\composite.fsh",
+      "passed": true,
+      "source_hash": "efd3c1f701b9da61d34744181572a5903ca4c832795fab4627481f4b9e4c393e",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "RayTracing",
+      "file": "world0\\deferred18.csh",
+      "passed": true,
+      "source_hash": "535a1b66ae7cc862b9e2988fb668d5a73e2712a80c186e17fad45f74d5dbc838",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "RayTracing",
+      "file": "world0\\deferred20.csh",
+      "passed": true,
+      "source_hash": "bc7fa5d17494a37af101e5cf242fdb97051e6056b2db89d32c714052fce21d09",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "RayTracing",
+      "file": "world0\\gbuffers_basic.vsh",
+      "passed": true,
+      "source_hash": "33ec1f96483663f2da3c51caf8c746711023f9257adfe1f89a9aac112e2e478b",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "RayTracing",
+      "file": "world0\\composite31.fsh",
+      "passed": true,
+      "source_hash": "cf2df820a95d6a4e46b62caa30531d159a06b32a00a9fba0e20c4d7a5e0392a0",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "RayTracing",
+      "file": "world-1\\deferred18.csh",
+      "passed": true,
+      "source_hash": "60838f9d5a17f8409d9623c5f7b7a96134f61f56ad1fe23bbb04ba26bd6802ef",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "RayTracing",
+      "file": "world-1\\deferred20.csh",
+      "passed": true,
+      "source_hash": "da1b05d998d95f8f9e5a9fae3188ce4a00cc3db6951656c3c01042999f69df10",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "RayTracing",
+      "file": "world-1\\gbuffers_basic.vsh",
+      "passed": true,
+      "source_hash": "eba7769fa9f74fe1367dba10256f44d78f27f34f4d7e268d647470c5aab86297",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "RayTracing",
+      "file": "world-1\\composite31.fsh",
+      "passed": true,
+      "source_hash": "cf2df820a95d6a4e46b62caa30531d159a06b32a00a9fba0e20c4d7a5e0392a0",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "glass_grid_off",
+      "file": "world0\\composite2.csh",
+      "passed": true,
+      "source_hash": "9c85240c3309e624943f7c92d8a95c91d38e3c134a4f6987a2b8803fd6b568bc",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "glass_grid_off",
+      "file": "world0\\composite2.fsh",
+      "passed": true,
+      "source_hash": "fd4538c839aea1aea7d302af86c755335be809f0bc62762108f18ecb4779a448",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "glass_grid_off",
+      "file": "world0\\shadow.vsh",
+      "passed": true,
+      "source_hash": "92d67da67469dd6fa361037240304611afcee53f21685c4a69abe9e66b83ea30",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "glass_grid_off",
+      "file": "world0\\gbuffers_water.vsh",
+      "passed": true,
+      "source_hash": "e18e1006082a975d2b01551c595e8a0b638ad8c8e0bd9479e50d8fe805e8331f",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "glass_grid_off",
+      "file": "world0\\deferred21.fsh",
+      "passed": true,
+      "source_hash": "9b157ff8b998f46a531c2686c4065c89fa5e2e5b531fec494f7a0d2cb9bb05b0",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "glass_grid_off",
+      "file": "world-1\\composite2.csh",
+      "passed": true,
+      "source_hash": "8be815fde9a4f3dbbf37ff9844bc9e4cc631c983dc8c126f01cb813f591ff912",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "glass_grid_off",
+      "file": "world0\\shadowcomp.csh",
+      "passed": true,
+      "source_hash": "23dbbfab7b54747344afc9f923c885eb0ea5b36ce01f56b0e54eeeb770cb9053",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "glass_grid_off",
+      "file": "world0\\composite.fsh",
+      "passed": true,
+      "source_hash": "3c7a6ed5f72a1ac2aa85581a74d48f842ff9192a33640e1fd46f9bde5fc6b403",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "glass_grid_off",
+      "file": "world0\\deferred18.csh",
+      "passed": true,
+      "source_hash": "c6b076003afaa17059b0a79213ad22fb8a2b75d0a7da82188250666e140cb474",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "glass_grid_off",
+      "file": "world0\\deferred20.csh",
+      "passed": true,
+      "source_hash": "c944025e53181d5f3a6dd8933ed0c3657f6e9a0b71e0d97d3b8d8b293cbba6db",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "glass_grid_off",
+      "file": "world0\\deferred50.fsh",
+      "passed": true,
+      "source_hash": "01f09bf285d769a3a22d1e913091d151a67fb8901d5ca7c8427358ace1b0c2fb",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "glass_grid_off",
+      "file": "world0\\gbuffers_basic.vsh",
+      "passed": true,
+      "source_hash": "3e2ed4646782e6a9d20dfd9e4cbd455a253b991f6231847fa09b4e0a4ac27560",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "glass_grid_off",
+      "file": "world0\\composite31.fsh",
+      "passed": true,
+      "source_hash": "6b264ccb2ff6b07b11ab4e5c272cfe1468d9e3f6fc3d7dc90cb6a9386d5632df",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "glass_grid_off",
+      "file": "world0\\final.fsh",
+      "passed": true,
+      "source_hash": "905171656a0ad0afac1f57a81659d42a45e2dadbfea6dd9dfcf44161d847b8f5",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "physical_glass_off",
+      "file": "world0\\composite2.csh",
+      "passed": true,
+      "source_hash": "c480075c4846221b627aea67d50a47ac5ae8a44180d738f13a1a2c9d74377588",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "physical_glass_off",
+      "file": "world0\\composite2.fsh",
+      "passed": true,
+      "source_hash": "7cc35347588664563b68ebd6d2e3c1bbc8cd3f6b39aaa568be933e7e863cbf9b",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "physical_glass_off",
+      "file": "world0\\shadow.vsh",
+      "passed": true,
+      "source_hash": "27dec2af68193af3cb677fb81247ff230b9df3e32f5cde2484732b60a4674f5c",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "physical_glass_off",
+      "file": "world0\\gbuffers_water.vsh",
+      "passed": true,
+      "source_hash": "a693ec4da85c3dc16446bab8c628c506052834a0d92c6ed56e31bd8270b5ab4d",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "physical_glass_off",
+      "file": "world0\\deferred21.fsh",
+      "passed": true,
+      "source_hash": "d362898451b322eff93193e85fcf13e94ea2d5a31207917945936a4bf7efec36",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "physical_glass_off",
+      "file": "world-1\\composite2.csh",
+      "passed": true,
+      "source_hash": "43040d5b7a5f151618de0c82fba2234a312c8418dd65cf8e89cd35c8ede1b309",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "physical_glass_off",
+      "file": "world0\\shadowcomp.csh",
+      "passed": true,
+      "source_hash": "3fdf4c3014738f0e7d241f84b944b56177cf791515dcf4399a2b468a30b75802",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "physical_glass_off",
+      "file": "world0\\composite.fsh",
+      "passed": true,
+      "source_hash": "5cc8eaec420407c3ef62a39eaeb90605b978a7239a6ea0341fc925877690d874",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "physical_glass_off",
+      "file": "world0\\deferred18.csh",
+      "passed": true,
+      "source_hash": "d4d15cd3515e7f4aec272bfd18833f33b798e5d31a78ee543f284e6b2e803068",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "physical_glass_off",
+      "file": "world0\\deferred20.csh",
+      "passed": true,
+      "source_hash": "55319ab4e4b1a1b821a39891ce70ef859d07c076100f5963b4f311f8bd4f5ba3",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "physical_glass_off",
+      "file": "world0\\deferred50.fsh",
+      "passed": true,
+      "source_hash": "d4288015ab653789975ebabc1b8554f54ebf23e70a93b434f8b2dcb95e7e4d1d",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "physical_glass_off",
+      "file": "world0\\gbuffers_basic.vsh",
+      "passed": true,
+      "source_hash": "77cc4760aab4ef27cfeaf7b2d2c7cea8d759a8d056a0c22f1be68b46a0f8ba7a",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "physical_glass_off",
+      "file": "world0\\composite31.fsh",
+      "passed": true,
+      "source_hash": "648699b38e0d5e5f4c553b55c48707eec5f12cf14f614f9fe0a79ff3154de0eb",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "physical_glass_off",
+      "file": "world0\\final.fsh",
+      "passed": true,
+      "source_hash": "d7fe41c3b19a74ab34d3710e04011795a72ad6fcc1fcbbb6b71326bc27ff76d2",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "all_local_off",
+      "file": "world0\\composite2.csh",
+      "passed": true,
+      "source_hash": "d138d02040922f187aeab3b87da8c1afa93a4ee01853725492c3cdb72d108292",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "all_local_off",
+      "file": "world0\\composite2.fsh",
+      "passed": true,
+      "source_hash": "f46a4522639aabc55e2118397134ee923df269f078d2bb26af41c042c199de0d",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "all_local_off",
+      "file": "world0\\shadow.vsh",
+      "passed": true,
+      "source_hash": "a224d73ed9624e442dba834ccd5b96ce700900cee973bca1866a7dec842dd452",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "all_local_off",
+      "file": "world0\\gbuffers_water.vsh",
+      "passed": true,
+      "source_hash": "45b4f68e04215db0960037aed026568582874c671fe8203fbff304a371cf22b1",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "all_local_off",
+      "file": "world0\\deferred21.fsh",
+      "passed": true,
+      "source_hash": "d9823c645f97073f65f634eda0ae9e1d0b61d1b868cf503a8b9836c574a0bf30",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "all_local_off",
+      "file": "world-1\\composite2.csh",
+      "passed": true,
+      "source_hash": "c1a002c7a91274907e38b8bd48ef5c5dabbe6983040a9e72a75b7c08db95fce9",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "all_local_off",
+      "file": "world0\\shadowcomp.csh",
+      "passed": true,
+      "source_hash": "56e8d66929a6032050e029a036d7eebc6e6214d7d631820664b2bd1c649e389a",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "all_local_off",
+      "file": "world0\\composite.fsh",
+      "passed": true,
+      "source_hash": "4da95d10053d658a252d3b976364f45cd50a38db58068bf63c95714d83ad10e9",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "all_local_off",
+      "file": "world0\\deferred18.csh",
+      "passed": true,
+      "source_hash": "0c01a03517a0e6459662104366b34db87720986fd804b52d14862ee27663ddea",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "all_local_off",
+      "file": "world0\\deferred20.csh",
+      "passed": true,
+      "source_hash": "a4ec7dccd76b1fa18acdc327cf199da9e4ca9df415f7ca5702e975af475fdc12",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "all_local_off",
+      "file": "world0\\deferred50.fsh",
+      "passed": true,
+      "source_hash": "e58253b4ea6d82affb276c17ebd6920d98bc6c5c5aa01068a3e825bb6aaed3a9",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "all_local_off",
+      "file": "world0\\gbuffers_basic.vsh",
+      "passed": true,
+      "source_hash": "afa081af7462b3f7ae09408d5f2ab25515315c8bafebb84575a73b83302776da",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "all_local_off",
+      "file": "world0\\composite31.fsh",
+      "passed": true,
+      "source_hash": "8f83815c31396f447553eb127d6938bd5a53477e952386c4c89b09909cd9bd12",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "all_local_off",
+      "file": "world0\\final.fsh",
+      "passed": true,
+      "source_hash": "98c992b699cd380cde2c6d46b18e08a5fed2539213ae185561e8f42e6a1a6548",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "refraction_trace",
+      "file": "world0\\composite2.csh",
+      "passed": true,
+      "source_hash": "8ee40ce2bd3f59b1a16e1a83bda46747e7eeb849278d7cf3aa016b20be37b1e6",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "refraction_trace",
+      "file": "world0\\composite2.fsh",
+      "passed": true,
+      "source_hash": "bc38fe7af5f493eea5eb6cf3765527015724c634ae3f05e40ea11bf8ea40d373",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "refraction_trace",
+      "file": "world0\\shadow.vsh",
+      "passed": true,
+      "source_hash": "e0092eaf3b9d8e5e69ec8b4a860ee6c07f5cff60c901d94ed567508ac218e874",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "refraction_trace",
+      "file": "world0\\gbuffers_water.vsh",
+      "passed": true,
+      "source_hash": "ae1f3b525ee12af526cfba0d88bf9dbb83cbecf53888e3c1b801cf10f068a170",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "refraction_trace",
+      "file": "world0\\deferred21.fsh",
+      "passed": true,
+      "source_hash": "c6d69c05a04d747e49063f7f1a248b67fc1dccfb4740e6085607a920a8c25877",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "refraction_trace",
+      "file": "world-1\\composite2.csh",
+      "passed": true,
+      "source_hash": "8e9e7c5d034439f2d0e1051adadd6881c55ebeb29c236c3a6173b422d7784922",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "refraction_trace",
+      "file": "world0\\shadowcomp.csh",
+      "passed": true,
+      "source_hash": "2787f597c5dc48b9ea33e02342b5d37743b0cd321354af7fbdb451050021de94",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "refraction_trace",
+      "file": "world0\\composite.fsh",
+      "passed": true,
+      "source_hash": "cbcca70a496b8ffa96bf4957cba86e7c1c578c68c40c4ab460db25394c111bce",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "refraction_trace",
+      "file": "world0\\deferred18.csh",
+      "passed": true,
+      "source_hash": "abab860880941a4691b121e3ff407631c002f3c68b2389e4840c7716ab13cf0d",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "refraction_trace",
+      "file": "world0\\deferred20.csh",
+      "passed": true,
+      "source_hash": "2018464f20ba2694aa3464d669eb87235d61b834d2e23dcdedc59096d3e78700",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "refraction_trace",
+      "file": "world0\\deferred50.fsh",
+      "passed": true,
+      "source_hash": "b003e5afad3ce7e4614ed57f7973dff2e1b7c2701173c4126cbab7dd73fedb86",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "refraction_trace",
+      "file": "world0\\gbuffers_basic.vsh",
+      "passed": true,
+      "source_hash": "dce476593cfe6c90e3e1de3a7733c4bd9a57e70195ade95895683a5cf3c821c3",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "refraction_trace",
+      "file": "world0\\composite31.fsh",
+      "passed": true,
+      "source_hash": "bf2fbd56d12978faa16afdfd67cfc0eea348325014d5c82315ebeebb20e6f507",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "refraction_trace",
+      "file": "world0\\final.fsh",
+      "passed": true,
+      "source_hash": "adced2b491c804717b458e7a78cf76657be7c1f9699ad6427a8f32522f7ff5bd",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "PBR",
+      "file": "world0\\composite2.csh",
+      "passed": true,
+      "source_hash": "bf0f6a5b2532b0330dd1db6a4fe10dc84e2f22c59b5ea966a267ad2e7cb1b2b5",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "PBR",
+      "file": "world0\\composite2.fsh",
+      "passed": true,
+      "source_hash": "58435d95ee8ca92b03dbee8a6d1abaa0152f8d9abeb80151a4298be44867608f",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "PBR",
+      "file": "world0\\shadow.vsh",
+      "passed": true,
+      "source_hash": "872e03a6f9a070f196b54da96614279457ae515717c0c34688e5c75e38f9d874",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "PBR",
+      "file": "world0\\gbuffers_water.vsh",
+      "passed": true,
+      "source_hash": "a21631239109169b8f0deb0bd8e7d0104817d8c461c6328dfa5026d52fe341d5",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "PBR",
+      "file": "world0\\deferred21.fsh",
+      "passed": true,
+      "source_hash": "f76453e13014c49d9409c2b5615d9a17ecd39b6acb2de54cdd828e51e387d71f",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "PBR",
+      "file": "world-1\\composite2.csh",
+      "passed": true,
+      "source_hash": "726dfd71474b44510fcaada6aedf3d2a3e7323db9e56665b3c49afee4327bc53",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "PBR",
+      "file": "world0\\shadowcomp.csh",
+      "passed": true,
+      "source_hash": "fd97343130f40dcb71d21abc0607d597ddfe8e66da2db4199b6504ca76452b7b",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "PBR",
+      "file": "world0\\composite.fsh",
+      "passed": true,
+      "source_hash": "868f08278ce0b85cc221e83602834b3a5b444744d715176f673dcb6b0e7d3f91",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "PBR",
+      "file": "world0\\deferred18.csh",
+      "passed": true,
+      "source_hash": "38580dace4bddc9a91635a890e3a4fb52405445257393eaf107cd91314313768",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "PBR",
+      "file": "world0\\deferred20.csh",
+      "passed": true,
+      "source_hash": "a14df7385e98a415a23c93445d7e7289a049722a25b56e68642616bab8ae7374",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "PBR",
+      "file": "world0\\deferred50.fsh",
+      "passed": true,
+      "source_hash": "b48dfeb1f9a3363c17eb5771168e4f5c65374338bf49c443349ec479489a731f",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "PBR",
+      "file": "world0\\gbuffers_basic.vsh",
+      "passed": true,
+      "source_hash": "74bc306ce9c06e1358a7a143fd82e56a29e7d1d8e79c76bb3f87e68938a9db97",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "PBR",
+      "file": "world0\\composite31.fsh",
+      "passed": true,
+      "source_hash": "1766ca0dc1f5dffe817e71db6ea9b53a85dd0ea808bf97a504ae4fc70a0e6037",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "PBR",
+      "file": "world0\\final.fsh",
+      "passed": true,
+      "source_hash": "6827fb71493d2f95ba929e911bd550924c72a390d223a381ea4b94651086762c",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "cached_local",
+      "file": "world0\\composite2.csh",
+      "passed": true,
+      "source_hash": "4c44de38750ba71dfc70cb5a1c041865ea3e9e211f3db60ea634f4762f5a384b",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "cached_local",
+      "file": "world0\\composite2.fsh",
+      "passed": true,
+      "source_hash": "6211fb725100dfd91f134a2b830c2c8b00e83a191d868d385b4267d4848fd395",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "cached_local",
+      "file": "world0\\shadow.vsh",
+      "passed": true,
+      "source_hash": "f4b80cfb385b832371e884631d9489bab44e578b1368c538fa5c051289442a9e",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "cached_local",
+      "file": "world0\\gbuffers_water.vsh",
+      "passed": true,
+      "source_hash": "54260690da563501aa255d01064ed6a09a80a8f431407ac17a4f78fb87bd4a8a",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "cached_local",
+      "file": "world0\\deferred21.fsh",
+      "passed": true,
+      "source_hash": "3e1cc7ac85aac0b64d998110ebdcea328d86e7623e8b0c27d8b36ed02b492c67",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "cached_local",
+      "file": "world-1\\composite2.csh",
+      "passed": true,
+      "source_hash": "df972828094d63ffe6933e5b412787b371bc242b2caa6e68154fc9475e3413d6",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "cached_local",
+      "file": "world0\\shadowcomp.csh",
+      "passed": true,
+      "source_hash": "44c9bb634da9d7b7ce2189160232bdd70d3bac7138e11b0b0a3a9dc7b2ce489b",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "cached_local",
+      "file": "world0\\composite.fsh",
+      "passed": true,
+      "source_hash": "ce396ec24321b923f85c753d282471706713a2671ea129865ae21e7396e001f9",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "cached_local",
+      "file": "world0\\deferred18.csh",
+      "passed": true,
+      "source_hash": "535a1b66ae7cc862b9e2988fb668d5a73e2712a80c186e17fad45f74d5dbc838",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "cached_local",
+      "file": "world0\\deferred20.csh",
+      "passed": true,
+      "source_hash": "bc7fa5d17494a37af101e5cf242fdb97051e6056b2db89d32c714052fce21d09",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "cached_local",
+      "file": "world0\\deferred50.fsh",
+      "passed": true,
+      "source_hash": "1a1c06c63833e2e48b19da74662b2fd78495480163fdeecb62472a0f5cc06009",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "cached_local",
+      "file": "world0\\gbuffers_basic.vsh",
+      "passed": true,
+      "source_hash": "33ec1f96483663f2da3c51caf8c746711023f9257adfe1f89a9aac112e2e478b",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "cached_local",
+      "file": "world0\\composite31.fsh",
+      "passed": true,
+      "source_hash": "cf2df820a95d6a4e46b62caa30531d159a06b32a00a9fba0e20c4d7a5e0392a0",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "cached_local",
+      "file": "world0\\final.fsh",
+      "passed": true,
+      "source_hash": "117ae6ace88ef1c716caaa7c1908b9668fb76050853db9f4e7405aaa3ca4d9f2",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "HDR",
+      "file": "world0\\composite2.csh",
+      "passed": true,
+      "source_hash": "bdb8fc767845e3ef4d1a6656bfadc120fdb4477ef2f8db3476b9e4511d518123",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "HDR",
+      "file": "world0\\composite2.fsh",
+      "passed": true,
+      "source_hash": "0c2d5119d46f0bdb7483af9e85d738c559112d317c7242c88142bdb300bda0f2",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "HDR",
+      "file": "world0\\shadow.vsh",
+      "passed": true,
+      "source_hash": "154a80b2e97a08b851ae7ffd920508367452340de19b75cdd326545b0febf190",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "HDR",
+      "file": "world0\\gbuffers_water.vsh",
+      "passed": true,
+      "source_hash": "650bb5f94de1919f31bae8a9227823607a77573d4be7a11c73448c3908fa4aae",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "HDR",
+      "file": "world0\\deferred21.fsh",
+      "passed": true,
+      "source_hash": "1a560fc4ead51518512d4adea1f3a5f70180f172b3cc2fd3e6a560277a32360c",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "HDR",
+      "file": "world-1\\composite2.csh",
+      "passed": true,
+      "source_hash": "e2b3d6c6fa694d8f31eebaf2435788c44be0de06e4bab8d15e22e2d2ac2d50c1",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "HDR",
+      "file": "world0\\shadowcomp.csh",
+      "passed": true,
+      "source_hash": "049b10df534b21fa6fd09262647564363d333ba065200e6373ba35bf8f463971",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "HDR",
+      "file": "world0\\composite.fsh",
+      "passed": true,
+      "source_hash": "f31c9df277e4c66a8da72b94c7c7c658e06bd6f193d34798fa3d7215a708aade",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "HDR",
+      "file": "world0\\deferred18.csh",
+      "passed": true,
+      "source_hash": "6d7fcce8e02e6fdb7698d9b82169c3dab46a197ed49e0a4784c32e4fd8dac2a4",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "HDR",
+      "file": "world0\\deferred20.csh",
+      "passed": true,
+      "source_hash": "3900f7a860a87a53789d987a27e6bbfc458bc1c60ed54aa124a12c1f44ca3ae9",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "HDR",
+      "file": "world0\\deferred50.fsh",
+      "passed": true,
+      "source_hash": "4e47d32488f3bac65db6fc79d400b6c2d500e7734d9db8548f1cc5d7a4b36185",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "HDR",
+      "file": "world0\\gbuffers_basic.vsh",
+      "passed": true,
+      "source_hash": "ccea2bef2cf73a1b86215d5753ba7e50d59f4365a6d7648e042fa0b57d5f78df",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "HDR",
+      "file": "world0\\composite31.fsh",
+      "passed": true,
+      "source_hash": "fc3cc65192fbc2c04d02afc20de95c33b08c9b7961e20843a6efef90d0e3cbf3",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "HDR",
+      "file": "world0\\final.fsh",
+      "passed": true,
+      "source_hash": "5ef422089edbbe70496c9f24d19d9f91cfb95150172c38ab936b65225ad29621",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "acceleration_off",
+      "file": "world0\\composite2.csh",
+      "passed": true,
+      "source_hash": "4a28b28ccf7adfcb4831268f2e0a3f8ed4cb5e03f741bf275e39ce9dd9371ff0",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "acceleration_off",
+      "file": "world0\\composite2.fsh",
+      "passed": true,
+      "source_hash": "46501713570f75961ef3d77a8e61ae7098091c2e0d1386c2eb9aeacf66e12b9b",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "acceleration_off",
+      "file": "world0\\shadow.vsh",
+      "passed": true,
+      "source_hash": "56761c06e7bddee566f9891503fcb4bb4851bcf5227c21093d8b365061c68a72",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "acceleration_off",
+      "file": "world0\\gbuffers_water.vsh",
+      "passed": true,
+      "source_hash": "3ae05954e2ae397e0b8b0f0208ffa477002c729aca51cac727e06aae6fed2ac2",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "acceleration_off",
+      "file": "world0\\deferred21.fsh",
+      "passed": true,
+      "source_hash": "b832ca6a204aa99ab17f6e13d52de55bb88edc3d728fbd8f43f4dcf5c8aafc1b",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "acceleration_off",
+      "file": "world-1\\composite2.csh",
+      "passed": true,
+      "source_hash": "9df6736fa30916b4e72da3c4012c1508ab2beb0f167b2540573cb34768b0a9af",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "acceleration_off",
+      "file": "world0\\shadowcomp.csh",
+      "passed": true,
+      "source_hash": "4d6cce1202ca30f377bb2d184149298e4d2bf1691c86765b5fc39d30393392ef",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "acceleration_off",
+      "file": "world0\\composite.fsh",
+      "passed": true,
+      "source_hash": "cbbd51323986c7a28a4a61087c2a21cbff37d6edde5656d4cca9c7346e74fcbb",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "acceleration_off",
+      "file": "world0\\deferred18.csh",
+      "passed": true,
+      "source_hash": "4afe9648fa2deb8a5d98a91dc8b1b1214f393ec91baf0cfb44cc6b2edf4ec97e",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "acceleration_off",
+      "file": "world0\\deferred20.csh",
+      "passed": true,
+      "source_hash": "b38e0ad98aac6f4450dd9c838d193c248ded20e2e6bc255d1fbdc5f0d8f022b8",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "acceleration_off",
+      "file": "world0\\deferred50.fsh",
+      "passed": true,
+      "source_hash": "5e68e20181f167f67b1ed2c224dd7e600c507bf6faa17234d8a6bae643c929a3",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "acceleration_off",
+      "file": "world0\\gbuffers_basic.vsh",
+      "passed": true,
+      "source_hash": "84c7d8b440d8a31e3755b7726e7cc6f235139fd1488d6569d6055f75fe89a5a0",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "acceleration_off",
+      "file": "world0\\composite31.fsh",
+      "passed": true,
+      "source_hash": "7b6c7753d33edc6200ce45111076dd821eb8d94a3f1cdac153bfb3d76360da83",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "acceleration_off",
+      "file": "world0\\final.fsh",
+      "passed": true,
+      "source_hash": "abdd1c25c53b79789e6d1f1d3635c90f5db38e6bc72c51f59e502c835980a0ee",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "handheld_only",
+      "file": "world0\\composite2.csh",
+      "passed": true,
+      "source_hash": "c9fbfb23445ae1ea94bdad94cc74b7ea54a0adc38c641da407c603f098496ccf",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "handheld_only",
+      "file": "world0\\composite2.fsh",
+      "passed": true,
+      "source_hash": "5174fe14518ea5a6e6f6fd1799025076256766d5b28baa12603311ecaa7a45f1",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "handheld_only",
+      "file": "world0\\shadow.vsh",
+      "passed": true,
+      "source_hash": "9311efa58156c284d0cbfd2ca052a406a86d06c24cc037728b2a336613df3c05",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "handheld_only",
+      "file": "world0\\gbuffers_water.vsh",
+      "passed": true,
+      "source_hash": "7015b16ca1e140b93036244d28ba67c8818479c2ca2c405a8d567f0b2a88babd",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "handheld_only",
+      "file": "world0\\deferred21.fsh",
+      "passed": true,
+      "source_hash": "957bb43bbb09f334cdee16ebe9fc8a07753f8460784526cd00ac285431820494",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "handheld_only",
+      "file": "world-1\\composite2.csh",
+      "passed": true,
+      "source_hash": "d18a8a34e3f263b32eb24f34d17c3683d092682cac4a47c68fa5d3182a6b860c",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "handheld_only",
+      "file": "world0\\shadowcomp.csh",
+      "passed": true,
+      "source_hash": "864c1c4c4fe51aef48df61bd60625074d3b1bd10abd2e4ea2a723d4ff4a6749a",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "handheld_only",
+      "file": "world0\\composite.fsh",
+      "passed": true,
+      "source_hash": "b8b71ad8a7933ca52af21fb9c70a16d97899edc88fff0345769431cff08be463",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "handheld_only",
+      "file": "world0\\deferred18.csh",
+      "passed": true,
+      "source_hash": "8165bdf725e09e8e46f9b1f0bc287119ce85f06e51ee143335b667f5d81617ad",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "handheld_only",
+      "file": "world0\\deferred20.csh",
+      "passed": true,
+      "source_hash": "04da303abe1c0493173ccbb94b9df87f252f50ee4ac9f5fc6c81d997e43d6560",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "handheld_only",
+      "file": "world0\\deferred50.fsh",
+      "passed": true,
+      "source_hash": "d18ebfe99b58507eb416423d88293d274ca425a85770b28a588cc63c719075e2",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "handheld_only",
+      "file": "world0\\gbuffers_basic.vsh",
+      "passed": true,
+      "source_hash": "2dd3dd4fe2b9cfc622809129dc464aebd9f5a54c1b6475eb16215f4069a4d004",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "handheld_only",
+      "file": "world0\\composite31.fsh",
+      "passed": true,
+      "source_hash": "d533929c64aa9491c7e73585befc7ffb674c4ba58f55d8741dcfda72f86ef409",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "handheld_only",
+      "file": "world0\\final.fsh",
+      "passed": true,
+      "source_hash": "c836fdf79d94a6e192b9cf3849de4a38f822f127236f1073c5fe52819c7def50",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "glass_only",
+      "file": "world0\\composite2.csh",
+      "passed": true,
+      "source_hash": "d905ed249cacc8a345c77b4dcb9a1a30bab5b1ed2889650da388b4b1dc19fba2",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "glass_only",
+      "file": "world0\\composite2.fsh",
+      "passed": true,
+      "source_hash": "ca827e9272f1eae3e1a23a159b1233c62665b544c64e21408d793ff92af516c5",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "glass_only",
+      "file": "world0\\shadow.vsh",
+      "passed": true,
+      "source_hash": "6472f80372ed1fa8093e2ff2247b49a68d6890976ea9be020f7eb7c8801f756a",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "glass_only",
+      "file": "world0\\gbuffers_water.vsh",
+      "passed": true,
+      "source_hash": "cda35d4377639c4e831a0c2abe8132cde9568958ec13ef61f66a95bf43e92aa0",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "glass_only",
+      "file": "world0\\deferred21.fsh",
+      "passed": true,
+      "source_hash": "07ae1be6c6c94ed6837db489e132e681b49f8c6b4f15847ef7e28334878f2209",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "glass_only",
+      "file": "world-1\\composite2.csh",
+      "passed": true,
+      "source_hash": "4ea4aa6d262817ded1e344fb529d728727c39d670b9cf3ae55ef270f4e8ec7eb",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "glass_only",
+      "file": "world0\\shadowcomp.csh",
+      "passed": true,
+      "source_hash": "7a310798de8dc106a79b7530dde2ad0d2a1a4c3a334c4d0d6f7038db87afca3b",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "glass_only",
+      "file": "world0\\composite.fsh",
+      "passed": true,
+      "source_hash": "6642a3ea516d9ee91609f81d8673f7a22a57342a58de86b493b81cd362c260ea",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "glass_only",
+      "file": "world0\\deferred18.csh",
+      "passed": true,
+      "source_hash": "e5630104a0ef593260230f3da334ae855dbd00855431aabae46821fc9698c810",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "glass_only",
+      "file": "world0\\deferred20.csh",
+      "passed": true,
+      "source_hash": "686dd2c2f032153bdb7aeba33fcb2cb783546b0db58da2047a0d24ea558fcdd6",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "glass_only",
+      "file": "world0\\deferred50.fsh",
+      "passed": true,
+      "source_hash": "2b90bee8fec78e1649e67182110acb81abdd67e7661e3110cda56d15df4370f4",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "glass_only",
+      "file": "world0\\gbuffers_basic.vsh",
+      "passed": true,
+      "source_hash": "d487c937175660edb2618bb98253131cdb5ccabc39d26e7fbdd1260973059ea0",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "glass_only",
+      "file": "world0\\composite31.fsh",
+      "passed": true,
+      "source_hash": "bac790d71c408ed43eb7c3e9f8edbdf68735199458eacafbc41907299bcc0edd",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "glass_only",
+      "file": "world0\\final.fsh",
+      "passed": true,
+      "source_hash": "cea9916d6fe0494bd32698790c3e37d99692af4147930aa818603c51f230cfda",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "PBR_cached_local",
+      "file": "world0\\composite2.csh",
+      "passed": true,
+      "source_hash": "bf0f6a5b2532b0330dd1db6a4fe10dc84e2f22c59b5ea966a267ad2e7cb1b2b5",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "PBR_cached_local",
+      "file": "world0\\composite2.fsh",
+      "passed": true,
+      "source_hash": "58435d95ee8ca92b03dbee8a6d1abaa0152f8d9abeb80151a4298be44867608f",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "PBR_cached_local",
+      "file": "world0\\shadow.vsh",
+      "passed": true,
+      "source_hash": "872e03a6f9a070f196b54da96614279457ae515717c0c34688e5c75e38f9d874",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "PBR_cached_local",
+      "file": "world0\\gbuffers_water.vsh",
+      "passed": true,
+      "source_hash": "a21631239109169b8f0deb0bd8e7d0104817d8c461c6328dfa5026d52fe341d5",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "PBR_cached_local",
+      "file": "world0\\deferred21.fsh",
+      "passed": true,
+      "source_hash": "f76453e13014c49d9409c2b5615d9a17ecd39b6acb2de54cdd828e51e387d71f",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "PBR_cached_local",
+      "file": "world-1\\composite2.csh",
+      "passed": true,
+      "source_hash": "726dfd71474b44510fcaada6aedf3d2a3e7323db9e56665b3c49afee4327bc53",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "PBR_cached_local",
+      "file": "world0\\shadowcomp.csh",
+      "passed": true,
+      "source_hash": "fd97343130f40dcb71d21abc0607d597ddfe8e66da2db4199b6504ca76452b7b",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "PBR_cached_local",
+      "file": "world0\\composite.fsh",
+      "passed": true,
+      "source_hash": "868f08278ce0b85cc221e83602834b3a5b444744d715176f673dcb6b0e7d3f91",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "PBR_cached_local",
+      "file": "world0\\deferred18.csh",
+      "passed": true,
+      "source_hash": "38580dace4bddc9a91635a890e3a4fb52405445257393eaf107cd91314313768",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "PBR_cached_local",
+      "file": "world0\\deferred20.csh",
+      "passed": true,
+      "source_hash": "a14df7385e98a415a23c93445d7e7289a049722a25b56e68642616bab8ae7374",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "PBR_cached_local",
+      "file": "world0\\deferred50.fsh",
+      "passed": true,
+      "source_hash": "b48dfeb1f9a3363c17eb5771168e4f5c65374338bf49c443349ec479489a731f",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "PBR_cached_local",
+      "file": "world0\\gbuffers_basic.vsh",
+      "passed": true,
+      "source_hash": "74bc306ce9c06e1358a7a143fd82e56a29e7d1d8e79c76bb3f87e68938a9db97",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "PBR_cached_local",
+      "file": "world0\\composite31.fsh",
+      "passed": true,
+      "source_hash": "1766ca0dc1f5dffe817e71db6ea9b53a85dd0ea808bf97a504ae4fc70a0e6037",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "PBR_cached_local",
+      "file": "world0\\final.fsh",
+      "passed": true,
+      "source_hash": "6827fb71493d2f95ba929e911bd550924c72a390d223a381ea4b94651086762c",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "native_local",
+      "file": "world0\\composite2.csh",
+      "passed": true,
+      "source_hash": "92ca3d7204f0029f6fc3a60b0ad5e44692c12f1f14caaf147c21e79f4c06620b",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "native_local",
+      "file": "world0\\composite2.fsh",
+      "passed": true,
+      "source_hash": "43a769e888892e57163b079a11568b0cbe2039eb14e237439360b5301d1bbe6b",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "native_local",
+      "file": "world0\\shadow.vsh",
+      "passed": true,
+      "source_hash": "260af98a3a837ee2888baba7df646838fc22c23cba4c039f05dd3b0fad8a9319",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "native_local",
+      "file": "world0\\gbuffers_water.vsh",
+      "passed": true,
+      "source_hash": "f30a84803d1e65cb934fa7669b3d076651bf201d22317ba97d4014d2d62adbad",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "native_local",
+      "file": "world0\\deferred21.fsh",
+      "passed": true,
+      "source_hash": "e92a1066a94c43ac92b31543c63f74bd50ac49e2c9ac616bcc27e94cfee59a85",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "native_local",
+      "file": "world-1\\composite2.csh",
+      "passed": true,
+      "source_hash": "cfb6a71b1b4a178160be667b8bf2695b98911f84de700a019cb24754a5994aba",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "native_local",
+      "file": "world0\\shadowcomp.csh",
+      "passed": true,
+      "source_hash": "7f8b216110223366179155ac8d8a9243e5da940295a6236568d178a44047cdde",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "native_local",
+      "file": "world0\\composite.fsh",
+      "passed": true,
+      "source_hash": "1b665efc28eabe5c6a5e446af63110ae3cad031412a47c6a175d8e58ad0383dd",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "native_local",
+      "file": "world0\\deferred18.csh",
+      "passed": true,
+      "source_hash": "386eeb08b74f452bac26c819c4acc02c942ff7d63653d0140488f4f71718deaf",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "native_local",
+      "file": "world0\\deferred20.csh",
+      "passed": true,
+      "source_hash": "ecbdc1fb4a4e8e38b6a8511429eb31a1e6d7d832123d04863beffb87ff848579",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "native_local",
+      "file": "world0\\deferred50.fsh",
+      "passed": true,
+      "source_hash": "4baf2418cdf9d320602e233ce663adab529da468b47c719218cda322d3403dd4",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "native_local",
+      "file": "world0\\gbuffers_basic.vsh",
+      "passed": true,
+      "source_hash": "93e43fd25fda99143f044865f18ed7256d5fe213a9fd013a55a337d9cb865442",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "native_local",
+      "file": "world0\\composite31.fsh",
+      "passed": true,
+      "source_hash": "50705743bfaa4b9d926dc401a5f6df9c5bc1e5bf4ad49e273d198575e1845ec1",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "native_local",
+      "file": "world0\\final.fsh",
+      "passed": true,
+      "source_hash": "06c491f576be323e6d58986caa43acc584e2a2da8a2471a299483b643b66764b",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "analytic_local",
+      "file": "world0\\composite2.csh",
+      "passed": true,
+      "source_hash": "887b882cb6d61167131927403151f50ba8e464a5bc54a6e2b8a486f03cde7cb7",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "analytic_local",
+      "file": "world0\\composite2.fsh",
+      "passed": true,
+      "source_hash": "c5de0c7188aa66c5c2425e16c3b1d83e62849cf9aa6cc4903232badc52aaeac9",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "analytic_local",
+      "file": "world0\\shadow.vsh",
+      "passed": true,
+      "source_hash": "e3fc02785d470576299b92a6aae99c307eca93e8e593099f4a03c902d728a7e2",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "analytic_local",
+      "file": "world0\\gbuffers_water.vsh",
+      "passed": true,
+      "source_hash": "4faba403130e0e1b658aba8e7507a392b94c631f508fb01cb512724f2d21b52f",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "analytic_local",
+      "file": "world0\\deferred21.fsh",
+      "passed": true,
+      "source_hash": "d79bf90ad3f8932734bcfac4ba21b44e5c416511e57dfd87df7859faa9dea057",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "analytic_local",
+      "file": "world-1\\composite2.csh",
+      "passed": true,
+      "source_hash": "bf9d5981492648612a554154b9be8abad47deaa0f117d4ccf7fcc0e58bd4708a",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "analytic_local",
+      "file": "world0\\shadowcomp.csh",
+      "passed": true,
+      "source_hash": "5620c3b762e21733b0999c1f21728584446a2c44bd9615b2abf4daa5ee9c9f78",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "analytic_local",
+      "file": "world0\\composite.fsh",
+      "passed": true,
+      "source_hash": "e13beac80d11045f46fb2d71907e3f661484003d6dd05d518074c9b7776ea16a",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "analytic_local",
+      "file": "world0\\deferred18.csh",
+      "passed": true,
+      "source_hash": "659b37c0c39ecfba1952b1a27b4f3fb4df197b35d9aca71641a91e0d7700f36e",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "analytic_local",
+      "file": "world0\\deferred20.csh",
+      "passed": true,
+      "source_hash": "9dc3372880549789299f354e3be55da51bef18b2d00ba27b32b8a8f8a592154e",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "analytic_local",
+      "file": "world0\\deferred50.fsh",
+      "passed": true,
+      "source_hash": "381f4fb1b112fc22dbdc524dd1d3721239d835848935f5643ac1e282372a5ea2",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "analytic_local",
+      "file": "world0\\gbuffers_basic.vsh",
+      "passed": true,
+      "source_hash": "e1f708411d2b9db186c5d866a12e5022708171b08a15e3a5833c7276e17c1d50",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "analytic_local",
+      "file": "world0\\composite31.fsh",
+      "passed": true,
+      "source_hash": "3287109fbcc2f2ebac9d1a3868504d76adbcbe3bd2876cd20d7fe2e2bba5bae8",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "analytic_local",
+      "file": "world0\\final.fsh",
+      "passed": true,
+      "source_hash": "dad7a31aa793edf86b8936ce7a96d990f1102616abdf58e12ded967848e7092b",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "traced_volume",
+      "file": "world0\\composite2.csh",
+      "passed": true,
+      "source_hash": "e9fe0f77da07b356a6aea838c0201745b71e2a464372fbcd48e1beaaa92722bb",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "traced_volume",
+      "file": "world0\\composite2.fsh",
+      "passed": true,
+      "source_hash": "337005d5c912946ad96721f071bad00caaae20ce8d4eaff4159c417b600da9f7",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "traced_volume",
+      "file": "world0\\shadow.vsh",
+      "passed": true,
+      "source_hash": "f52a1885704757384927ecd35ddc578c1b18699a12dee30562bb3b4628cd450e",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "traced_volume",
+      "file": "world0\\gbuffers_water.vsh",
+      "passed": true,
+      "source_hash": "792d3a303fd83bd504b6f7df90d2157ed4f4aecaae4c569e98b271ee66e401d1",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "traced_volume",
+      "file": "world0\\deferred21.fsh",
+      "passed": true,
+      "source_hash": "01b85656a14c01b4591e808b84586ca5ed274d700974ec3356e8b3f744ab7daf",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "traced_volume",
+      "file": "world-1\\composite2.csh",
+      "passed": true,
+      "source_hash": "73b2113a1cd61858333f6709ffa39326a051c611caa8bfbe119c55f1298c2a15",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "traced_volume",
+      "file": "world0\\shadowcomp.csh",
+      "passed": true,
+      "source_hash": "296a44f72ad606193511f2eb39a1fee10bfdf7390ef54b6eceec5490f197f01e",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "traced_volume",
+      "file": "world0\\composite.fsh",
+      "passed": true,
+      "source_hash": "54951cce17814cf261e741583155fcaab120fdfbe7a45c9e08ee64c2206eca61",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "traced_volume",
+      "file": "world0\\deferred18.csh",
+      "passed": true,
+      "source_hash": "2d079692a84feee9703574ed8201db97404135cfa702d3311dc0e3cd5e493fff",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "traced_volume",
+      "file": "world0\\deferred20.csh",
+      "passed": true,
+      "source_hash": "15511a7a72e91f1a53769ea47588cd31fa4507c162c07468301e21fa1668ce42",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "traced_volume",
+      "file": "world0\\deferred50.fsh",
+      "passed": true,
+      "source_hash": "8a3bfdb91d773efe647d674980c663adabd2a270bd092a053ffa29fc56748e5d",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "traced_volume",
+      "file": "world0\\gbuffers_basic.vsh",
+      "passed": true,
+      "source_hash": "8e14626a7af778a161493204f8b86220772da942834e14c92614089c7363d527",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "traced_volume",
+      "file": "world0\\composite31.fsh",
+      "passed": true,
+      "source_hash": "1b0fd7e02764625d9783b159760f63847af739d0d08e03f1e0ff69696f4a1b23",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "traced_volume",
+      "file": "world0\\final.fsh",
+      "passed": true,
+      "source_hash": "2ed43a3f971f5d294ad88c15ee178eed15c63a979e9c67c9f3423073836015eb",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "temporal_local",
+      "file": "world0\\composite2.csh",
+      "passed": true,
+      "source_hash": "998dd6dd7f4a59f6f3821e65bfa9f2964543e27b19f4e0d55eedcdcf5e5839a0",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "temporal_local",
+      "file": "world0\\composite2.fsh",
+      "passed": true,
+      "source_hash": "e71100d24511c65cd087c521d21bb814c3878ef8a8e9dd8392369dc5ca4785b4",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "temporal_local",
+      "file": "world0\\shadow.vsh",
+      "passed": true,
+      "source_hash": "ae44cc6152841452d16e0001ad7707b132134094514a3a8ddfdad3b370a8f922",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "temporal_local",
+      "file": "world0\\gbuffers_water.vsh",
+      "passed": true,
+      "source_hash": "a78c300a0aea4c3d7d8a79f23f7a7665630fbf2a05d1973e5b653213f5f2a989",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "temporal_local",
+      "file": "world0\\deferred21.fsh",
+      "passed": true,
+      "source_hash": "c27483d727a50061ef78a222297da978c589f4b8562e7f65e2913799a91d98db",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "temporal_local",
+      "file": "world-1\\composite2.csh",
+      "passed": true,
+      "source_hash": "5a9a404b4ac9143550da9c4eb747d619f0268d5eb9a8c9da17b660ada1d4d35a",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "temporal_local",
+      "file": "world0\\shadowcomp.csh",
+      "passed": true,
+      "source_hash": "5a40ab504935945206947efd83611146bae7d6ba0b8f3e8d1d44ba53eb498101",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "temporal_local",
+      "file": "world0\\composite.fsh",
+      "passed": true,
+      "source_hash": "47e3342c6dce92c6dbbc9b12f9d3a4f4a77cc57cdc10d97b827779266df72acb",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "temporal_local",
+      "file": "world0\\deferred18.csh",
+      "passed": true,
+      "source_hash": "80c39e79023d99215b43aeea495bea1cf4e703c57343dfa8535600b8c70397ea",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "temporal_local",
+      "file": "world0\\deferred20.csh",
+      "passed": true,
+      "source_hash": "91f7e264f18d21be1171984154add07a35fdb257d3f7ffa587d8a057fba8cdc7",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "temporal_local",
+      "file": "world0\\deferred50.fsh",
+      "passed": true,
+      "source_hash": "86f2911feb0877021eb7dd0dbba851e5bd1d12b2d1e4233032b7453f67d42e07",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "temporal_local",
+      "file": "world0\\gbuffers_basic.vsh",
+      "passed": true,
+      "source_hash": "3f532f03adb5f6deacf7c4177336c9e9177b5412d8b1306696ae5d48febd3906",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "temporal_local",
+      "file": "world0\\composite31.fsh",
+      "passed": true,
+      "source_hash": "46e876abcf5229acc5f3f51251b955ce5e9b22cd90539029413e95ba3984f91e",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "temporal_local",
+      "file": "world0\\final.fsh",
+      "passed": true,
+      "source_hash": "e6a0468ac7572f124d35b09e422eb7131833c20531c8abe88ed8d200a3d23a7e",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "fixed_area",
+      "file": "world0\\composite2.csh",
+      "passed": true,
+      "source_hash": "4d27316eed0672091df945a337f83ece49f80271c8acb6224139221ecf6e90ee",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "fixed_area",
+      "file": "world0\\composite2.fsh",
+      "passed": true,
+      "source_hash": "876c7949acea65f9c157efe5c1e0a9813740ac674cb275f60d1e3362198e845a",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "fixed_area",
+      "file": "world0\\shadow.vsh",
+      "passed": true,
+      "source_hash": "fe157a63d0133fd52c5d9c179bcf00a770de6e403ebfdb3135661c119d030cba",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "fixed_area",
+      "file": "world0\\gbuffers_water.vsh",
+      "passed": true,
+      "source_hash": "583e7813d36ede7d202e383e2f24d336513cb12f9405326b17d62675bb4489a4",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "fixed_area",
+      "file": "world0\\deferred21.fsh",
+      "passed": true,
+      "source_hash": "518da5bf4d4029d127e34c2df5605edc3b7f0d79fddc317d6ae73cb1a9d58185",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "fixed_area",
+      "file": "world-1\\composite2.csh",
+      "passed": true,
+      "source_hash": "e8e4d2d777971adcfdebef4d98055e7babb0753997ae0c1056266ac6cf33d892",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "fixed_area",
+      "file": "world0\\shadowcomp.csh",
+      "passed": true,
+      "source_hash": "8eb8e13ba8712d74a3a1c319dd8259da0863048577b2e0604f7785242ff78d2d",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "fixed_area",
+      "file": "world0\\composite.fsh",
+      "passed": true,
+      "source_hash": "b5a10c6d2ca06be0436fd71fb9be52a0cdf21fdf9ae02ef0b5e70e33b63657d4",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "fixed_area",
+      "file": "world0\\deferred18.csh",
+      "passed": true,
+      "source_hash": "a73080a937e45945a1514cbafddac0e89012e842b6a69bdf36a92659df918dff",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "fixed_area",
+      "file": "world0\\deferred20.csh",
+      "passed": true,
+      "source_hash": "0c2ee0abfc3c7bb55ef2b2db4bd8b3f1fa6a6e1c237b1346d41a74f4c8757682",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "fixed_area",
+      "file": "world0\\deferred50.fsh",
+      "passed": true,
+      "source_hash": "9ddd805c7c207ae0ceb46b75514775bae0ecb86fbc722a1f146c067f91495cc2",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "fixed_area",
+      "file": "world0\\gbuffers_basic.vsh",
+      "passed": true,
+      "source_hash": "84d13f5b38fc685b9c2b054cb3569ea91e210531fef528a7a0f42f06e9292d23",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "fixed_area",
+      "file": "world0\\composite31.fsh",
+      "passed": true,
+      "source_hash": "8ee58df7eb2d895dd2ccc05eb5c502dba496c4e4f9cfd62742c3179fdc5bd4a6",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "fixed_area",
+      "file": "world0\\final.fsh",
+      "passed": true,
+      "source_hash": "9bc2338a4aac5329319b0dfde193844d702ed59652f7c9ddbbee273304a437c3",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "hard_local",
+      "file": "world0\\composite2.csh",
+      "passed": true,
+      "source_hash": "03e83c365a6bc27cc8055556539de14ac974183bbf74d3faf718af36bf3c52a0",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "hard_local",
+      "file": "world0\\composite2.fsh",
+      "passed": true,
+      "source_hash": "17fb7e0d080fe9e96cf5896c7660709c6c22675b238872f0b0125746db35b976",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "hard_local",
+      "file": "world0\\shadow.vsh",
+      "passed": true,
+      "source_hash": "d0ea2dd39bbc13c438b9cc51282f9f1e8a584417d3e510b68b2b534d047c6fe2",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "hard_local",
+      "file": "world0\\gbuffers_water.vsh",
+      "passed": true,
+      "source_hash": "f63d42ce700ff8880e4b23ed19cb9bc5ce27f5040ac6af999206c07f8e34a8a3",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "hard_local",
+      "file": "world0\\deferred21.fsh",
+      "passed": true,
+      "source_hash": "233cc9b736bf637ac37a7157407dfc5516676ca14751a6beb30d30bdb5df85e0",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "hard_local",
+      "file": "world-1\\composite2.csh",
+      "passed": true,
+      "source_hash": "3dd175dbece1924f6e1c63e18bdbd2c540afa8db5de2df29c8dc22aca7f876b0",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "hard_local",
+      "file": "world0\\shadowcomp.csh",
+      "passed": true,
+      "source_hash": "7198f698faf5c075ee9683b4f8a89857f40afc541bacd10515e3a6ec7d686c2e",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "hard_local",
+      "file": "world0\\composite.fsh",
+      "passed": true,
+      "source_hash": "792c57c52546ecd37ddf05c20dc884e20a1ae0db79a2ce546e884a1424aa6066",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "hard_local",
+      "file": "world0\\deferred18.csh",
+      "passed": true,
+      "source_hash": "ce6391cd56890ea30c088b04cc5c8fb9d102c0e767bdf191c64d1d93b95db9ed",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "hard_local",
+      "file": "world0\\deferred20.csh",
+      "passed": true,
+      "source_hash": "8f6f0026a34fa61023e3a2600fd65349af89d9f23a7a0b6be76fa2a7984e1cec",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "hard_local",
+      "file": "world0\\deferred50.fsh",
+      "passed": true,
+      "source_hash": "4c31dc8b7c87ef78cd8561f21fec41d5e923da93fed966588503e5681e5c88b6",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "hard_local",
+      "file": "world0\\gbuffers_basic.vsh",
+      "passed": true,
+      "source_hash": "2f49c86edf9643b22e5e810da3c7fea3a93ea8010ae978bae588c729c1d214d4",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "hard_local",
+      "file": "world0\\composite31.fsh",
+      "passed": true,
+      "source_hash": "e00e4a1ff52821b629e64a8238e40e8851869d1fadbdf63c598938d1c0963191",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "hard_local",
+      "file": "world0\\final.fsh",
+      "passed": true,
+      "source_hash": "a3b8fae4ae96016a8acf0d8709829934ec29e7381b88b986ef3d112b0d87c8fa",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "custom_lights",
+      "file": "world0\\composite2.csh",
+      "passed": true,
+      "source_hash": "68e045d077825a41eae03554f46e8e6063a364db271a6212b41176398c76034c",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "custom_lights",
+      "file": "world0\\composite2.fsh",
+      "passed": true,
+      "source_hash": "cd0121755f905b4f125007db1dae6bd6804a4852d5bee06a0d6d45a26045c00c",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "custom_lights",
+      "file": "world0\\shadow.vsh",
+      "passed": true,
+      "source_hash": "d27ea76295abb7bfd6437d0fc056f23e1e7c2cf43061879f0a5749f09fc047f3",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "custom_lights",
+      "file": "world0\\gbuffers_water.vsh",
+      "passed": true,
+      "source_hash": "edea1fb36e09b3f723a7e0415e1a9173e1f9bdea60c03ee28c2e7c35f985c15b",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "custom_lights",
+      "file": "world0\\deferred21.fsh",
+      "passed": true,
+      "source_hash": "5fcea3b5f63152ad19a5bb41682854f823e13e2bf7300203b595deeab62bee3f",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "custom_lights",
+      "file": "world-1\\composite2.csh",
+      "passed": true,
+      "source_hash": "6d424f2b31b587593e40b295f4a9fb0d155dafddf113d8495c922ff60dbe310c",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "custom_lights",
+      "file": "world0\\shadowcomp.csh",
+      "passed": true,
+      "source_hash": "d17699dea87c0e74bd96c27a5e7b01727643e1584eea698351ab1ee32d28abac",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "custom_lights",
+      "file": "world0\\composite.fsh",
+      "passed": true,
+      "source_hash": "2242157d37257c9bc22668d98b23cf59b53309c6db759154b817339aedffdae4",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "custom_lights",
+      "file": "world0\\deferred18.csh",
+      "passed": true,
+      "source_hash": "e6e6455dc5fc3020bf51d02b15ba9dec61cd4654ea4d77b601084993dd2f154d",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "custom_lights",
+      "file": "world0\\deferred20.csh",
+      "passed": true,
+      "source_hash": "c2b067289c22ec240113ac0aa97435dfbee4b98f103d6397539e08f870118d11",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "custom_lights",
+      "file": "world0\\deferred50.fsh",
+      "passed": true,
+      "source_hash": "167eda3b4b893284af92bf02cf54fe28dafada966f3a41af03649302c7ba2766",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "custom_lights",
+      "file": "world0\\gbuffers_basic.vsh",
+      "passed": true,
+      "source_hash": "1b0552a8def96124aa2b1fce219814ff3d0f062c1f906225f32c4f17f6bdd681",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "custom_lights",
+      "file": "world0\\composite31.fsh",
+      "passed": true,
+      "source_hash": "eba304780166b43d03dfc85343dfd8d1b17e8519e6dfaca8f04284d37c68d3cc",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "custom_lights",
+      "file": "world0\\final.fsh",
+      "passed": true,
+      "source_hash": "9881054600bac922fde8cc916baa7915e1e6698b7a4c4bd9663a5bd6184c225d",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "flashlight",
+      "file": "world0\\composite2.csh",
+      "passed": true,
+      "source_hash": "409334d14467bdba7c8c3a372024651afb72fecd19e0402f28d45794bb8b30a0",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "flashlight",
+      "file": "world0\\composite2.fsh",
+      "passed": true,
+      "source_hash": "5c8b72659805cccd930f19955436c129eaf096590eb00446cc55aec5f54fbe92",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "flashlight",
+      "file": "world0\\shadow.vsh",
+      "passed": true,
+      "source_hash": "68737458306042a26cebf645882c9fe3f08ee5653c7a70378c7698269d68eadc",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "flashlight",
+      "file": "world0\\gbuffers_water.vsh",
+      "passed": true,
+      "source_hash": "b138e01a8b5d39820dd8d70675fe96ce97ddac5568e3f36937cf5f95c2a151ce",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "flashlight",
+      "file": "world0\\deferred21.fsh",
+      "passed": true,
+      "source_hash": "a0527f3549e49c99a2f39adbc8bfaf0c1ee5f4d51a01d465b40c028db31bc4fe",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "flashlight",
+      "file": "world-1\\composite2.csh",
+      "passed": true,
+      "source_hash": "794a87522b9ce00c33c52677c483118669df9ef1ffce7b7712c8acb48d9d4cf5",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "flashlight",
+      "file": "world0\\shadowcomp.csh",
+      "passed": true,
+      "source_hash": "c5e86f6a168470899e0871ff81438bd81d6654c63ad2ae3d510eff6e05427c46",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "flashlight",
+      "file": "world0\\composite.fsh",
+      "passed": true,
+      "source_hash": "11a33f84a9e0815f12d93470868e6436a3e4625aa57dabbee5e795b9e7573a90",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "flashlight",
+      "file": "world0\\deferred18.csh",
+      "passed": true,
+      "source_hash": "706d33cf4e2e7a2065f8429a9f82b8a8d830628f805762604dfac671713c6f87",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "flashlight",
+      "file": "world0\\deferred20.csh",
+      "passed": true,
+      "source_hash": "47d616c99b4783d86880878e588056638d9d9a1de1c1ee9feff70ca0b6bdb51a",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "flashlight",
+      "file": "world0\\deferred50.fsh",
+      "passed": true,
+      "source_hash": "4e2736ade43e7965ece1c37f6330f42ad7c56dde32e272a825216ab2c238b679",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "flashlight",
+      "file": "world0\\gbuffers_basic.vsh",
+      "passed": true,
+      "source_hash": "e19bc9b627e7072a02d957f163b1fd767ec167edb9ddf130006d1786c0bbd680",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "flashlight",
+      "file": "world0\\composite31.fsh",
+      "passed": true,
+      "source_hash": "cd90284afa2edcbb5efa99cb63aaa9646aa36f14b3fc61125baae4c81f29fe9a",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "flashlight",
+      "file": "world0\\final.fsh",
+      "passed": true,
+      "source_hash": "7a750f091c1a7ea92316f60a4d5dbb1c28abd6bc6a8421d88d339c6404365f9e",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "flashlight_custom",
+      "file": "world0\\composite2.csh",
+      "passed": true,
+      "source_hash": "f08dc9988235d859252e3b7aa5a55bebd501f179afb9f74ab624a6c9be57d64c",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "flashlight_custom",
+      "file": "world0\\composite2.fsh",
+      "passed": true,
+      "source_hash": "03fbcc8566f1dce3bfbb0c10e646a0c9662d4f0902960b6bb4ce4505529d9150",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "flashlight_custom",
+      "file": "world0\\shadow.vsh",
+      "passed": true,
+      "source_hash": "a250a4e9c0a7af7655cf052b46140ea8a3b5f3ff094996a7ad5039ed86f5d89a",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "flashlight_custom",
+      "file": "world0\\gbuffers_water.vsh",
+      "passed": true,
+      "source_hash": "d4c747ea8d0db0481bb887a97cbc50a00cdbc27904f258a35957dff754d737f9",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "flashlight_custom",
+      "file": "world0\\deferred21.fsh",
+      "passed": true,
+      "source_hash": "fe7d1e1d4337834be04008486b26b7051d48f3af8e3d792bb5e53bc7efc845a6",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "flashlight_custom",
+      "file": "world-1\\composite2.csh",
+      "passed": true,
+      "source_hash": "8b3bf6db6778b74176d9d76b48bbf024661c785ea1a06f5fc8ba761355aed882",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "flashlight_custom",
+      "file": "world0\\shadowcomp.csh",
+      "passed": true,
+      "source_hash": "56cad611cc67fe5f2d953df3e7ab7042f173e7047df6ddfc8cedaa59e32e274d",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "flashlight_custom",
+      "file": "world0\\composite.fsh",
+      "passed": true,
+      "source_hash": "ac58d5ba144f11f01e580ee0b890366c12e7527b13b437fbe2e9b331df9f893d",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "flashlight_custom",
+      "file": "world0\\deferred18.csh",
+      "passed": true,
+      "source_hash": "09e1bbb704db6228fae7728b51062ac3763056e481b4ecd5bcab30fbefcc5269",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "flashlight_custom",
+      "file": "world0\\deferred20.csh",
+      "passed": true,
+      "source_hash": "bf8cfd550a05f1007cd08551df55502a7fae1ad91f6af1711b2f2d4ca006907c",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "flashlight_custom",
+      "file": "world0\\deferred50.fsh",
+      "passed": true,
+      "source_hash": "f5f7b2ed38aa14d096b4dbe960f2306105113fc1f4b1a84efb21f52c95cfa6f9",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "flashlight_custom",
+      "file": "world0\\gbuffers_basic.vsh",
+      "passed": true,
+      "source_hash": "ff36d42f2ad8349f9090c646427aa8e984f29b3d6af77dc2af29695440f8b498",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "flashlight_custom",
+      "file": "world0\\composite31.fsh",
+      "passed": true,
+      "source_hash": "6025ea4dba09bb5eb2fb89ccf1fd65b2093e96d5ac8da5ce2cf021479ce61106",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "flashlight_custom",
+      "file": "world0\\final.fsh",
+      "passed": true,
+      "source_hash": "ed902fc99325de85d18e032655b322e7e9a7c0e9ee1a0255e9f9a4978a4c2f02",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "hand_color_sampling",
+      "file": "world0\\composite2.csh",
+      "passed": true,
+      "source_hash": "567a0985774d01deca26406a9fb6c84167ce3723726992750532719b776fd6e1",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "hand_color_sampling",
+      "file": "world0\\composite2.fsh",
+      "passed": true,
+      "source_hash": "3b354b3bdf1555e6d021d9d8169fd7897e0379db1d7dd8f0277141086679fba7",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "hand_color_sampling",
+      "file": "world0\\shadow.vsh",
+      "passed": true,
+      "source_hash": "36704f0a94476da6b52eae8e5acacc000b1a27dfc063d8d513337ec3fceae236",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "hand_color_sampling",
+      "file": "world0\\gbuffers_water.vsh",
+      "passed": true,
+      "source_hash": "5e15148c34fa36b4f3668ce6ca083697425810c50ca9422cfd0e7f1b8e476770",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "hand_color_sampling",
+      "file": "world0\\deferred21.fsh",
+      "passed": true,
+      "source_hash": "f754ccc08266924f7261a9bec0fbf5695a734089ab77a9ac2ef77635768d3fa5",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "hand_color_sampling",
+      "file": "world-1\\composite2.csh",
+      "passed": true,
+      "source_hash": "ff5319eb7e6ae8ccbdae8e7bcf787d57c5656c149a52a1b6875b41ad606f47a6",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "hand_color_sampling",
+      "file": "world0\\shadowcomp.csh",
+      "passed": true,
+      "source_hash": "fbb6237e98b3ee36d6c0658a733e82a141a9668e4f03c3d92727904be1f97413",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "hand_color_sampling",
+      "file": "world0\\composite.fsh",
+      "passed": true,
+      "source_hash": "dcc9b1028402fa53d2003eb689149264fff79a4b39bda7b1f0345577d63c61de",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "hand_color_sampling",
+      "file": "world0\\deferred18.csh",
+      "passed": true,
+      "source_hash": "72f52324989cc06865883a017ec9e1352f05ace39f26900eb53ac4d6a37372e8",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "hand_color_sampling",
+      "file": "world0\\deferred20.csh",
+      "passed": true,
+      "source_hash": "fa87a03fd50dad91c973cce070865e8f245bb00a0ca8faef1486c80a7ed593c0",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "hand_color_sampling",
+      "file": "world0\\deferred50.fsh",
+      "passed": true,
+      "source_hash": "994323d408153b1b6f6b00fdc8bfd15192c950f905e7a851260bd18e2b34d9a6",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "hand_color_sampling",
+      "file": "world0\\gbuffers_basic.vsh",
+      "passed": true,
+      "source_hash": "b2a41b04ec022aa19d64c3d66e90e2f80f364b9606a0754d75369153c7ea1a60",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "hand_color_sampling",
+      "file": "world0\\composite31.fsh",
+      "passed": true,
+      "source_hash": "6e583fc0af709795224c30e16359ba0ce713861ab0f0284c1caa575a362534d1",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "hand_color_sampling",
+      "file": "world0\\final.fsh",
+      "passed": true,
+      "source_hash": "863ec3dc8a79abbec62865adf0953a51de4323ef9197317edf7af6e867103972",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "lights_zero",
+      "file": "world0\\composite2.csh",
+      "passed": true,
+      "source_hash": "6ccf5d56d31b2a273de446a7b2b2c278a8d8815be0421fe98534172b35e0f22f",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "lights_zero",
+      "file": "world0\\composite2.fsh",
+      "passed": true,
+      "source_hash": "ea8262d849ed56d2526bc097451b4c9b37d10deefa5a9fe3b1b31766b493fb71",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "lights_zero",
+      "file": "world0\\shadow.vsh",
+      "passed": true,
+      "source_hash": "9bc808b48d1fb76e4143c8b13851eec955c803d3642bd62d858dba5731f09b6d",
+      "reused_exact_source": true
+    },
+    {
+      "variant": "lights_zero",
+      "file": "world0\\gbuffers_water.vsh",
+      "passed": true,
+      "source_hash": "6d707e2652bd4ba3e759f1f9397155ae33da9169de4bc06008fcf70e32fd6e82",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "lights_zero",
+      "file": "world0\\deferred21.fsh",
+      "passed": true,
+      "source_hash": "3131ace118212aecdfea062e4de35a342b2722296e8f3e021d56c02ca345fbaa",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "lights_zero",
+      "file": "world-1\\composite2.csh",
+      "passed": true,
+      "source_hash": "edcc71bc8706dc7135c8367b6c4420a96aac51037134c9cb8d221537178c6fd7",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "lights_zero",
+      "file": "world0\\shadowcomp.csh",
+      "passed": true,
+      "source_hash": "2bbdfc27f364c83a8f0e452e0b40725727566d6ae504a608adf42f80b8efaee3",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "lights_zero",
+      "file": "world0\\composite.fsh",
+      "passed": true,
+      "source_hash": "59284ff2dc79e5d1d921ae0fd5b9976de66659446cbce505e4ae583cfd84b2ed",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "lights_zero",
+      "file": "world0\\deferred18.csh",
+      "passed": true,
+      "source_hash": "08ddd77bf9af4cb912163b6c11db8a968e618d9f49857c9cd09a8a3e3824d569",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "lights_zero",
+      "file": "world0\\deferred20.csh",
+      "passed": true,
+      "source_hash": "fc5a4604fb002a91fb4db46b3a8640fc9d55f06e0d2a1f5f8fd43810c3926522",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "lights_zero",
+      "file": "world0\\deferred50.fsh",
+      "passed": true,
+      "source_hash": "496aa8e08a8cd92b6c67bca24c1850994097b1212deb83bb38c14367609c1b27",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "lights_zero",
+      "file": "world0\\gbuffers_basic.vsh",
+      "passed": true,
+      "source_hash": "cf83e3d4559f1e0deb2971f2271236f7984c77a572c0a881b6448a193522fc8a",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "lights_zero",
+      "file": "world0\\composite31.fsh",
+      "passed": true,
+      "source_hash": "6a27f2878a54ba1a3789ba14ab477b6a8242f5a823329c8b4e9754a6ff86fffe",
+      "reused_exact_source": false
+    },
+    {
+      "variant": "lights_zero",
+      "file": "world0\\final.fsh",
+      "passed": true,
+      "source_hash": "016b6c04143781a4a94d24fdd27b9b33d5556672f5f102f60de94aeb5833dc3f",
+      "reused_exact_source": false
+    }
+  ]
+}

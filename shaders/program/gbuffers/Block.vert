@@ -1,3 +1,4 @@
+// Revelation RT v3 modifications, 2026-10-26. Apache-2.0.
 /*
 --------------------------------------------------------------------------------
 
@@ -12,6 +13,7 @@
 //======// Utility //=============================================================================//
 
 #include "/lib/Utility.glsl"
+#include "/lib/lighting/SceneID.glsl"
 
 //======// Output //==============================================================================//
 
@@ -43,7 +45,7 @@ void main() {
 
 	lightmap = saturate((gl_MultiTexCoord1.xy - 8.0) * rcp(232.0));
 
-	materialID = uint(blockEntityId - 10000);
+	materialID = uint(max(RTBaseBlockID(blockEntityId) - 10000, 1));
 
 	vec3 viewPos = transMAD(gl_ModelViewMatrix, gl_Vertex.xyz);
 	worldPos = transMAD(gbufferModelViewInverse, viewPos);

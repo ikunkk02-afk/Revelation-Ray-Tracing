@@ -1,0 +1,103 @@
+{
+  "source_digest": "d34a83f9aa4bfad4480c0b38bfb629c89ff387ccf95871443a402f7fae7e58e6",
+  "passed": true,
+  "renderer": "NVIDIA GeForce RTX 5060 Laptop GPU/PCIe/SSE2",
+  "runtime_game_validation": false,
+  "tests": [
+    {
+      "name": "Default v9.2 torch intensity and color retained",
+      "passed": true
+    },
+    {
+      "name": "Natural torch and lantern retain the same prior palette",
+      "passed": true
+    },
+    {
+      "name": "Omnidirectional torch still lights outside the future beam",
+      "passed": true
+    },
+    {
+      "name": "Block brightness zero removes source radiance and emission",
+      "passed": true
+    },
+    {
+      "name": "Block brightness no longer changes handheld brightness",
+      "passed": true
+    },
+    {
+      "name": "Block brightness scales direct radiance and emission linearly",
+      "passed": true
+    },
+    {
+      "name": "Custom block color reaches both direct light and source emission",
+      "passed": true
+    },
+    {
+      "name": "Custom block color does not tint held light",
+      "passed": true
+    },
+    {
+      "name": "Custom handheld color reaches actual surface illumination",
+      "passed": true
+    },
+    {
+      "name": "Handheld brightness scales independently and linearly",
+      "passed": true
+    },
+    {
+      "name": "Zero handheld brightness avoids both illumination and shadow rays",
+      "passed": true
+    },
+    {
+      "name": "Flashlight lights the crosshair but not its sides or behind it",
+      "passed": true
+    },
+    {
+      "name": "Flashlight extends to configured range with a finite cutoff",
+      "passed": true
+    },
+    {
+      "name": "Flashlight retains one shadow ray; outside-beam pixels trace none",
+      "passed": true,
+      "per_point_counts": [
+        1,
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1
+      ]
+    },
+    {
+      "name": "All three torch types enter beam mode",
+      "passed": true
+    },
+    {
+      "name": "Lanterns and luminous blocks remain omnidirectional",
+      "passed": true
+    },
+    {
+      "name": "Offhand torch also supports the flashlight",
+      "passed": true
+    },
+    {
+      "name": "Beam field of view changes the illuminated region",
+      "passed": true
+    },
+    {
+      "name": "Softness zero is finite and softness fades only the rim",
+      "passed": true
+    },
+    {
+      "name": "Flashlight remains occluded by a solid wall",
+      "passed": true
+    },
+    {
+      "name": "Flashlight retains stained-glass absorption and tint",
+      "passed": true
+    }
+  ],
+  "scope": "Production light controls, handheld illumination, beam rejection, ray counts and real opaque/glass traversal"
+}

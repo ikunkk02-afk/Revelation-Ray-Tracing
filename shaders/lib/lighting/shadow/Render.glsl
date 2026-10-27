@@ -1,3 +1,4 @@
+// Modified for the Revelation Ray Tracing fork, 2026-10-27. See MODIFICATIONS.md; original license notices retained.
 #if !defined INCLUDE_LIB_SHADOW_RENDER
 #define INCLUDE_LIB_SHADOW_RENDER
 
@@ -31,6 +32,9 @@ uniform sampler2D shadowcolor0;
 uniform sampler2D shadowcolor1;
 
 #include "Caustic.glsl"
+#ifdef RT_GLASS_ENABLED
+#include "/lib/lighting/GlassGrid.glsl"
+#endif
 
 float BlockerSearch(vec3 shadowScreenPos, float dither, float searchScale) {
 	float blockerDepth = 0.0;
@@ -62,6 +66,9 @@ vec3 PercentageCloserFilter(vec3 shadowScreenPos, vec3 worldPos, float dither, f
 	vec3 color = vec3(0.0);
 	vec4 waterData = vec4(0.0); // (encoded normal, count)
 	float waterDepth = 0.0;
+#ifdef RT_GLASS_ENABLED
+    vec3 localGlassTransmission = vec3(-1.0);
+#endif
 
 	for (uint i = 0u; i < PCSS_FILTER_SAMPLES; ++i) {
 		vec2 offset = sampleVogelDisk(i, PCSS_FILTER_SAMPLES, dither);
@@ -81,7 +88,14 @@ vec3 PercentageCloserFilter(vec3 shadowScreenPos, vec3 worldPos, float dither, f
 					waterData += vec4(waterSample.xyz, 1.0);
 					waterDepth += sampleDepth0 - shadowScreenPos.z;
                 } else {
-                    color += cube(texelFetch(shadowcolor0, sampleTexel, 0).rgb);
+                    vec3 glassTransmission = cube(texelFetch(shadowcolor0, sampleTexel, 0).rgb);
+#ifdef RT_GLASS_ENABLED
+                    if (waterSample.w > 0.1 && waterSample.w < 0.4 && RTSolarGlassCaptured(worldPos, shadowScreenPos.z, sampleDepth0)) {
+                        if (localGlassTransmission.x < 0.0) localGlassTransmission = RTSolarGlassTransmission(worldPos);
+                        glassTransmission = localGlassTransmission;
+                    }
+#endif
+                    color += glassTransmission;
                 }
             } else {
                 color += 1.0;

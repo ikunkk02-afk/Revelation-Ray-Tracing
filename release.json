@@ -1,0 +1,13 @@
+{
+  "version": "9.3",
+  "tag": "v9.3",
+  "artifact": "Revelation-RT-v9.3-LightControls",
+  "date": "2026-10-27",
+  "minecraft": "1.21.1",
+  "loader": "Fabric",
+  "iris_validation_target": "1.8.14-beta.1",
+  "opengl": "4.6",
+  "license": "Apache-2.0",
+  "upstream": "HaringPro/Revelation",
+  "upstream_commit": "d5911393856d9dd97375b46a1a088e6b8fddd755"
+}

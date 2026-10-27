@@ -1,3 +1,10 @@
 /.vibris/
 SHADER_PIPELINE.md
 __pycache__/
+
+# Fork build outputs and temporary validation products
+/dist/
+*.pyc
+/validation/iris-classes*/
+/validation/*.log
+/validation/failed_shader.glsl

@@ -1,3 +1,4 @@
+// Modified for the Revelation Ray Tracing fork, 2026-10-27. See MODIFICATIONS.md; original license notices retained.
 /*
 --------------------------------------------------------------------------------
 
@@ -39,6 +40,7 @@ out vec4 specularOut;
 #include "/lib/atmosphere/Common.glsl"
 
 #include "/lib/surface/Material.glsl"
+#include "/lib/surface/Selection.glsl"
 
 #include "/lib/lighting/BRDF.glsl"
 #include "/lib/lighting/SSR.glsl"
@@ -49,6 +51,7 @@ void main() {
 
 	ivec2 texelPos = ivec2(gl_FragCoord.xy);
 
+    if (loadMaterialPack(texelPos).y == rtSelectionMaterial) return;
 	Material material = GetMaterialData(Unpack2x8U(loadMaterialPack(texelPos).z));
 	if (material.specularMask) {
 		vec3 screenPos = vec3(gl_FragCoord.xy * scaledTexelSize, loadDepth0(texelPos));

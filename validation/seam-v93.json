@@ -1,0 +1,112 @@
+{
+  "source_digest": "d34a83f9aa4bfad4480c0b38bfb629c89ff387ccf95871443a402f7fae7e58e6",
+  "renderer": "NVIDIA GeForce RTX 5060 Laptop GPU/PCIe/SSE2",
+  "passed": true,
+  "runtime_game_validation": false,
+  "scenes": [
+    {
+      "scene": "ceiling strip, 12 lamps",
+      "max_error": 0.0,
+      "tile_step_excess": 0.0,
+      "shipped_tile_step_excess": 0.030114,
+      "shipped_ratio_to_local": 3.79,
+      "minecraft_fps_measured": false
+    },
+    {
+      "scene": "staggered 12 lamps",
+      "max_error": 0.0,
+      "tile_step_excess": 2.2e-05,
+      "shipped_tile_step_excess": 0.156858,
+      "shipped_ratio_to_local": 2.675,
+      "minecraft_fps_measured": false
+    },
+    {
+      "scene": "random 10 lamps",
+      "max_error": 0.0,
+      "tile_step_excess": 7e-06,
+      "shipped_tile_step_excess": 0.035183,
+      "shipped_ratio_to_local": 2.888,
+      "minecraft_fps_measured": false
+    }
+  ],
+  "tests": [
+    {
+      "name": "ceiling strip, 12 lamps: mask integration equals exhaustive integration",
+      "passed": true,
+      "max_error": 0.0
+    },
+    {
+      "name": "ceiling strip, 12 lamps: no discontinuity on the 16 px tile grid",
+      "passed": true,
+      "tile_excess": 0.0,
+      "ratio_to_local_variation": 0.0
+    },
+    {
+      "name": "ceiling strip, 12 lamps: shipped v7.1 selector still chains 16 px blocks at lamp junctions",
+      "passed": true,
+      "tile_excess": 0.030114,
+      "ratio_to_local_variation": 3.79
+    },
+    {
+      "name": "ceiling strip, 12 lamps: tile masks contain every contributing light",
+      "passed": true,
+      "missing": [],
+      "missing_count": 0,
+      "lights": 12
+    },
+    {
+      "name": "staggered 12 lamps: mask integration equals exhaustive integration",
+      "passed": true,
+      "max_error": 0.0
+    },
+    {
+      "name": "staggered 12 lamps: no discontinuity on the 16 px tile grid",
+      "passed": true,
+      "tile_excess": 2.2e-05,
+      "ratio_to_local_variation": 0.0
+    },
+    {
+      "name": "staggered 12 lamps: shipped v7.1 selector still chains 16 px blocks at lamp junctions",
+      "passed": true,
+      "tile_excess": 0.156858,
+      "ratio_to_local_variation": 2.675
+    },
+    {
+      "name": "staggered 12 lamps: tile masks contain every contributing light",
+      "passed": true,
+      "missing": [],
+      "missing_count": 0,
+      "lights": 12
+    },
+    {
+      "name": "random 10 lamps: mask integration equals exhaustive integration",
+      "passed": true,
+      "max_error": 0.0
+    },
+    {
+      "name": "random 10 lamps: no discontinuity on the 16 px tile grid",
+      "passed": true,
+      "tile_excess": 7e-06,
+      "ratio_to_local_variation": 0.001
+    },
+    {
+      "name": "random 10 lamps: shipped v7.1 selector still chains 16 px blocks at lamp junctions",
+      "passed": true,
+      "tile_excess": 0.035183,
+      "ratio_to_local_variation": 2.888
+    },
+    {
+      "name": "random 10 lamps: tile masks contain every contributing light",
+      "passed": true,
+      "missing": [],
+      "missing_count": 0,
+      "lights": 10
+    },
+    {
+      "name": "local volumetric in-scattering is continuous across tile borders",
+      "passed": true,
+      "tile_excess": 3.1e-05,
+      "ratio_to_local_variation": 0.224
+    }
+  ]
+}

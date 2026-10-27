@@ -1,0 +1,28 @@
+// Revelation RT v6, Apache-2.0. One 64-bit occupancy mask per 4^3 brick.
+#include "/lib/Utility.glsl"
+#include "/lib/lighting/SceneShapes.glsl"
+layout(local_size_x=4,local_size_y=4,local_size_z=4) in;
+const ivec3 workGroups=ivec3(4,4,4);
+layout(rgba32ui) writeonly uniform uimage3D rtLocalHierarchyImg;
+#ifdef RT_SCENE_ENABLED
+uniform usampler3D rtSceneGridTex;
+#endif
+#ifdef RT_GLASS_ENABLED
+uniform usampler3D rtGlassGridTex;
+#endif
+void main() {
+    ivec3 brick=ivec3(gl_GlobalInvocationID);
+    uvec4 masks=uvec4(0u);
+    for (uint i=0u;i<64u;++i) {
+        ivec3 cell=brick*4+ivec3(int(i&3u),int((i>>2u)&3u),int(i>>4u));
+        uint word=i>>5u,bit=1u<<(i&31u);
+#ifdef RT_SCENE_ENABLED
+        uint index=texelFetch(rtSceneGridTex,cell,0).r;
+        if(index>0u && index<rtSceneClassCount && RTSceneInfo(index).x!=0u) masks[int(word)]|=bit;
+#endif
+#ifdef RT_GLASS_ENABLED
+        if(texelFetch(rtGlassGridTex,cell,0).r!=0u) masks[int(word)+2]|=bit;
+#endif
+    }
+    imageStore(rtLocalHierarchyImg,brick,masks);
+}

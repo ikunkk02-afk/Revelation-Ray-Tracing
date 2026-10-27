@@ -1,0 +1,101 @@
+{
+  "source_digest": "d34a83f9aa4bfad4480c0b38bfb629c89ff387ccf95871443a402f7fae7e58e6",
+  "renderer": "NVIDIA GeForce RTX 5060 Laptop GPU/PCIe/SSE2",
+  "passed": true,
+  "runtime_game_validation": false,
+  "tests": [
+    {
+      "name": "All 4 lights match exhaustive GPU integration, including tile edges and tail",
+      "passed": true,
+      "max_error": 0.0,
+      "pixels": 3072
+    },
+    {
+      "name": "4 lights match independent inverse-square and cosine reference",
+      "passed": true,
+      "max_error": 4.535168579844484e-07,
+      "cpu_peak": 0.2896731093295373,
+      "gpu_peak": 0.28967317938804626,
+      "ratio": 0.9999997581463735
+    },
+    {
+      "name": "All 9 lights match exhaustive GPU integration, including tile edges and tail",
+      "passed": true,
+      "max_error": 0.0,
+      "pixels": 8385
+    },
+    {
+      "name": "9 lights match independent inverse-square and cosine reference",
+      "passed": true,
+      "max_error": 5.57637658216148e-07,
+      "cpu_peak": 0.3586034124274856,
+      "gpu_peak": 0.35860389471054077,
+      "ratio": 0.999998655109266
+    },
+    {
+      "name": "Shipped v7.1 control loses clustered-light energy; v8 restores it",
+      "passed": true,
+      "old_error": 0.0405149906873703,
+      "new_error": 0.0,
+      "control_error_share_of_peak": 0.11297993628424541
+    },
+    {
+      "name": "All 36 lights match exhaustive GPU integration, including tile edges and tail",
+      "passed": true,
+      "max_error": 0.0,
+      "pixels": 3072
+    },
+    {
+      "name": "36 lights match independent inverse-square and cosine reference",
+      "passed": true,
+      "max_error": 5.266444380147561e-06,
+      "cpu_peak": 1.1419912277653828,
+      "gpu_peak": 1.1419956684112549,
+      "ratio": 0.9999961115037518
+    },
+    {
+      "name": "Light insertion order does not change the image",
+      "passed": true
+    },
+    {
+      "name": "All 129 lights match exhaustive GPU integration, including tile edges and tail",
+      "passed": true,
+      "max_error": 0.0,
+      "pixels": 3072
+    },
+    {
+      "name": "129 lights match independent inverse-square and cosine reference",
+      "passed": true,
+      "max_error": 8.82116582268111e-06,
+      "cpu_peak": 3.163101998122706,
+      "gpu_peak": 3.1631085872650146,
+      "ratio": 0.9999979168776136
+    },
+    {
+      "name": "All 256 lights match exhaustive GPU integration, including tile edges and tail",
+      "passed": true,
+      "max_error": 0.0,
+      "pixels": 3072
+    },
+    {
+      "name": "256 lights match independent inverse-square and cosine reference",
+      "passed": true,
+      "max_error": 1.4260675310850957e-05,
+      "cpu_peak": 5.14998206771927,
+      "gpu_peak": 5.149989128112793,
+      "ratio": 0.9999986290469072
+    },
+    {
+      "name": "16-sample multi-light soft shadows match exhaustive integration",
+      "passed": true
+    },
+    {
+      "name": "Area-shadow pattern is independent of atomic light insertion order",
+      "passed": true
+    },
+    {
+      "name": "Multiple volumetric lights add without nearest-light switching",
+      "passed": true
+    }
+  ]
+}

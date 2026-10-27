@@ -1,7 +1,9 @@
+// Modified for the Revelation Ray Tracing fork, 2026-10-27. See MODIFICATIONS.md; original license notices retained.
 #if !defined INCLUDE_LIB_LIGHTING_COMMON
 #define INCLUDE_LIB_LIGHTING_COMMON
 
 #include "/lib/lighting/BRDF.glsl"
+#include "/lib/lighting/LightSourceControls.glsl"
 
 //================================================================================================//
 

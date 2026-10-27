@@ -1,3 +1,4 @@
+// Modified for the Revelation Ray Tracing fork, 2026-10-27. See MODIFICATIONS.md; original license notices retained.
 /*
 --------------------------------------------------------------------------------
 
@@ -47,13 +48,24 @@ layout(location = 0) out vec4 sceneOut;
 
 #include "/lib/lighting/BRDF.glsl"
 #include "/lib/lighting/SSRT.glsl"
+#include "/lib/lighting/GlassOptics.glsl"
 
-void CalculateTranslucentRefraction(inout vec3 sceneColor, ivec2 texelPos, vec3 viewPos, vec3 screenPos, bool waterMask) {
+void CalculateTranslucentRefraction(inout vec3 sceneColor, ivec2 texelPos, vec3 viewPos, vec3 screenPos, bool waterMask,
+    out float glassPathLength, out float glassExitTransmission) {
 	vec3 viewNormal = mat3(gbufferModelView) * FetchSurfaceNormal(texelPos);
 	vec3 viewDir = normalize(viewPos);
+    viewNormal = faceforward(viewNormal, viewDir, viewNormal);
+    glassPathLength = 0.0; glassExitTransmission = 1.0;
 
     float eta = waterMask ? (isEyeInWater == 1 ? WATER_IOR : 1.0 / WATER_IOR) : 1.0 / GLASS_IOR;
 	vec3 refractedDir = refract(viewDir, viewNormal, eta);
+    uint glassCode = uint(texelFetch(colortex12, texelPos, 0).z * 2047.0 + 0.5);
+#ifdef RT_PHYSICAL_GLASS
+    if (!waterMask && glassCode != 0u) {
+        if (!RTRefractGlass(viewPos, viewNormal, glassCode, viewPos, refractedDir, glassPathLength, glassExitTransmission)) return;
+    }
+#endif
+    if (dot(refractedDir, refractedDir) < 1e-8) return;
 
 	#ifdef RAYTRACED_REFRACTION
 		float dither = BlueNoise(texelPos, frameCounter);
@@ -75,8 +87,10 @@ void CalculateTranslucentRefraction(inout vec3 sceneColor, ivec2 texelPos, vec3 
 
             float t = dot(viewPosBack - viewPos, viewNormal) / denom;
             vec3 hitViewPos = viewPos + refractedDir * t;
+            if (t <= 0.0 || hitViewPos.z >= -near) break;
 
             vec3 hitScreenPos = ViewToScreenPos(hitViewPos);
+            if (any(lessThan(hitScreenPos.xy, vec2(0.0))) || any(greaterThanEqual(hitScreenPos.xy, vec2(1.0)))) break;
             ivec2 hitTexelPos = uvToTexelScaled(hitScreenPos.xy);
 
             vec3 screenPosBack = vec3(hitScreenPos.xy, loadDepth1(hitTexelPos));
@@ -168,10 +182,11 @@ void main() {
 	bool waterMask = materialID == 3u;
 
 	vec3 sceneColor = loadSceneMain(texelPos);
+    float glassPathLength = 0.0, glassExitTransmission = 1.0;
 
 	// Process refraction
 	if (glassMask || waterMask) {
-        CalculateTranslucentRefraction(sceneColor, texelPos, viewPos, screenPos, waterMask);
+        CalculateTranslucentRefraction(sceneColor, texelPos, viewPos, screenPos, waterMask, glassPathLength, glassExitTransmission);
 	}
 
 	#if defined LOD_MOD
@@ -200,7 +215,12 @@ void main() {
 		if (glassMask || waterMask) {
 			if (glassMask) {
 				// Absorption
-				sceneColor *= exp2(log2(albedo * oms(0.125 * translucentColor.a)) * approxSqrt(translucentColor.a + 0.25));
+                uint glassCode = uint(texelFetch(colortex12, texelPos, 0).z * 2047.0 + 0.5);
+#ifdef RT_PHYSICAL_GLASS
+                if (glassCode != 0u) sceneColor *= RTGlassAbsorption(glassCode, glassPathLength) * glassExitTransmission;
+                else
+#endif
+				sceneColor *= exp2(log2(max(albedo * oms(0.125 * translucentColor.a), vec3(1e-4))) * approxSqrt(translucentColor.a + 0.25));
 
 				// Emissive
 				sceneColor += (2.0 * EMISSIVE_BRIGHTNESS) * Unpack2x8UX(materialPack.x) * mean(albedo) * albedo;

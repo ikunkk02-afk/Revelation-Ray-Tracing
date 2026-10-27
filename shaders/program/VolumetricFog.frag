@@ -1,3 +1,4 @@
+// Modified for the Revelation Ray Tracing fork, 2026-10-27. See MODIFICATIONS.md; original license notices retained.
 /*
 --------------------------------------------------------------------------------
 
@@ -52,6 +53,9 @@ uniform sampler2D shadowcolor1;
 #endif
 
 #include "/lib/water/WaterFog.glsl"
+#if defined RT_LOCAL_LIGHTS && defined RT_LOCAL_VOLUMETRICS
+#include "/lib/lighting/LocalVolumetrics.glsl"
+#endif
 
 mat2x3 UnpackFogData(uvec2 data) {
 	return mat2x3(DecodeRGBE8U(data.x), DecodeRGBE8U(data.y));
@@ -60,6 +64,7 @@ mat2x3 UnpackFogData(uvec2 data) {
 //======// Main //================================================================================//
 void main() {
 	ivec2 texelPos = ivec2(gl_FragCoord.xy * 2.0);
+    if(any(greaterThanEqual(texelPos,ivec2(scaledViewSize)))) discard;
 
 	vec2 screenCoord = gl_FragCoord.xy * scaledTexelSize * 2.0;
 	vec3 screenPos = vec3(screenCoord, loadDepth0(texelPos));
@@ -92,6 +97,13 @@ void main() {
 		}
 	#endif
 
+#if defined RT_LOCAL_LIGHTS && defined RT_LOCAL_VOLUMETRICS
+    if(isEyeInWater==0) {
+        mat2x3 localFog=RTRaymarchLocalFog(gbufferModelViewInverse[3].xyz,worldPos,dither,texelPos);
+        volFogData[0]=volFogData[0]*sqrt(localFog[1])+localFog[0];
+        volFogData[1]*=localFog[1];
+    }
+#endif
 	// Temporal reprojection
 	vec3 prevViewPos = worldPos + cameraMovement * step(0.56, screenPos.z);
 	prevViewPos = transMAD(gbufferPreviousModelView, prevViewPos);
@@ -111,6 +123,10 @@ void main() {
 		mat2x3 reprojectedFog = UnpackFogData(reprojectedData.xy);
 
 		float blendWeight = 0.9;
+#if defined RT_LOCAL_LIGHTS && defined RT_LOCAL_VOLUMETRICS
+        float currentLuma=luminance(volFogData[0]),historyLuma=luminance(reprojectedFog[0]);
+        blendWeight*=exp2(-2.0*abs(currentLuma-historyLuma)/max(max(currentLuma,historyLuma),0.01));
+#endif
 		blendWeight *= exp2(abs(uintBitsToFloat(reprojectedData.z) + viewPos.z) * 32.0 / viewPos.z);
 
 		volFogData[0] = mix(volFogData[0], reprojectedFog[0], blendWeight);

@@ -1,3 +1,4 @@
+// Modified for the Revelation Ray Tracing fork, 2026-10-27. See MODIFICATIONS.md; original license notices retained.
 /*
 --------------------------------------------------------------------------------
 
@@ -12,16 +13,18 @@
 //======// Utility //=============================================================================//
 
 #include "/lib/Utility.glsl"
+#include "/lib/surface/Selection.glsl"
 
 //======// Output //==============================================================================//
 
 /* RENDERTARGETS: 6,7 */
 layout(location = 0) out vec4 albedoOut;
-layout(location = 1) out uvec2 materialOut;
+layout(location = 1) out uvec4 materialOut;
 
 //======// Input //===============================================================================//
 
 flat in vec4 vertColor;
+flat in uint selectionOverlay;
 in vec2 lightmap;
 
 //======// Uniform //=============================================================================//
@@ -42,6 +45,9 @@ void main() {
 
 	albedoOut = vec4(vertColor.rgb, 1.0);
 
-	materialOut.x = Pack2x8U(lightmap);
-	materialOut.y = lightmap.x > 0.999 ? 20u : 1u;
+	materialOut = uvec4(Pack2x8U(lightmap), lightmap.x > 0.999 ? 20u : 1u, 0u, 0u);
+    if (selectionOverlay != 0u) {
+        albedoOut.rgb = vec3(0.0);
+        materialOut = uvec4(0u, rtSelectionMaterial, 0u, 0u);
+    }
 }

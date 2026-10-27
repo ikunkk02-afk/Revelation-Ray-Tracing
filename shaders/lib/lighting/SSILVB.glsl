@@ -1,3 +1,4 @@
+// Modified for the Revelation Ray Tracing fork, 2026-10-27. See MODIFICATIONS.md; original license notices retained.
 #if !defined INCLUDE_LIB_LIGHTING_SSILVB
 #define INCLUDE_LIB_LIGHTING_SSILVB
 
@@ -8,8 +9,8 @@
 
 //================================================================================================//
 
-#define SSILVB_SLICE_COUNT 1 // [1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16]
-#define SSILVB_SAMPLE_COUNT 32 // [4 6 8 10 12 14 16 18 20 22 24 26 28 30 32 34 36 38 40 42 44 46 48 50 52 54 56 58 60 62 64]
+#define SSILVB_SLICE_COUNT 3 // [1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16]
+#define SSILVB_SAMPLE_COUNT 48 // [4 6 8 10 12 14 16 18 20 22 24 26 28 30 32 34 36 38 40 42 44 46 48 50 52 54 56 58 60 62 64]
 #define SSILVB_SECTOR_COUNT 32 // [4 8 16 32 64 128]
 #define SSILVB_HIT_THICKNESS 1.0 // [0.25 0.5 1.0 1.5 2.0 2.5 3.0 3.5 4.0 4.5 5.0 5.5 6.0 6.5 7.0 7.5 8.0]
 

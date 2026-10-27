@@ -1,8 +1,12 @@
+// Modified for the Revelation Ray Tracing fork, 2026-10-27. See MODIFICATIONS.md; original license notices retained.
 #if !defined INCLUDE_LIB_ATMOSPHERE_ATMOSPHERIC_FOG
 #define INCLUDE_LIB_ATMOSPHERE_ATMOSPHERIC_FOG
 
 #include "/lib/atmosphere/Rainbow.glsl"
 #include "/lib/atmosphere/clouds/Common.glsl"
+#if defined PASS_VOLUMETRIC_FOG && defined RT_GLASS_ENABLED && defined COLORED_VOLUMETRIC_FOG
+#include "/lib/lighting/GlassGrid.glsl"
+#endif
 
 uniform float biomeSandstorm;
 uniform float biomeSnowstorm;
@@ -122,9 +126,14 @@ mat2x3 RaymarchAtmosphericFog(vec3 rayStart, vec3 rayEnd, float dither, uint ste
 				ivec2 shadowTexel = ivec2(shadowScreenPos.xy * realShadowMapRes);
 				sampleShadow = vec3(texture(shadowtex1, shadowScreenPos));
 
-				float sampleDepth0 = step(shadowScreenPos.z, texelFetch(shadowtex0, shadowTexel, 0).x);
+                float rawGlassDepth = texelFetch(shadowtex0, shadowTexel, 0).x;
+				float sampleDepth0 = step(shadowScreenPos.z, rawGlassDepth);
 				if (sampleShadow.x != sampleDepth0) {
 					vec3 shadowColorSample = cube(texelFetch(shadowcolor0, shadowTexel, 0).rgb);
+#ifdef RT_GLASS_ENABLED
+                    float glassMarker = texelFetch(shadowcolor1, shadowTexel, 0).w;
+                    if (glassMarker > 0.1 && glassMarker < 0.4 && RTSolarGlassCaptured(rayPos, shadowScreenPos.z, rawGlassDepth)) shadowColorSample = RTSolarGlassTransmission(rayPos);
+#endif
 					sampleShadow = shadowColorSample * (sampleShadow - sampleDepth0) + vec3(sampleDepth0);
 				}
 			}

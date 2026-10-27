@@ -1,3 +1,4 @@
+// Revelation RT v3 modifications, 2026-10-26. Apache-2.0.
 #if !defined INCLUDE_LIB_UTILITY
 #define INCLUDE_LIB_UTILITY
 
@@ -14,6 +15,9 @@
 
 
 #include "/lib/Setting.glsl"
+#if defined RT_LOCAL_LIGHTS || defined RT_HANDHELD_SHADOWS
+#define RT_SCENE_ENABLED
+#endif
 
 #if defined VOXY || defined DISTANT_HORIZONS
 	#define LOD_MOD

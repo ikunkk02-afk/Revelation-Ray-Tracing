@@ -1,3 +1,4 @@
+// Modified for the Revelation Ray Tracing fork, 2026-10-27. See MODIFICATIONS.md; original license notices retained.
 /*
 --------------------------------------------------------------------------------
 
@@ -14,6 +15,7 @@
 //======// Utility //=============================================================================//
 
 #include "/lib/Utility.glsl"
+#include "/lib/surface/Selection.glsl"
 
 #define TONE_MAPPER 1 // [0 1 2 3 16 17 32 33 48]
 #define HDR_TONE_MAPPER 33 // [0 3 16 17 32 33]
@@ -173,6 +175,15 @@ void main() {
     // When super resolution is enabled, texelPos will be at the original resolution
 	ivec2 texelPos = ivec2(gl_FragCoord.xy);
     vec2 screenCoord = texelToUv(texelPos);
+    ivec2 selectionTexel = clamp(ivec2(screenCoord * scaledViewSize), ivec2(0), ivec2(scaledViewSize) - 1);
+    if (loadMaterialPack(selectionTexel).y == rtSelectionMaterial) {
+        color = RTSelectionDisplayColor();
+#ifdef HDR_ENABLED
+        color = sRGBToLinear(color) * sRGB_2_Rec2020;
+#endif
+        return;
+    }
+
 
 	#if EXPOSURE_MODE == MANUAL
 		float exposure = exp2(-MANUAL_EV);

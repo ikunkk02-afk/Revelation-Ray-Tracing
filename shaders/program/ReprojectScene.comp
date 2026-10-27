@@ -1,3 +1,4 @@
+// Revelation RT modifications, 2026-10-26. Apache-2.0.
 /*
 --------------------------------------------------------------------------------
 
@@ -23,6 +24,9 @@ const vec2 workGroupsRender = vec2(RENDER_SCALE, RENDER_SCALE);
 //======// Uniform //=============================================================================//
 
 writeonly restrict uniform image2D colorimg4;
+#ifdef RTGI_ENABLED
+layout(rgba16f) writeonly restrict uniform image2D colorimg10;
+#endif
 
 #include "/lib/universal/Uniform.glsl"
 
@@ -36,11 +40,41 @@ void main() {
 	uvec2 localPos = RemapThread16x16(gl_LocalInvocationIndex);
 	ivec2 texelPos = ivec2(localPos + gl_WorkGroupID.xy * gl_WorkGroupSize.xy);
 
-	float depth = loadDepth0(texelPos);
+    if (any(greaterThanEqual(texelPos, ivec2(scaledViewSize)))) return;
+    float depth = loadDepth0(texelPos);
+#ifdef RTGI_ENABLED
+    vec4 direct = vec4(0.0);
+    float rtDepth = depth;
+#if defined LOD_MOD
+    if (rtDepth >= 1.0) rtDepth = ViewToScreenDepth(ScreenToViewDepthLod(loadDepth0Lod(texelPos)));
+#endif
+    if (depth > 0.56 && rtDepth < 1.0 && frameCounter > 0 && !historyReset) {
+        vec3 viewPos = ScreenToViewPos(vec3(texelToUvScaled(texelPos), rtDepth));
+        vec3 worldPos = transMAD(gbufferModelViewInverse, viewPos) + cameraMovement;
+        vec3 prevView = transMAD(gbufferPreviousModelView, worldPos);
+        if (prevView.z < -near) {
+            vec3 ndc = projMAD(gbufferPreviousProjection, prevView) / -prevView.z;
+#ifdef SHOULD_APPLY_JITTER
+            ndc.xy += taaJitterPrev;
+#endif
+            vec2 uv = ndc.xy * 0.5 + 0.5;
+            if (all(greaterThanEqual(uv, vec2(0.0))) && all(lessThan(uv, vec2(1.0)))) {
+                vec4 history = textureLod(colortex5, scaleScreenUv(uv), 0.0);
+                float tolerance = max(0.05, abs(prevView.z) * 0.01);
+                if (history.a < 0.0 && abs(history.a - prevView.z) < tolerance) {
+                    direct = vec4(max(history.rgb, vec3(0.0)), 1.0);
+                }
+            }
+        }
+    }
+    imageStore(colorimg10, texelPos, direct);
+#endif
 	vec2 previousCoord = ReprojectScreenPos(vec3(texelToUvScaled(texelPos), depth)).xy;
 
-	if (depth > 0.56) {
+	if (depth > 0.56 && !historyReset && frameCounter > 0 && all(greaterThanEqual(previousCoord, vec2(0.0))) && all(lessThan(previousCoord, vec2(1.0)))) {
 		vec3 reprojectedHistory = texture(colortex1, saturate(previousCoord)).rgb;
 		imageStore(colorimg4, texelPos, vec4(reprojectedHistory, 1.0));
-	}
+	} else {
+        imageStore(colorimg4, texelPos, vec4(0.0));
+    }
 }

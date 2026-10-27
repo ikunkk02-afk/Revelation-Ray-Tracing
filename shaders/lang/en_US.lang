@@ -1,5 +1,11 @@
+profile.Default=Original default
+profile.Low=Low
+profile.Medium=Medium
+profile.High=High
+profile.Ultra=Ultra
+profile.RayTracing=Ray tracing (maximum quality)
+# Revelation RT modifications, 2026-10-26. Apache-2.0.
 # PROFILES
-profile.Default=Default
 
 
 # SCREENS
@@ -511,3 +517,104 @@ option.DEBUG_CLOUD_SHADOWS=Debug Cloud Shadows
 option.DEBUG_VOXELIZATION=Debug Voxelization
 option.DEBUG_RADIANCE_CACHE=Debug Radiance Cache
 option.DEBUG_TONE_MAPPING_PLOT=Debug Tone Mapping Plot
+
+# Revelation RT modifications, 2026-10-26. Apache-2.0.
+screen.RayTracing=Software Ray Tracing (Experimental)
+option.RTGI_ENABLED=Path-traced Indirect Light
+option.RTGI_ENABLED.comment=Screen-space diffuse paths with explicit bounces. Requires Global Illumination. No off-screen or hidden geometry; not hardware RTX.
+option.RTGI_SAMPLES=Paths per Pixel
+option.RTGI_SAMPLES.comment=Samples per frame at half resolution. Higher values reduce noise and increase GPU cost.
+option.RTGI_BOUNCES=Diffuse Bounces
+option.RTGI_BOUNCES.comment=Trace 1-4 explicit bounces using an independent direct-only radiance cache.
+option.RT_MAX_DISTANCE=Maximum Ray Segment Distance
+suffix.RT_MAX_DISTANCE= blocks
+option.RT_MAX_DISTANCE.comment=Also affects reflections and refraction. Longer rays need more steps; they do not provide off-screen geometry.
+option.RT_HIT_THICKNESS=Intersection Thickness
+suffix.RT_HIT_THICKNESS= blocks
+option.RT_HIT_THICKNESS.comment=Depth-slab tolerance. Large values can cause false occlusion; small values can miss thin surfaces.
+option.RT_RADIANCE_CLAMP=Indirect Radiance Limit
+option.RT_RADIANCE_CLAMP.comment=Suppresses fireflies while preserving hue. Lower limits darken bright indirect lighting.
+option.RT_SPECULAR_SAMPLES=Rough Reflection Samples
+option.RT_SPECULAR_SAMPLES.comment=Multiple GGX importance-sampled reflection rays. Mirror surfaces use one ray.
+option.RT_HANDHELD_SHADOWS=Ray-traced Handheld Shadows
+option.RT_HANDHELD_SHADOWS.comment=Independent main/off-hand lights with screen-space opaque occlusion. Off-screen occluders are unavailable.
+option.RT_HANDHELD_SHADOW_SAMPLES=Handheld Shadow Steps
+option.RT_HANDHELD_RADIUS=Handheld Source Radius
+suffix.RT_HANDHELD_RADIUS= blocks
+option.RT_HANDHELD_FLICKER=Subtle Flame Flicker
+option.RT_HANDHELD_FLICKER.comment=Small continuous brightness variation for torch and soul-flame items.
+option.RT_TEMPORAL_CLIP=Indirect History Clipping
+option.RT_TEMPORAL_CLIP.comment=Variance-based neighborhood clipping reduces stale lighting trails. Requires SVGF.
+option.RT_CLIP_SIGMA=History Clip Tolerance
+option.RT_CLIP_SIGMA.comment=Lower values react faster but may increase noise and flicker.
+
+# Revelation RT v2 modifications, 2026-10-26. Apache-2.0.
+option.RT_HANDHELD_SOFT_SAMPLES=Fixed Handheld Soft-shadow Samples
+option.RT_HANDHELD_SOFT_SAMPLES.comment=Used only for a nonzero source radius. More samples reduce banding and increase GPU cost.
+option.RT_HANDHELD_THICKNESS=Handheld Intersection Thickness
+suffix.RT_HANDHELD_THICKNESS= blocks
+option.RT_HANDHELD_THICKNESS.comment=Separate thin depth tolerance reduces false edge occlusion and broad halos.
+option.RT_GLASS_ENABLED=Stained-glass Light Transmission
+option.RT_GLASS_ENABLED.comment=Nearby 64x64x64 glass data tints handheld and traced indirect light. Also improves sun/moon transmission. Includes connected pane bounds.
+option.RT_GLASS_COLOR_STRENGTH=Transmission Color Strength
+option.RT_GLASS_COLOR_STRENGTH.comment=Higher values produce stronger colored transmission. Multiple layers multiply absorption along the ray.
+option.RT_GLASS_DENSITY=Glass Absorption Density
+
+# Revelation RT v3 modifications, 2026-10-26. Apache-2.0.
+option.RT_LOCAL_LIGHTS=Local world lights
+option.RT_LOCAL_BRIGHTNESS=Local light brightness
+option.RT_LOCAL_SOFT_SHADOWS=Local Light Soft Shadows
+option.RT_LOCAL_SOFT_SHADOWS.comment=Samples occlusion across the emitter's own disc for distance-dependent contact-hardening penumbra. Off uses one hard ray per pixel.
+option.RT_LOCAL_SHADOW_SAMPLES=Local Light Shadow Samples
+option.RT_LOCAL_SHADOW_SAMPLES.comment=Occlusion samples per emitter, converged by TAA. 1 keeps crisp edges; higher values smooth the penumbra at extra cost.
+option.RT_LOCAL_SPECULAR=Local Light Specular
+option.RT_LOCAL_SPECULAR.comment=GGX highlight share from torches and lanterns on smooth surfaces. 0 disables it.
+option.RT_HANDHELD_SHADOWS.comment=Trace captured local model bounds instead of single-layer camera depth.
+
+# Revelation RT v5, Apache-2.0.
+option.RT_PHYSICAL_GLASS=Solid glass optics
+option.RT_PHYSICAL_GLASS.comment=Snell entry/exit refraction, thickness-based absorption and Fresnel reflection. Reconstructs the frontmost glass cell, not full multilayer path tracing.
+option.RT_GLASS_ROUGHNESS=Glass surface roughness
+option.RT_GLASS_ROUGHNESS.comment=0 is a sharp mirror. Higher values sample a GGX microfacet reflection; use more reflection samples to reduce noise.
+option.RT_LOCAL_LIGHTS.comment=64-block capture grid, up to 256 emitters. Accumulates every influencing light; traces vanilla door, trapdoor, bar and grate cutouts.
+option.RT_GLASS_DENSITY.comment=Shared absorption per block of actual glass path length. Thin panes absorb less than full cubes; multiple layers multiply.
+option.RT_HANDHELD_RADIUS.comment=0 is a point source; a positive radius gives contact-hardening soft shadows with TAA convergence.
+
+# Revelation RT v6, Apache-2.0.
+option.RT_LOCAL_ACCELERATION=Hierarchical local ray traversal
+option.RT_LOCAL_ACCELERATION.comment=Combine opaque visibility and glass in one traversal; skip empty 4-block bricks using 64-bit occupancy masks. Retains 1/16-block cutouts.
+option.RT_LOCAL_SOURCE_SIZE=Local emitting surface size
+option.RT_LOCAL_SOURCE_SIZE.comment=Smaller sources make aperture projections sharper; larger sources widen the penumbra. Does not change the light range.
+option.RT_LOCAL_VOLUMETRICS=Local volumetric lighting
+option.RT_LOCAL_VOLUMETRICS.comment=Accumulates candidate lights along the view ray with source-to-medium and medium-to-camera extinction. Limited by sampling and the local capture grid.
+option.RT_LOCAL_VOLUME_SAMPLES=Local volume samples
+option.RT_LOCAL_HAZE_DENSITY=Local haze density
+option.RT_LOCAL_HAZE_DENSITY.comment=0 disables local haze; suggested range 0.004 to 0.012. Higher values increase visible scattering and extinction.
+
+option.RT_LOCAL_HALF_RES=Half-resolution local diffuse
+option.RT_LOCAL_TRACED_SHADOWS=Ray-traced local shadows (expensive)
+option.RT_LOCAL_TEMPORAL_SHADOWS=One shadow sample per frame (temporal)
+option.RT_LOCAL_MAX_TRACED=Ray-traced lights per pixel
+option.RT_LOCAL_IMPORTANCE_CUTOFF=Drop lights below this share of the strongest
+option.RT_LOCAL_VOLUME_LIGHT_CAP=Haze lights along the ray
+
+# Revelation RT v9.3 light controls
+screen.LightSources=Light Sources & Flashlight
+screen.BlockLightSettings=Block Light Settings
+screen.HandheldLightSettings=Handheld Light Settings
+screen.FlashlightSettings=Flashlight Settings
+option.RT_BLOCK_CUSTOM_COLOR=Custom Block Light Color
+option.RT_BLOCK_CUSTOM_COLOR.comment=Off preserves each emitter color; on overrides illumination and emission using the RGB controls.
+option.HELD_LIGHT_CUSTOM_COLOR=Custom Handheld Light Color
+option.HELD_LIGHT_CUSTOM_COLOR.comment=Override the emitted color of held light sources, including the flashlight.
+option.HELD_LIGHT_COLOR_R=Held Light Red
+option.HELD_LIGHT_COLOR_G=Held Light Green
+option.HELD_LIGHT_COLOR_B=Held Light Blue
+option.RT_HANDHELD_FLASHLIGHT=Torch Flashlight Mode
+option.RT_HANDHELD_FLASHLIGHT.comment=Normal, soul and redstone torches illuminate a view-directed spotlight. Other held items remain omnidirectional.
+option.RT_FLASHLIGHT_FOV=Beam Field of View (degrees)
+option.RT_FLASHLIGHT_FOV.comment=Full cone angle; smaller values produce a narrower spot.
+option.RT_FLASHLIGHT_SOFTNESS=Beam Edge Softness
+option.RT_FLASHLIGHT_SOFTNESS.comment=Angular edge fade; zero gives a hard beam edge. Shadow projection remains unchanged.
+option.RT_FLASHLIGHT_RANGE=Flashlight Range (blocks)
+option.RT_FLASHLIGHT_RANGE.comment=Flashlight mode only. Illumination still decreases with distance.

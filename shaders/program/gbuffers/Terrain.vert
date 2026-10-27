@@ -1,3 +1,4 @@
+// Revelation RT v3 modifications, 2026-10-26. Apache-2.0.
 /*
 --------------------------------------------------------------------------------
 
@@ -12,6 +13,7 @@
 //======// Utility //=============================================================================//
 
 #include "/lib/Utility.glsl"
+#include "/lib/lighting/SceneID.glsl"
 
 #define WAVING_FOLIAGE
 #define WAVING_FOLIAGE_SPEED 1.0 // [0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0 1.1 1.2 1.3 1.4 1.5 1.6 1.7 1.8 1.9 2.0 3.0 5.0 7.0 10.0]
@@ -59,7 +61,7 @@ void main() {
 
 	vec3 worldPos = transMAD(gbufferModelViewInverse, transMAD(gl_ModelViewMatrix, gl_Vertex.xyz));
 
-	materialID = uint(max(mc_Entity.x - 1e4, 1));
+	materialID = uint(max(float(RTBaseBlockID(int(mc_Entity.x))) - 1e4, 1));
 
 	// Unlabelled foilage detection
 	#ifdef UNLABELLED_FOILAGE_DETECTION

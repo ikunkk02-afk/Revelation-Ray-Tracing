@@ -1,3 +1,6 @@
+// Revelation RT v3 modifications, 2026-10-26. Apache-2.0.
+// Revelation RT v2 modifications, 2026-10-26. Apache-2.0.
+// Revelation RT modifications, 2026-10-26. Apache-2.0.
 /*
 --------------------------------------------------------------------------------
 
@@ -20,7 +23,11 @@
 //======// Output //==============================================================================//
 
 /* RENDERTARGETS: 0 */
-out vec3 sceneOut;
+layout(location = 0) out vec3 sceneOut;
+#ifdef RTGI_ENABLED
+/* RENDERTARGETS: 0,5 */
+layout(location = 1) out vec4 directOut;
+#endif
 
 //======// Uniform //=============================================================================//
 
@@ -45,9 +52,18 @@ out vec3 sceneOut;
 #include "/lib/atmosphere/clouds/Common.glsl"
 
 #include "/lib/surface/Material.glsl"
+#include "/lib/surface/Selection.glsl"
 
 #include "/lib/lighting/Common.glsl"
+#include "/lib/lighting/LocalLightCache.glsl"
 #include "/lib/lighting/shadow/Render.glsl"
+#ifdef HANDHELD_LIGHTING
+#include "/lib/lighting/HandheldTracing.glsl"
+#endif
+
+#ifdef RT_LOCAL_LIGHTS
+#include "/lib/lighting/LocalLights.glsl"
+#endif
 
 #if AO_ENABLED > 0 && !defined SSILVB_ENABLED
 	#include "/lib/lighting/SSAO.glsl"
@@ -103,7 +119,11 @@ void main() {
 	float dither = BlueNoise(texelPos, frameCounter);
 
 	sceneOut = vec3(0.0);
+#ifdef RTGI_ENABLED
+    directOut = vec4(0.0);
+#endif
 
+    if (materialID == rtSelectionMaterial) return;
 	if (materialID == 0u) { // Sky
     #if defined DIMENSION_OVERWORLD
 		vec3 viewDir  = ScreenToViewDir(screenCoord);
@@ -284,7 +304,7 @@ void main() {
         #endif // DIMENSION_OVERWORLD
 
 		// Ambient occlusion
-		#if AO_ENABLED > 0 && !defined SSILVB_ENABLED
+#if AO_ENABLED > 0 && !defined SSILVB_ENABLED
 			vec3 ao = vec3(1.0);
 			#if AO_ENABLED == 1
 				ao.x = CalculateSSAO(screenCoord, viewPos, viewNormal, SampleStbnUnitvec2(texelPos, frameCounter));
@@ -302,6 +322,7 @@ void main() {
 		#endif
 
 		#ifndef SSILVB_ENABLED
+        #if defined DIMENSION_OVERWORLD
             // Skylight
 			if (lightmap.y > EPS) {
 				// Spherical harmonics skylight
@@ -312,6 +333,7 @@ void main() {
 				float bounce = CalculateFakeBouncedLight(worldNormal);
 				diffuseRadiance += bounce * pow5(lightmap.y) * sunlightBase * ao;
 			}
+        #endif
 
             // Blocklight
 			if (lightmap.x > EPS) {
@@ -328,24 +350,32 @@ void main() {
             diffuseRadiance += (worldNormal.y * 0.4 + 0.6) * ambientColor * ao;
 		#endif
 
-		// Handheld light
-		#ifdef HANDHELD_LIGHTING
-			if (heldBlockLightValue + heldBlockLightValue2 > EPS) {
-				float NdotL = saturate(dot(worldNormal, -worldDir));
-				float attenuation = rcp(1.0 + viewDist * viewDist) * NdotL;
-				float intensity = max(heldBlockLightValue, heldBlockLightValue2);
-                intensity *= HELD_LIGHT_BRIGHTNESS;
-
-                #ifdef COLORED_HANDHELD_LIGHTING
-					vec4 heldLightData = handheldAlbedo.average;
-					vec3 heldLightColor = mix(blocklightColor, heldLightData.rgb, heldLightData.a);
-                #else
-                    #define heldLightColor blocklightColor
-                #endif
-				diffuseRadiance += intensity * attenuation * heldLightColor;
-                diffuseRadiance += intensity * 4.0 * float(handMask) * luminance(albedo);
-			}
-		#endif
+        // Handheld lights contribute to the direct cache and the final image.
+        bool reusedLocalDiffuse = false;
+#ifdef RT_LOCAL_HALF_RES
+#if defined RT_LOCAL_LIGHTS || defined HANDHELD_LIGHTING
+        vec3 localDiffuse, localSpecular;
+        if (!handMask) {
+            reusedLocalDiffuse = RTGatherLocalDiffuse(texelPos, viewPos, worldNormal, material, localDiffuse, localSpecular);
+            if (reusedLocalDiffuse) {
+                diffuseRadiance += localDiffuse;
+                specularRadiance += localSpecular;
+            }
+        }
+#endif
+#endif
+        if (!reusedLocalDiffuse) {
+#ifdef HANDHELD_LIGHTING
+            AddTracedHandheldLighting(viewPos, worldNormal, geoNormal, material, handMask, dither, texelPos, diffuseRadiance, specularRadiance);
+#endif
+#ifdef RT_LOCAL_LIGHTS
+            AddTracedLocalLighting(viewPos, worldNormal, geoNormal, material, handMask, dither, texelPos, diffuseRadiance, specularRadiance);
+#endif
+        }
+#ifdef RTGI_ENABLED
+        vec3 directDiffuse = diffuseRadiance;
+        vec3 directSpecular = specularRadiance;
+#endif
 
 		// Indirect diffuse lighting
 		#ifdef SSILVB_ENABLED
@@ -378,7 +408,12 @@ void main() {
 			// Hard-coded emissive
 			sceneOut += HardCodeEmissive(materialID, albedo, worldPos) * EMISSIVE_BRIGHTNESS * albedo;
 		#endif
+        if (!handMask && materialID != 500u && materialID != 2000u) sceneOut = RTAdjustBlockEmission(sceneOut);
 
-		sceneOut += diffuseRadiance + specularRadiance;
+#ifdef RTGI_ENABLED
+        // Exclude traced diffuse and indirect specular from the source cache.
+        directOut = vec4(clamp(sceneOut + directDiffuse * albedo * oms(material.metallic) + directSpecular, vec3(0.0), vec3(FP16_MAX)), viewPos.z);
+#endif
+        sceneOut += diffuseRadiance + specularRadiance;
 	}
 }

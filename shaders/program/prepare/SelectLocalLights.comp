@@ -1,0 +1,53 @@
+// Revelation RT v8, 2026-10-27. Apache-2.0.
+// Conservative masks keep every intersecting light, with no nearest-N seam.
+#include "/lib/Utility.glsl"
+#include "/lib/universal/Uniform.glsl"
+#include "/lib/universal/Transform.glsl"
+#include "/lib/lighting/SceneGrid.glsl"
+#include "/lib/lighting/Emitters.glsl"
+layout(rgba32ui) writeonly uniform uimage2D rtLightTilesImg;
+layout(rgba32ui) writeonly uniform uimage2D rtLightTilesHiImg;
+layout(local_size_x = 8, local_size_y = 8) in;
+const vec2 workGroupsRender = vec2(0.0625, 0.0625);
+void main() {
+    ivec2 tile = ivec2(gl_GlobalInvocationID.xy);
+    ivec2 tileCount = imageSize(rtLightTilesImg);
+    if (any(greaterThanEqual(tile, tileCount))) return;
+    uvec4 low = uvec4(0u), high = uvec4(0u);
+    vec2 lower = vec2(tile * 16);
+    vec2 upper = min(lower + 16.0, scaledViewSize);
+    // Relative image dimensions may round down. The last tile owns the tail.
+    if (tile.x == tileCount.x - 1) upper.x = scaledViewSize.x;
+    if (tile.y == tileCount.y - 1) upper.y = scaledViewSize.y;
+    if (all(lessThan(lower, scaledViewSize))) {
+        // Jitter margin; infinite side planes cover all receiver depths, even
+        // transparent surfaces and fog. No depth-texture sample can hide a lamp.
+        lower = (lower - 2.0) * scaledTexelSize;
+        upper = (upper + 2.0) * scaledTexelSize;
+        vec3 rays[4] = vec3[4](ScreenToViewPos(vec3(lower, 0.75)),
+            ScreenToViewPos(vec3(upper.x, lower.y, 0.75)),
+            ScreenToViewPos(vec3(upper, 0.75)),
+            ScreenToViewPos(vec3(lower.x, upper.y, 0.75)));
+        vec3 center = rays[0] + rays[2];
+        vec3 planes[4];
+        for (int side = 0; side < 4; ++side) {
+            vec3 plane = normalize(cross(rays[side], rays[(side + 1) & 3]));
+            planes[side] = dot(plane, center) < 0.0 ? -plane : plane;
+        }
+        for (uint i = 0u; i < min(rtScene.lightCount, rtMaxLights); ++i) {
+            vec4 light = rtScene.lights[i];
+            uint kind = uint(light.w + 0.5);
+            float range = RTEmitterRange(kind) + RTEmitterRadius(kind) * RT_LOCAL_SOURCE_SIZE;
+            vec3 playerPos = light.xyz - fract(cameraPosition) - vec3(32.0);
+            vec3 viewPos = transMAD(gbufferModelView, playerPos);
+            bool intersects = viewPos.z <= range;
+            for (int side = 0; side < 4; ++side) intersects = intersects && dot(planes[side], viewPos) >= -range;
+            if (!intersects) continue;
+            uint word = i >> 5u, bit = 1u << (i & 31u);
+            if (word < 4u) low[int(word)] |= bit;
+            else high[int(word - 4u)] |= bit;
+        }
+    }
+    imageStore(rtLightTilesImg, tile, low);
+    imageStore(rtLightTilesHiImg, tile, high);
+}

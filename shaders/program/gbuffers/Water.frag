@@ -1,3 +1,4 @@
+// Modified for the Revelation Ray Tracing fork, 2026-10-27. See MODIFICATIONS.md; original license notices retained.
 /*
 --------------------------------------------------------------------------------
 
@@ -39,6 +40,7 @@ in vec4 vertColor;
 in vec2 texCoord;
 in vec2 lightmap;
 flat in uint materialID;
+flat in uint rtGlassCode;
 
 in vec3 worldPos;
 
@@ -152,7 +154,7 @@ void main() {
         #endif
 
 		normalOut.zw = OctEncodeSnorm(worldNormal);
-		waterOut = vec4(0.0);
+		waterOut = vec4(0.0, 0.0, float(rtGlassCode) / 2047.0, 0.0);
 	}
 
 	materialOut.x = Pack2x8U(lightmap);

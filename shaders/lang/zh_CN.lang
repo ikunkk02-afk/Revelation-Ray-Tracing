@@ -1,5 +1,11 @@
+profile.Default=原版默认
+profile.Low=低
+profile.Medium=中
+profile.High=高
+profile.Ultra=极高
+profile.RayTracing=光线追踪（最高画质）
+# Revelation RT modifications, 2026-10-26. Apache-2.0.
 # PROFILES
-profile.Default=默认
 
 
 # SCREENS
@@ -244,13 +250,15 @@ option.SHADOW_DISTORTION_STRENGTH=阴影形变强度
 option.SCREEN_SPACE_SHADOWS=屏幕空间阴影
 option.SCREEN_SPACE_SHADOWS_SAMPLES=屏幕空间阴影采样数
 
-option.BLOCKLIGHT_BRIGHTNESS=方块光亮度
+option.BLOCKLIGHT_BRIGHTNESS=方块光源亮度
+option.BLOCKLIGHT_BRIGHTNESS.comment=统一调整方块照明与自发光强度。0 关闭，1 为原始强度；不改变手持光源亮度。
 option.BLOCKLIGHT_COLOR_R=方块光颜色-§c红
 option.BLOCKLIGHT_COLOR_G=方块光颜色-§a绿
 option.BLOCKLIGHT_COLOR_B=方块光颜色-§9蓝
 option.HANDHELD_LIGHTING=手持光照
 option.COLORED_HANDHELD_LIGHTING=彩色手持光照
-option.HELD_LIGHT_BRIGHTNESS=手持光照亮度
+option.HELD_LIGHT_BRIGHTNESS=手持光源亮度
+option.HELD_LIGHT_BRIGHTNESS.comment=独立调整火把等手持光源及手电筒的强弱。0 关闭；不改变方块光源。
 
 option.NIGHT_BRIGHTNESS=夜间亮度
 prefix.NIGHT_BRIGHTNESS=2^
@@ -511,3 +519,104 @@ option.DEBUG_CLOUD_SHADOWS=测试云影
 option.DEBUG_VOXELIZATION=测试体素化
 option.DEBUG_RADIANCE_CACHE=测试辐射度缓存
 option.DEBUG_TONE_MAPPING_PLOT=测试色调映射曲线
+
+# Revelation RT modifications, 2026-10-26. Apache-2.0.
+screen.RayTracing=软件光线追踪（实验）
+option.RTGI_ENABLED=路径追踪间接光
+option.RTGI_ENABLED.comment=在屏幕空间追踪漫反射光路，支持多次反弹。需要同时开启全局光照。无法查询屏幕外和遮挡后的几何，不是硬件 RTX。
+option.RTGI_SAMPLES=每像素路径数
+option.RTGI_SAMPLES.comment=每帧在半分辨率下采样。更高的路径数减少噪点，但显著增加显卡负载。
+option.RTGI_BOUNCES=漫反射反弹次数
+option.RTGI_BOUNCES.comment=显式追踪 1 至 4 次反弹；使用不含间接光的独立直接光缓存，减少重复计光。
+option.RT_MAX_DISTANCE=单段射线最远距离
+suffix.RT_MAX_DISTANCE= 格
+option.RT_MAX_DISTANCE.comment=也影响反射、折射。更远的距离需要更多追踪步数，不能扩大可见几何范围。
+option.RT_HIT_THICKNESS=求交厚度
+suffix.RT_HIT_THICKNESS= 格
+option.RT_HIT_THICKNESS.comment=深度表面厚度容差。太大可能误判遮挡，太小可能漏掉细小物体。
+option.RT_RADIANCE_CLAMP=间接光亮度上限
+option.RT_RADIANCE_CLAMP.comment=抑制高亮噪点，保持光线色相。更低数值会使强光反弹变暗。
+option.RT_SPECULAR_SAMPLES=粗糙反射采样数
+option.RT_SPECULAR_SAMPLES.comment=对粗糙反射执行多条 GGX 重要性采样射线。完全光滑表面仍只需一条。
+option.RT_HANDHELD_SHADOWS=手持光源追踪阴影
+option.RT_HANDHELD_SHADOWS.comment=双手分别照明，使用屏幕可见的不透明几何遮挡。不会检测屏幕外遮挡物。
+option.RT_HANDHELD_SHADOW_SAMPLES=手持阴影追踪步数
+option.RT_HANDHELD_RADIUS=手持光源半径
+suffix.RT_HANDHELD_RADIUS= 格
+option.RT_HANDHELD_FLICKER=火焰轻微闪动
+option.RT_HANDHELD_FLICKER.comment=火把和灵魂火焰使用小幅、连续的亮度变化；其他已知光源保持稳定。
+option.RT_TEMPORAL_CLIP=间接光历史裁剪
+option.RT_TEMPORAL_CLIP.comment=将历史颜色限制在当前邻域的方差范围内，减少移动或切换光源时的拖影。需要 SVGF。
+option.RT_CLIP_SIGMA=历史裁剪宽容度
+option.RT_CLIP_SIGMA.comment=数值越低响应越快，但可能出现更多噪点和闪烁。
+
+# Revelation RT v2 modifications, 2026-10-26. Apache-2.0.
+option.RT_HANDHELD_SOFT_SAMPLES=手持软阴影固定采样数
+option.RT_HANDHELD_SOFT_SAMPLES.comment=默认 1 为单一中心投影。高于 1 为近似面光源，可能产生重影并增加负载。
+option.RT_HANDHELD_THICKNESS=手持阴影求交厚度
+suffix.RT_HANDHELD_THICKNESS= 格
+option.RT_HANDHELD_THICKNESS.comment=手持阴影独立使用更小的深度厚度，减少物体边缘的错误遮挡和宽灰边。
+option.RT_GLASS_ENABLED=染色玻璃透射着色
+option.RT_GLASS_ENABLED.comment=使用玩家附近 64×64×64 的玻璃数据；火把光和追踪的间接光按玻璃颜色吸收，并增强日月光彩色阴影。支持玻璃板连接形状。
+option.RT_GLASS_COLOR_STRENGTH=透射颜色浓度
+option.RT_GLASS_COLOR_STRENGTH.comment=数值越大，穿过染色玻璃后的颜色越鲜明。多层玻璃按路径叠加吸收。
+option.RT_GLASS_DENSITY=玻璃吸收密度
+
+# Revelation RT v3 modifications, 2026-10-26. Apache-2.0.
+option.RT_LOCAL_LIGHTS=世界局部光源
+option.RT_LOCAL_BRIGHTNESS=局部光源亮度
+option.RT_LOCAL_SOFT_SHADOWS=近似面光源阴影（可能重影）
+option.RT_LOCAL_SOFT_SHADOWS.comment=高级实验选项：少量面积采样会产生错开的投影。极高档默认关闭，每盏灯使用一次稳定的中心投影。
+option.RT_LOCAL_SHADOW_SAMPLES=局部光源阴影采样数
+option.RT_LOCAL_SHADOW_SAMPLES.comment=仅在开启近似软阴影时生效。少量面积采样会产生错开的投影，极高档默认使用单一中心投影。
+option.RT_LOCAL_SPECULAR=局部光源高光强度
+option.RT_LOCAL_SPECULAR.comment=火把、灯笼在光滑表面上的 GGX 高光比例。0 关闭。
+option.RT_HANDHELD_SHADOWS.comment=使用附近方块模型形状查询遮挡，避免仅依赖单层屏幕深度产生黑条。
+
+# Revelation RT v5, Apache-2.0.
+option.RT_PHYSICAL_GLASS=实体玻璃光学
+option.RT_PHYSICAL_GLASS.comment=使用入射与出射两界面的 Snell 折射、实际厚度吸收和 Fresnel 反射。只重建最前一块玻璃，非完整多层路径追踪。
+option.RT_GLASS_ROUGHNESS=玻璃表面粗糙度
+option.RT_GLASS_ROUGHNESS.comment=0 为清晰镜面；提高后用 GGX 微表面采样产生柔和反射。可配合反射采样数调整。
+option.RT_LOCAL_LIGHTS.comment=64格局部捕获网格，最多256盏灯；所有影响当前区域的光源参与累加。支持原版门、活板门、铁栏杆与铜格栅的孔洞遮挡。
+option.RT_GLASS_DENSITY.comment=统一按每格实际穿透长度计算吸收；薄玻璃板比整块玻璃吸收少，多层颜色相乘。
+option.RT_HANDHELD_RADIUS.comment=0 为点光源；大于0产生随距离变化的软阴影，采样由TAA收敛。
+
+# Revelation RT v6, Apache-2.0.
+option.RT_LOCAL_ACCELERATION=局部光线分层加速
+option.RT_LOCAL_ACCELERATION.comment=合并不透明遮挡和玻璃透射遍历，用4格空间分块和64位占据掩码跳过空区域。保持1/16格的孔洞细节。
+option.RT_LOCAL_SOURCE_SIZE=局部发光面尺寸
+option.RT_LOCAL_SOURCE_SIZE.comment=缩小可让孔洞投影更清晰；放大增加半影。控制取样光源的实际面积，不会扩大灯光照射范围。
+option.RT_LOCAL_VOLUMETRICS=局部灯光体积散射
+option.RT_LOCAL_VOLUMETRICS.comment=沿视线累加所有候选灯光的散射，光源到空气与空气到相机均有吸收；受采样数量与局部捕获范围限制。
+option.RT_LOCAL_VOLUME_SAMPLES=局部体积光采样数
+option.RT_LOCAL_HAZE_DENSITY=局部空气散射密度
+option.RT_LOCAL_HAZE_DENSITY.comment=0关闭局部空气效果；建议0.004至0.012。提高会增加光束可见度与空气衰减。
+
+option.RT_LOCAL_HALF_RES=局部漫反射半分辨率
+option.RT_LOCAL_TRACED_SHADOWS=局部灯光光线追踪阴影（昂贵）
+option.RT_LOCAL_TEMPORAL_SHADOWS=随机单次阴影采样（可能有噪点）
+option.RT_LOCAL_MAX_TRACED=每像素参与追踪的灯光数
+option.RT_LOCAL_IMPORTANCE_CUTOFF=低于最强灯此比例的灯不再追踪
+option.RT_LOCAL_VOLUME_LIGHT_CAP=沿视线参与雾散射的灯光数
+
+# Revelation RT v9.3 light controls
+screen.LightSources=光源与手电筒
+screen.BlockLightSettings=方块光源设置
+screen.HandheldLightSettings=手持光源设置
+screen.FlashlightSettings=手电筒设置
+option.RT_BLOCK_CUSTOM_COLOR=自定义方块光色
+option.RT_BLOCK_CUSTOM_COLOR.comment=关闭时保留各类光源原色；开启后用下方 RGB 统一设置照明与自发光的颜色。
+option.HELD_LIGHT_CUSTOM_COLOR=自定义手持光色
+option.HELD_LIGHT_CUSTOM_COLOR.comment=关闭时保留火把、灵魂火把等物品原色；开启后使用下方 RGB，也用于手电筒。
+option.HELD_LIGHT_COLOR_R=手持光颜色-§c红
+option.HELD_LIGHT_COLOR_G=手持光颜色-§a绿
+option.HELD_LIGHT_COLOR_B=手持光颜色-§9蓝
+option.RT_HANDHELD_FLASHLIGHT=手持火把变为手电筒
+option.RT_HANDHELD_FLASHLIGHT.comment=将普通、灵魂和红石火把变为跟随视角的聚光照明，中心对准准星。灯笼等其他物品保持原有照明方式。
+option.RT_FLASHLIGHT_FOV=光束张角（度）
+option.RT_FLASHLIGHT_FOV.comment=光束完整张角，数值越小光斑越窄。
+option.RT_FLASHLIGHT_SOFTNESS=光束边缘柔和度
+option.RT_FLASHLIGHT_SOFTNESS.comment=光斑边缘的渐变宽度，0 为硬边。不会改变已确认的单投影阴影。
+option.RT_FLASHLIGHT_RANGE=手电筒照射距离（格）
+option.RT_FLASHLIGHT_RANGE.comment=仅手电筒模式生效；实际亮度仍随距离衰减。

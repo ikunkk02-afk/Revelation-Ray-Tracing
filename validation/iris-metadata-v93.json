@@ -1,0 +1,8 @@
+{
+  "passed": true,
+  "source_digest": "d34a83f9aa4bfad4480c0b38bfb629c89ff387ccf95871443a402f7fae7e58e6",
+  "iris_jar": "iris-fabric-1.8.14-beta.1+mc1.21.1.jar",
+  "iris_jar_sha256": "0ceb694040b4628bf3fa02286cfe5f0db833195669ab07f8caa4001359763eff",
+  "scope": "Installed Iris metadata and option discovery; no game pipeline creation",
+  "output": "PASS: installed Iris 1.8.14-beta.1 metadata; 377 sources; six quality profiles, 36 transitions, matching Ultra defaults; independent light-control pages and torch-only flashlight options; RGBA16 glass buffer"
+}

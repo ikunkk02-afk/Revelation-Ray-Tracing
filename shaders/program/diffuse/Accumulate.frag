@@ -1,3 +1,4 @@
+// Revelation RT modifications, 2026-10-26. Apache-2.0.
 /*
 --------------------------------------------------------------------------------
 
@@ -55,7 +56,7 @@ void TemporalFilter(ivec2 texelPos, vec3 screenPos, vec3 worldNormal) {
 	vec2 currCoord = texelToUv(texelPos);
 	encodedNormalDepth = vec3(OctEncodeSnorm(worldNormal), viewPos.z);
 
-	if (saturate(prevCoord) == prevCoord && !historyReset) {
+	if (saturate(prevCoord) == prevCoord && !historyReset && frameCounter > 0) {
 		vec4 prevDiffuse = vec4(0.0);
 		float sumWeight = 0.0;
 
@@ -99,7 +100,26 @@ void TemporalFilter(ivec2 texelPos, vec3 screenPos, vec3 worldNormal) {
 				integratedDiffuse.rgb = texelFetch(colortex3, texelPos, 0).rgb;
 			}
 
-			float alpha = rcp(integratedDiffuse.a);
+#ifdef RT_TEMPORAL_CLIP
+            vec3 mean = vec3(0.0);
+            vec3 moment = vec3(0.0);
+            for (int y = -1; y <= 1; ++y) {
+                for (int x = -1; x <= 1; ++x) {
+                    ivec2 sampleTexel = clamp(texelPos + ivec2(x, y), ivec2(0), ivec2(scaledHalfViewSize) - 1);
+                    vec3 value = texelFetch(colortex3, sampleTexel, 0).rgb;
+                    mean += value;
+                    moment += value * value;
+                }
+            }
+            mean /= 9.0;
+            vec3 deviation = sqrt(max(moment / 9.0 - mean * mean, vec3(0.0)));
+            vec3 radius = RT_CLIP_SIGMA * deviation + vec3(0.01);
+            vec3 clipped = clamp(prevDiffuse.rgb, mean - radius, mean + radius);
+            float change = abs(clipped.x - prevDiffuse.x) / max(abs(prevDiffuse.x), 0.05);
+            integratedDiffuse.a = min(integratedDiffuse.a, mix(SSILVB_MAX_ACCUM_FRAMES, 4.0, saturate(change)));
+            prevDiffuse.rgb = clipped;
+#endif
+            float alpha = rcp(max(integratedDiffuse.a, 1.0));
 			integratedDiffuse.rgb = mix(min(prevDiffuse.rgb, FP16_MAX), integratedDiffuse.rgb, alpha);
 			return;
 		}
@@ -112,7 +132,7 @@ float GetClosestDepthN(ivec2 texel) {
 	float depth = 1.0;
 
 	for (uint i = 0u; i < 8u; ++i) {
-		ivec2 sampleTexel = offset3x3N[i] + texel;
+		ivec2 sampleTexel = clamp(offset3x3N[i] + texel, ivec2(0), ivec2(scaledViewSize) - 1);
 		float sampleDepth = loadDepth0(sampleTexel);
 		depth = min(depth, sampleDepth);
 	}
@@ -128,7 +148,7 @@ void main() {
 	vec2 renderCoord = texelToUvScaled(renderTexel);
 
 	float depth = loadDepth0(renderTexel);
-	bool terrainCheck = lessThanFLT1(min(GetClosestDepthN(renderTexel), depth));
+	bool terrainCheck = lessThanFLT1(depth);
 	#if defined LOD_MOD
 		bool lodMask = !terrainCheck;
 		if (lodMask) {

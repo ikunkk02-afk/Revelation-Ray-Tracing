@@ -1,3 +1,4 @@
+// Revelation RT modifications, 2026-10-26. Apache-2.0.
 /*
 --------------------------------------------------------------------------------
 
@@ -39,13 +40,17 @@ writeonly restrict uniform image2D colorimg3;
 #include "/lib/atmosphere/Common.glsl"
 
 #include "/lib/lighting/BRDF.glsl"
+#ifdef RTGI_ENABLED
+#include "/lib/lighting/PathTracing.glsl"
+#else
 #include "/lib/lighting/SSILVB.glsl"
+#endif
 
 float GetClosestDepthN(ivec2 texel) {
 	float depth = 1.0;
 
 	for (uint i = 0u; i < 8u; ++i) {
-		ivec2 sampleTexel = offset3x3N[i] + texel;
+		ivec2 sampleTexel = clamp(offset3x3N[i] + texel, ivec2(0), ivec2(scaledViewSize) - 1);
 		float sampleDepth = loadDepth0(sampleTexel);
 		depth = min(depth, sampleDepth);
 	}
@@ -58,9 +63,10 @@ void main() {
 	uvec2 localPos = RemapThread16x16(gl_LocalInvocationIndex);
 	ivec2 texelPos = ivec2(localPos + gl_WorkGroupID.xy * gl_WorkGroupSize.xy);
 
+	if (any(greaterThanEqual(texelPos, ivec2(scaledHalfViewSize)))) return;
 	ivec2 renderTexel = texelPos * 2 + checkerboardOffset2x2[frameCounter & 3u];
 	float depth = loadDepth0(renderTexel);
-	bool terrainCheck = lessThanFLT1(min(GetClosestDepthN(renderTexel), depth));
+	bool terrainCheck = lessThanFLT1(depth);
 	#if defined LOD_MOD
 		bool lodMask = !terrainCheck;
 		if (lodMask) {
@@ -85,7 +91,11 @@ void main() {
 		vec3 worldNormal = FetchSurfaceNormal(renderTexel);
 		float lightmapSky = Unpack2x8UY(loadMaterialPack(renderTexel).x);
 
-		vec4 result = CalculateSSILVB(screenCoord, viewPos, worldNormal, lightmapSky);
+		#ifdef RTGI_ENABLED
+        vec4 result = CalculatePathTracedDiffuse(renderTexel, viewPos, worldNormal, lightmapSky);
+        #else
+        vec4 result = CalculateSSILVB(screenCoord, viewPos, worldNormal, lightmapSky);
+        #endif
 		result.rgb = RGBToYCoCg(result.rgb); // Convert to YCoCg color space (for filtering)
 		imageStore(colorimg3, texelPos, result);
 	} else {

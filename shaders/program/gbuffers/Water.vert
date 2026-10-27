@@ -1,3 +1,4 @@
+// Modified for the Revelation Ray Tracing fork, 2026-10-27. See MODIFICATIONS.md; original license notices retained.
 /*
 --------------------------------------------------------------------------------
 
@@ -19,6 +20,7 @@ out vec4 vertColor;
 out vec2 texCoord;
 out vec2 lightmap;
 flat out uint materialID;
+flat out uint rtGlassCode;
 
 out vec3 worldPos;
 
@@ -37,6 +39,7 @@ uniform vec2 renderScale;
 //======// Function //============================================================================//
 
 #define PHYSICS_OCEAN_SUPPORT
+#include "/lib/lighting/GlassMaterial.glsl"
 #ifdef PHYSICS_OCEAN_SUPPORT
 #endif
 
@@ -56,6 +59,7 @@ void main() {
 	vertColor = gl_Color;
 
 	materialID = mc_Entity.x == 10003.0 ? 3u : 2u;
+    rtGlassCode = RTGlassCode(int(mc_Entity.x));
 
 	#ifdef PHYSICS_OCEAN
 		// basic texture to determine how shallow/far away from the shore the water is

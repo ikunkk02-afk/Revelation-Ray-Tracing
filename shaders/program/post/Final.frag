@@ -1,3 +1,4 @@
+// Modified for the Revelation Ray Tracing fork, 2026-10-27. See MODIFICATIONS.md; original license notices retained.
 /*
 --------------------------------------------------------------------------------
 
@@ -14,6 +15,7 @@
 //======// Utility //=============================================================================//
 
 #include "/lib/Utility.glsl"
+#include "/lib/surface/Selection.glsl"
 
 //======// Config //==============================================================================//
 
@@ -64,6 +66,8 @@ vec3 FFXCasFilter(in ivec2 texelPos, in float sharpness) {
 	vec3 h = CasLoad(ivec2( 0,  1));
 	vec3 i = CasLoad(ivec2( 1,  1));
 
+    vec3 neighborhoodLow = min(min(min(min(a,b),min(c,d)), min(min(e,f),min(g,h))),i);
+    vec3 neighborhoodHigh = max(max(max(max(a,b),max(c,d)), max(max(e,f),max(g,h))),i);
 	// Soft min and max.
 	//  a b c             b
 	//  d e f * 0.5  +  d e f * 0.5
@@ -74,7 +78,7 @@ vec3 FFXCasFilter(in ivec2 texelPos, in float sharpness) {
 	vec3 maxCol = max(max(max(d, e), max(f, b)), h);
 		maxCol += max(max(max(a, c), max(g, i)), maxCol);
 
-	vec3 amp = approxSqrt(saturate(min(minCol, 2.0 - maxCol) / maxCol));
+	vec3 amp = sqrt(saturate(min(minCol, 2.0 - maxCol) / max(maxCol, vec3(1e-6))));
 
 	// Filter shape.
 	//  0 w 0
@@ -82,6 +86,7 @@ vec3 FFXCasFilter(in ivec2 texelPos, in float sharpness) {
 	//  0 w 0
 	vec3 w = amp * -rcp(mix(8.0, 5.0, sharpness));
 	vec3 result = saturate(((b + d + f + h) * w + e) / (1.0 + 4.0 * w));
+    result = clamp(result, neighborhoodLow, neighborhoodHigh);
 	#ifdef HDR_ENABLED
 		return invReinhard(result);
 	#else
@@ -116,6 +121,12 @@ void main() {
 			finalOut = linearToSRGBSafe(finalOut * Rec2020_2_sRGB * HdrGamePaperWhiteBrightness / HdrUIBrightness);
 		#endif
 	#endif
+
+    ivec2 selectionTexel = clamp(ivec2(texelToUv(texelPos) * scaledViewSize), ivec2(0), ivec2(scaledViewSize) - 1);
+    if (loadMaterialPack(selectionTexel).y == rtSelectionMaterial) {
+        finalOut = RTSelectionDisplayColor();
+        return;
+    }
 
 	// Text display
 	#if 0

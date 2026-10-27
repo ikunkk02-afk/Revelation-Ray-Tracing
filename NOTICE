@@ -1,0 +1,20 @@
+Revelation Ray Tracing
+
+This distribution is derived from Revelation by HaringPro.
+Copyright (C) 2026 HaringPro.
+Upstream: https://github.com/HaringPro/Revelation
+Fork: https://github.com/ikunkk02-afk/Revelation-Ray-Tracing
+
+Revelation and this fork's RT additions/modifications are distributed under
+the Apache License, Version 2.0, except for separately identified third-party
+components. See LICENSE, THIRD_PARTY_NOTICES.md and the notices in source files.
+See MODIFICATIONS.md for the fork's changes. This fork is not an official
+upstream release and does not imply endorsement by upstream contributors.
+
+Upstream acknowledgements are retained:
+- Yong-Xin Mo: code contributions and technical guidance.
+- GeForceLegend: code contributions and debugging.
+- FactoriZation: development assistance and AMD GPU testing.
+- NASA Scientific Visualization Studio: star map and lunar imagery.
+
+This NOTICE is informational and does not change any license terms.

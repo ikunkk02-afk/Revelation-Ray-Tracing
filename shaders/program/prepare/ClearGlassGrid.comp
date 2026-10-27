@@ -1,0 +1,13 @@
+/* Revelation RT v2 modifications, 2026-10-26. Apache-2.0. */
+#include "/lib/Utility.glsl"
+#include "/lib/universal/Uniform.glsl"
+#define RT_GLASS_WRITE
+#include "/lib/lighting/GlassGrid.glsl"
+
+layout(local_size_x = 8, local_size_y = 8, local_size_z = 8) in;
+const ivec3 workGroups = ivec3(8, 8, 8);
+
+void main() {
+	imageStore(rtGlassGrid, ivec3(gl_GlobalInvocationID), uvec4(0u));
+	if (all(equal(gl_GlobalInvocationID, uvec3(0u)))) rtGlassState.occupiedFlag = 0u;
+}

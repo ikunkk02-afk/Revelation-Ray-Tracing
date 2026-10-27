@@ -1,3 +1,4 @@
+// Revelation RT modifications, 2026-10-26. Apache-2.0.
 #if !defined INCLUDE_LIB_LIGHTING_SSR
 #define INCLUDE_LIB_LIGHTING_SSR
 
@@ -8,7 +9,7 @@
 #include "/lib/atmosphere/NetherFog.glsl"
 #endif
 
-vec4 CalculateSpecularReflections(Material material, vec3 worldNormal, vec3 worldDir, vec3 viewPos, float skylight, float dither) {
+vec4 CalculateSpecularReflectionSample(Material material, vec3 worldNormal, vec3 worldDir, vec3 viewPos, float skylight, float dither, int sampleIndex) {
 	viewPos += mat3(gbufferModelView) * worldNormal * saturate(length(viewPos) * 3e-4);
 
 	vec3 halfway = worldNormal;
@@ -16,7 +17,7 @@ vec4 CalculateSpecularReflections(Material material, vec3 worldNormal, vec3 worl
 	if (!material.mirrorMask) {
 		mat3 tbnMatrix = BuildOrthonormalBasis(worldNormal);
 
-		vec2 noise = SampleStbnVec2(ivec2(gl_FragCoord.xy), frameCounter + 3);
+		vec2 noise = SampleStbnVec2(ivec2(gl_FragCoord.xy), frameCounter + 3 + sampleIndex * 19);
 		halfway = tbnMatrix * SampleVisibleGGX(-worldDir * tbnMatrix, material.roughness, noise);
 	}
     #endif
@@ -50,6 +51,17 @@ vec4 CalculateSpecularReflections(Material material, vec3 worldNormal, vec3 worl
 	}
 
 	return reflection;
+}
+
+vec4 CalculateSpecularReflections(Material material, vec3 worldNormal, vec3 worldDir, vec3 viewPos, float skylight, float dither) {
+    int sampleCount = material.mirrorMask ? 1 : RT_SPECULAR_SAMPLES;
+    vec4 result = vec4(0.0);
+    for (int i = 0; i < sampleCount; ++i) {
+        vec4 sampleValue = CalculateSpecularReflectionSample(material, worldNormal, worldDir, viewPos,
+            skylight, fract(dither + float(i) * 0.61803398875), i);
+        result += sampleValue / float(sampleCount);
+    }
+    return result;
 }
 
 #endif // INCLUDE_LIB_LIGHTING_SSR
